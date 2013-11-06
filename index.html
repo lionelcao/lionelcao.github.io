@@ -1,0 +1,37 @@
+---
+body_id: welcome
+layout: default
+title: Lionel Cao
+---
+<link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
+<header>
+  <h1>Lionel Cao</h1>
+</header>
+<section id="about">
+  <div id="mugshot">
+    <img src="images/me.jpg"/>
+  </div>
+  <p>
+    Hello. My name is <em>Lionel Cao</em>. I'm <em>BSA & Capacity Management Engineer</em> at <em>ebay.Inc</em> Living in <em>Shanghai, China</em>. I am working on <em>Data Warehouse System Capacity Management, Business Intelligence &amp;</em>. When not saving the world, I enjoy <em>photography, listening music, pool, &amp; hiking</em>.
+  </p>
+</section>
+<section id="links">
+  You can follow me on 
+  <a href="http://www.weibo.com/whucaolu">Weibo</a>, 
+  
+</section>
+<section id="writings">
+  <h2>Writings</h2>
+  <ul>
+  {% for post in site.posts %}
+    <li class="post">
+      <p>{{ post.date | date: "%b %d, %Y" }}</p>
+      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    </li>
+  {% endfor %}
+  </ul>
+</section>
+<footer>
+  <p>©2013 Lionel Cao</p>
+</footer>
+
