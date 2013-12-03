@@ -51,7 +51,7 @@
 
           <div class="nav-collapse">
             <ul class="nav">
-              {% assign pages_list = site.weight.pages %}
+              {% assign pages_list = site.weighted_pages %}
               {% assign group = 'navigation' %}
               {% include JB/pages_list %}
             </ul>
