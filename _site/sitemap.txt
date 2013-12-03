@@ -1,11 +1,11 @@
 
-http://username.github.io/atom.xml
-http://username.github.io/archive.html
-http://username.github.io/rss.xml
-http://username.github.io/tags.html
-http://username.github.io/pages.html
-http://username.github.io/index.html
-http://username.github.io/categories.html
-http://username.github.io/sitemap.txt
+http://lionelcao.github.io/atom.xml
+http://lionelcao.github.io/archive.html
+http://lionelcao.github.io/rss.xml
+http://lionelcao.github.io/tags.html
+http://lionelcao.github.io/pages.html
+http://lionelcao.github.io/index.html
+http://lionelcao.github.io/categories.html
+http://lionelcao.github.io/sitemap.txt
 
-http://username.github.io/lessons/2011/12/29/jekyll-introduction
+http://lionelcao.github.io/lessons/2011/12/29/jekyll-introduction
