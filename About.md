@@ -3,6 +3,7 @@ layout: page
 title: "About"
 description: ""
 group: navigation
+weight: 5
 ---
 {% include JB/setup %}
 Hello! This is Lionel Cao(曹鲁) from Shanghai, China.
