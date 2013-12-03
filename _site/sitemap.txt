@@ -1,6 +1,7 @@
 
 http://lionelcao.github.io/atom.xml
 http://lionelcao.github.io/archive.html
+http://lionelcao.github.io/About.html
 http://lionelcao.github.io/rss.xml
 http://lionelcao.github.io/tags.html
 http://lionelcao.github.io/pages.html
