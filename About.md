@@ -10,5 +10,5 @@ Welcome to my personal blog! I'm interested in DW, BI(IBM Cognos, Microstrategy)
 
 I'd like to record & share the tips, technologies and issues which I met in  my work.
 
-Welcome to email me at <*whucaolu@gmail.com*> or add comments.
+Welcome to email me at <whucaolu@gmail.com> or add comments.
 
