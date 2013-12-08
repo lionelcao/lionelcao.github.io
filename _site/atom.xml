@@ -4,7 +4,7 @@
  <title>Lionel Cao</title>
  <link href="http://lionelcao.github.io/" rel="self"/>
  <link href="http://lionelcao.github.io"/>
- <updated>2013-12-08T15:29:35+08:00</updated>
+ <updated>2013-12-08T17:20:06+08:00</updated>
  <id>http://lionelcao.github.io</id>
  <author>
    <name>北落师门</name>
@@ -18,9 +18,7 @@
    <updated>2013-12-07T00:00:00+08:00</updated>
    <id>http://lionelcao.github.io/%E9%9A%8F%E7%AC%94/2013/12/07/个人博客开张</id>
    <content type="html">
-&lt;h1 id=&quot;&quot;&gt;断断续续&lt;/h1&gt;
-
-&lt;p&gt;折腾了一个多月，终于把博客搭好了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;断&lt;/strong&gt;断续续折腾了一个多月，终于把博客搭好了。&lt;/p&gt;
 
 &lt;p&gt;Web开发基本上0经验，以前零星自己看过一些&lt;code&gt;HTML&lt;/code&gt;代码，改过几个页面，当时调几个&lt;code&gt;div&lt;/code&gt;的布局就很头疼。好在现在搭个博客也不需要多少开发经验，慢慢研究一下还是搞定了。&lt;/p&gt;
 
@@ -30,7 +28,7 @@
 
 &lt;p&gt;在&lt;a href=&quot;http://www.haochen.me&quot;&gt;Hchen9&lt;/a&gt;同学的推荐下，开始学习在&lt;a href=&quot;http://github.com&quot;&gt;github&lt;/a&gt;上搭个人博客。&lt;/p&gt;
 
-&lt;p&gt;说实话还真有点儿费劲，刚开始的时候会遇到很多问题，因为之前对&lt;code&gt;git&lt;/code&gt;，&lt;code&gt;jekyll&lt;/code&gt;，&lt;code&gt;ssh&lt;/code&gt;还有&lt;code&gt;css&lt;/code&gt;都不熟。后来在网上看了N篇教程，慢慢摸索之下还是一点点搭起来了，解决问题的过程那真是痛并快乐着啊～整这玩意儿占据了大量的业余时间，现在&lt;code&gt;dota&lt;/code&gt;也没时间搞了，刚好妹子也不同意玩儿&lt;code&gt;dota&lt;/code&gt;，于是含泪把&lt;code&gt;11game&lt;/code&gt;卸载了TT。。。&lt;/p&gt;
+&lt;p&gt;说实话还真有点儿费劲，刚开始的时候会遇到很多问题，因为之前对&lt;code&gt;git&lt;/code&gt;，&lt;code&gt;jekyll&lt;/code&gt;，&lt;code&gt;ssh&lt;/code&gt;还有&lt;code&gt;css&lt;/code&gt;都不熟。后来在网上看了N篇教程，慢慢摸索之下还是一点点搭起来了，解决问题的过程那真是痛并快乐着啊～整这玩意儿占据了大量的业余时间，现在&lt;code&gt;dota&lt;/code&gt;也没时间搞了，刚好妹子也不同意玩儿&lt;code&gt;dota&lt;/code&gt;，于是含泪把&lt;code&gt;11game&lt;/code&gt;卸载了T T。。。&lt;/p&gt;
 
 &lt;p&gt;后面有时间专门整理一份自己的搭github博客的过程吧。对于想拥有一个可以完全自己定制的博客的同学来说，&lt;code&gt;github&lt;/code&gt;真是一个不错的选择～&lt;code&gt;喂——你这是在做广告吗亲？！&lt;/code&gt;&lt;/p&gt;
 
