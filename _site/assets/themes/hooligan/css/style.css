@@ -145,7 +145,10 @@ hr {
 .content div.row div.span12 div.image1 {
   text-align: center;
 }
-
+.content div.row div.span12 div.me {
+  width: 400px;
+  height: 267px;
+}
 /* line 128, ../_sass/_base.scss */
 .content div.row div.span4 h4 {
   margin-top: 10px;

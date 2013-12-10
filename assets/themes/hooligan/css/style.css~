@@ -145,7 +145,10 @@ hr {
 .content div.row div.span12 div.image1 {
   text-align: center;
 }
-
+.content div.row div.span12 div.me {
+  width: 800;
+  height: 533;
+}
 /* line 128, ../_sass/_base.scss */
 .content div.row div.span4 h4 {
   margin-top: 10px;
@@ -309,7 +312,7 @@ div.content div#page-index {
 /* line 269, ../_sass/_base.scss */
 .zocial.weibo:focus,
 .zocial.weibo:hover {
-  color:#0066ff !important;
+  /*color:#0066ff !important;*/
 }  
 /* Layout */
 /* line 2, ../_sass/_responsive.scss */

@@ -29,7 +29,7 @@ weight: 5
 
 --------------------------
 <div class="me">
-  <img src='images/me.jpg'
+  <img src='images/me.jpg' target="_blank"
   />
 </div>
 --------------------------

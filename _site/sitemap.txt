@@ -1,6 +1,7 @@
 
 http://lionelcao.github.io/sitemap.txt
 http://lionelcao.github.io/About.html
+http://lionelcao.github.io/Links.html
 http://lionelcao.github.io/tags.html
 http://lionelcao.github.io/index.html
 http://lionelcao.github.io/categories.html
