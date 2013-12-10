@@ -51,25 +51,9 @@
 
           <div class="nav-collapse">
             <ul class="nav">
-              {% assign pages_list = site.weighted_pages %}
+              {% assign pages_list = site.pages %}
               {% assign group = 'navigation' %}
-              {% if site.JB.pages_list.provider == "custom" %}
-  {% include custom/pages_list %}
-{% else %}
-  {% for node in pages_list %}
-    {% if node.title != null %}
-      {% if group == null or group == node.group %}
-      	{% if page.url == node.url %}
-      	<li class="active"><a href="{{ BASE_PATH }}{{node.url}}" class="active">{{node.title}}</a></li>
-      	{% else %}
-      	<li><a href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a></li>
-      	{% endif %}
-      {% endif %}
-    {% endif %}
-  {% endfor %}
-{% endif %}
-{% assign pages_list = nil %}
-{% assign group = nil %}
+              {% include JB/pages_list %}
               
             </ul>
             <ul class="nav pull-right social visible-desktop">
@@ -146,6 +130,18 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{ ASSET_PATH }}/js/jquery.min.js"><\/script>')</script>
     <script src="{{ ASSET_PATH }}/bootstrap/js/bootstrap.min.js"></script>
+        <!--多说js加载开始，一个页面只需要加载一次 -->
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"{{ site.JB.comments.duoshuo.name }}"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = 'http://static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script>
+    <!--多说js加载结束，一个页面只需要加载一次 -->
 
     {% include JB/analytics %}
   </body>
