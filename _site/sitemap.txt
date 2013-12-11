@@ -11,5 +11,6 @@ http://lionelcao.github.io/categories.html
 http://lionelcao.github.io/Links.html
 http://lionelcao.github.io/sitemap.txt
 
+http://lionelcao.github.io/资料/2013/12/11/markdown
 http://lionelcao.github.io/随笔/2013/12/11/blogupdate1
 http://lionelcao.github.io/随笔/2013/12/07/BlogBegins

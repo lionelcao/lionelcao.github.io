@@ -3,7 +3,7 @@ layout: post
 category: 随笔
 title: "个人博客开张"
 tagline: ""
-tags: [博客, github, Jekyll]
+tags: [博客, github, jekyll]
 ---
 {% include JB/setup %}
 断断续续折腾了一个多月，终于把博客搭好了。
