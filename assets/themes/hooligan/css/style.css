@@ -16,7 +16,7 @@ body {
   text-shadow: 1px 1px 1px #000;
   height: 100%;
   font-family: 'Oxygen', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 /* line 26, ../_sass/_base.scss */
@@ -149,6 +149,89 @@ hr {
   width: 400px;
   height: 267px;
 }
+.content div.row div.span12 div.wrappe {
+    transition: all 0.3s;
+transition-property: all;
+transition-duration: 0.3s;
+transition-timing-function: initial;
+transition-delay: initial;
+border: 1px solid rgba(255,255,255,0.067);
+border-top-color: rgba(255, 255, 255, 0.0666667);
+border-top-style: solid;
+border-top-width: 1px;
+border-right-color: rgba(255, 255, 255, 0.0666667);
+border-right-style: solid;
+border-right-width: 1px;
+border-bottom-color: rgba(255, 255, 255, 0.0666667);
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-left-color: rgba(255, 255, 255, 0.0666667);
+border-left-style: solid;
+border-left-width: 1px;
+border-radius: 10px;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+box-shadow: 1px 2px 4px rgba(255,255,255,0.067);
+padding: 5px;
+padding-top: 5px;
+padding-right: 5px;
+padding-bottom: 5px;
+padding-left: 5px;
+margin: 5px 0px;
+margin-top: 5px;
+margin-right: 0px;
+margin-bottom: 5px;
+margin-left: 0px;
+}
+
+ .content div.row div.span12 div.wrappe.entry-title {
+      border-bottom: 1px dashed rgba(0, 0, 0, 0.067);
+    }
+.content div.row div.span12 div.wrappe:hover {
+transition: all 0.3s;
+transition-property: all;
+transition-duration: 0.3s;
+transition-timing-function: initial;
+transition-delay: initial;
+border: 1px solid rgba(255,255,255,0.167);
+border-top-color: rgba(255, 255, 255, 0.1666667);
+border-top-style: solid;
+border-top-width: 1px;
+border-right-color: rgba(255, 255, 255, 0.1666667);
+border-right-style: solid;
+border-right-width: 1px;
+border-bottom-color: rgba(255, 255, 255, 0.1666667);
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-left-color: rgba(255, 255, 255, 0.1666667);
+border-left-style: solid;
+border-left-width: 1px;
+box-shadow: 2px 3px 4px rgba(255,255,255,0.167);
+    }
+    p img {
+      @include img;
+    }
+.content div.row div.span12 div.wrappe.status {
+      border-top: 1px dashed rgba(0, 0, 0, 0.067);
+      padding-top: 10px;
+      color: rgb(119, 119, 119);
+      .date {
+        padding: 4px 0 0;
+        vertical-align: middle;
+        a {
+          color: rgb(119, 119, 119);
+          &:hover, &:focus {
+            color: rgb(51, 51, 51);
+          }
+        }
+      }
+      .visible-lg {
+        margin-top: 0px;
+      }
+    }
+
 /* line 128, ../_sass/_base.scss */
 .content div.row div.span4 h4 {
   margin-top: 10px;

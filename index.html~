@@ -1,0 +1,36 @@
+---
+layout: page
+title: 北落师门
+tagline: Welcome to Lionel Cao's Blog
+---
+{% include JB/setup %}
+
+<hr>
+<div class="image1">
+   <img
+     src='images/cat.png'
+    />
+</div>
+<hr>
+
+{% for post in paginator.posts %}
+<div class="wrapper">
+  <h2 class="h2 entry-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+  {% if post.content contains "<!-- more -->" %}
+    {{ post.content | split:'<!-- more -->' | first }}
+  {% else %}
+    {{ post.content | strip_html | truncatewords:50 }}
+  {% endif %}
+
+  <div class="status">
+    <div class="col-md-6 date visible-lg visible-md">
+      <span class="glyphicon glyphicon-time"></span> {{ post.date | date_to_string }}
+      <span class="glyphicon glyphicon-comment"></span><a href="{{ post.url }}#comments"> Comments</a>
+    </div>
+    {% if post.content contains "<!-- more -->" %}
+    <a class="btn btn-default btn-sm pull-right" href="{{ post.url }}"><span class="readmore">Read More &raquo; </span></a>
+    {% endif %}
+    <div class="clearfix"></div>
+  </div>
+</div>
+{% endfor %}

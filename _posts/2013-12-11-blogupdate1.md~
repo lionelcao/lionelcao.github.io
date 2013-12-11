@@ -1,0 +1,29 @@
+---
+layout: post
+title: "博客功能更新"
+description: ""
+category: "随笔"
+tags: []
+---
+{% include JB/setup %}
+
+今天给博客添加新功能，做了以下几件事：
+
+
+1. 将`disqus`评论插件替换为多说评论
+2. 新建了`Blog`页面，分页预览博客概要，每页5篇
+3. 新建了`Links`页面，用于添加好友博客地址以及收藏网址
+4. 更新了`About`页面
+5. 为`Blog`页面添加了`css`，了解到`css`的预处理器`sass`，简单看了一些介绍，但尚未深入学习和使用
+
+
+接下来准备做的事：
+
+
+1. 将导航条Archive，Tags，Categories合并为一个下拉菜单
+2. 导航条标签排序
+3. 继续学习Hadoop和Java
+
+
+
+
