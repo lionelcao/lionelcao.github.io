@@ -133,53 +133,49 @@
 <!-- more -->
 <p>创建文件夹jdk</p>
 
-<pre><code> $ cd /usr/lib
- $ sudo mkdir jdk</code></pre>
+<p>$ cd /usr/lib $ sudo mkdir jdk</p>
 
 <p>把下载的文件拷贝到新创建的目录下面</p>
 
-<pre><code> $ sudo mv  ~/Downloads/jdk-7u45-linux-x64.tar.gz  /usr/lib/jdk/</code></pre>
+<p>$ sudo mv ~/Downloads/jdk-7u45-linux-x64.tar.gz /usr/lib/jdk/</p>
 
 <p>解压缩文件</p>
 
-<pre><code> $ sudo tar -zxvg jdk-7u45-linux-x64.tar.gz</code></pre>
+<p>$ sudo tar -zxvg jdk-7u45-linux-x64.tar.gz</p>
 </li>
 
 <li>
 <p>设置环境变量</p>
 
-<pre><code> $ sudo gedit /etc/profile</code></pre>
+<p>$ sudo gedit /etc/profile</p>
 
 <p>在文件的最后加上：</p>
 
-<pre><code> export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45
+<p>export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45</p>
 
- export JRE_HOME=/usr/lib/jdk/jdk1.7.0_45/jre
+<p>export JRE_HOME=/usr/lib/jdk/jdk1.7.0_45/jre</p>
 
- export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
+<p>export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH</p>
 
- export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib</code></pre>
+<p>export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib</p>
 </li>
 
 <li>
 <p>将系统默认的jdk修改过来</p>
 
-<pre><code> $ sudo update-alternatives --install /usr/bin/java java /usr/lib/jdk/jdk1.7.0_45/bin/java 300
+<p>$ sudo update-alternatives –install /usr/bin/java java /usr/lib/jdk/jdk1.7.0_45/bin/java 300</p>
 
- $ sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jdk/jdk1.7.0_45/bin/javac 300
+<p>$ sudo update-alternatives –install /usr/bin/javac javac /usr/lib/jdk/jdk1.7.0_45/bin/javac 300</p>
 
- $ sudo update-alternatives --config java
+<p>$ sudo update-alternatives –config java</p>
 
- $ sudo update-alternatives --config javac</code></pre>
+<p>$ sudo update-alternatives –config javac</p>
 </li>
 
 <li>
 <p>验证Java版本</p>
 
-<pre><code> $ java -version
- java version &quot;1.7.0_45&quot;
- Java(TM) SE Runtime Environment (build 1.7.0_45-b18)
- Java HotSpot(TM) 64-Bit Server VM (build 24.45-b08, mixed mode)</code></pre>
+<p>$ java -version java version “1.7.0_45” Java(TM) SE Runtime Environment (build 1.7.0_45-b18) Java HotSpot(TM) 64-Bit Server VM (build 24.45-b08, mixed mode)</p>
 </li>
 </ol>
 

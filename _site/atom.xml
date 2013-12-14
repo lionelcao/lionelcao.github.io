@@ -4,7 +4,7 @@
  <title>Lionel Cao</title>
  <link href="http://lionelcao.github.io/" rel="self"/>
  <link href="http://lionelcao.github.io"/>
- <updated>2013-12-14T22:39:50+08:00</updated>
+ <updated>2013-12-14T22:46:34+08:00</updated>
  <id>http://lionelcao.github.io</id>
  <author>
    <name>北落师门</name>
@@ -28,53 +28,49 @@
 &lt;!-- more --&gt;
 &lt;p&gt;创建文件夹jdk&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; $ cd /usr/lib
- $ sudo mkdir jdk&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;$ cd /usr/lib $ sudo mkdir jdk&lt;/p&gt;
 
 &lt;p&gt;把下载的文件拷贝到新创建的目录下面&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; $ sudo mv  ~/Downloads/jdk-7u45-linux-x64.tar.gz  /usr/lib/jdk/&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;$ sudo mv ~/Downloads/jdk-7u45-linux-x64.tar.gz /usr/lib/jdk/&lt;/p&gt;
 
 &lt;p&gt;解压缩文件&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; $ sudo tar -zxvg jdk-7u45-linux-x64.tar.gz&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;$ sudo tar -zxvg jdk-7u45-linux-x64.tar.gz&lt;/p&gt;
 &lt;/li&gt;
 
 &lt;li&gt;
 &lt;p&gt;设置环境变量&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; $ sudo gedit /etc/profile&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;$ sudo gedit /etc/profile&lt;/p&gt;
 
 &lt;p&gt;在文件的最后加上：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45
+&lt;p&gt;export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45&lt;/p&gt;
 
- export JRE_HOME=/usr/lib/jdk/jdk1.7.0_45/jre
+&lt;p&gt;export JRE_HOME=/usr/lib/jdk/jdk1.7.0_45/jre&lt;/p&gt;
 
- export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
+&lt;p&gt;export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH&lt;/p&gt;
 
- export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib&lt;/p&gt;
 &lt;/li&gt;
 
 &lt;li&gt;
 &lt;p&gt;将系统默认的jdk修改过来&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; $ sudo update-alternatives --install /usr/bin/java java /usr/lib/jdk/jdk1.7.0_45/bin/java 300
+&lt;p&gt;$ sudo update-alternatives –install /usr/bin/java java /usr/lib/jdk/jdk1.7.0_45/bin/java 300&lt;/p&gt;
 
- $ sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jdk/jdk1.7.0_45/bin/javac 300
+&lt;p&gt;$ sudo update-alternatives –install /usr/bin/javac javac /usr/lib/jdk/jdk1.7.0_45/bin/javac 300&lt;/p&gt;
 
- $ sudo update-alternatives --config java
+&lt;p&gt;$ sudo update-alternatives –config java&lt;/p&gt;
 
- $ sudo update-alternatives --config javac&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;$ sudo update-alternatives –config javac&lt;/p&gt;
 &lt;/li&gt;
 
 &lt;li&gt;
 &lt;p&gt;验证Java版本&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; $ java -version
- java version &amp;quot;1.7.0_45&amp;quot;
- Java(TM) SE Runtime Environment (build 1.7.0_45-b18)
- Java HotSpot(TM) 64-Bit Server VM (build 24.45-b08, mixed mode)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;$ java -version java version “1.7.0_45” Java(TM) SE Runtime Environment (build 1.7.0_45-b18) Java HotSpot(TM) 64-Bit Server VM (build 24.45-b08, mixed mode)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 </content>
