@@ -20,7 +20,7 @@ JDK: jdk-7u45-linux-x64.tar.gz
         $ sudo tar -zxvg jdk-7u45-linux-x64.tar.gz   //解压缩文件
         
 
-* 尼马写个中文会死啊
+* Change Profile
 
         $ sudo gedit /etc/profile
 
