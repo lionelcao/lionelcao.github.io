@@ -12,8 +12,11 @@ tags: [Ubuntu, bootstrap, html, css]
 
 <!-- more -->
 
-    1. 将Links页更新为_config.yml+html文件中通过ruby调用，同样的方法用在导航栏上实现了标签排序。之前用了一个别人开发的排序插件结果导致导航栏直接消失不见了，但在本地jekyll serve却能看到。诡异的问题，还是自己修改比较靠谱。
-    2. 将Categories,Tags,Archive合并成为一个下拉菜单，并调整了css以修改默认外观。由于用的是bootstrap模板，在官网查了下文档，改起来还是比较方便的。修改bootstrap.min.css文件打开太容易卡死，直接怒把default.html中引用换成bootstrap.css。
+    1. 将Links页更新为_config.yml+html文件中通过ruby调用，同样的方法用在导航栏上实现了标签排序。
+       之前用了一个别人开发的排序插件结果导致导航栏直接消失不见了，但在本地jekyll serve却能看到。诡异的问题，还是自己修改比较靠谱。
+    2. 将Categories,Tags,Archive合并成为一个下拉菜单，并调整了css以修改默认外观。
+       由于用的是bootstrap模板，在官网查了下文档，改起来还是比较方便的。修改bootstrap.min.css文件打开太容易卡死，直接怒把
+       default.html中引用换成bootstrap.css。
 
 
 ###下一个版本准备做的事：

@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <title>
       
-        Tags - 
+        Ubuntu下安装JDK - 
       
       Lionel Cao
     </title>
-    
+    <meta name="description" content="">
     <meta name="author" content="北落师门">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- HTML5 shim, for IE6-8 support of HTML elements -->
@@ -113,410 +113,143 @@
     <div class="container">
       <div class="content">
         
-<div class="page-header-wrapper">
-	<div class="page-header">
-  		<h1>Tags </h1>
-  	</div>
+<div class="page-header">
+  <h1>
+    Ubuntu下安装JDK 
+    
+  </h1>
 </div>
 
 <div class="row">
-  <div class="span12">
+  <div class="span8">
     
+<h3 id="ubuntu__1204">Ubuntu : 12.04</h3>
 
-<ul class="tag_box inline">
-    
+<h3 id="jdk_jdk7u45linuxx64targz">JDK: jdk-7u45-linux-x64.tar.gz</h3>
+
+<ol>
+<li>从Oracle官网下载JDK。将jdk-7u45-linux-x64.tar.gz拷贝到/usr/lib/jdk/目录下面，这里如果没有jdk文件夹，则创建该文件夹:</li>
+</ol>
+<!-- more -->
+<p>创建文件夹jdk</p>
+
+<pre><code>    $ cd /usr/lib
+    $ sudo mkdir jdk</code></pre>
+
+<p>把下载的文件拷贝到新创建的目录下面</p>
+
+<pre><code>    $ sudo mv  ~/Downloads/jdk-7u45-linux-x64.tar.gz  /usr/lib/jdk/</code></pre>
+
+<p>解压缩文件</p>
+
+<pre><code>    $ sudo tar -zxvg jdk-7u45-linux-x64.tar.gz</code></pre>
+
+<ol>
+<li>
+<p>设置环境变量</p>
+
+<pre><code> $ sudo gedit /etc/profile</code></pre>
+
+<p>在文件的最后加上：</p>
+
+<pre><code> export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45
+
+ export JRE_HOME=/usr/lib/jdk/jdk1.7.0_45/jre
+
+ export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
+
+ export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib</code></pre>
+</li>
+
+<li>
+<p>将系统默认的jdk修改过来</p>
+
+<pre><code> $ sudo update-alternatives --install /usr/bin/java java /usr/lib/jdk/jdk1.7.0_45/bin/java 300
+
+ $ sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jdk/jdk1.7.0_45/bin/javac 300
+
+ $ sudo update-alternatives --config java
+
+ $ sudo update-alternatives --config javac</code></pre>
+</li>
+
+<li>
+<p>验证Java版本</p>
+
+<pre><code> $ java -version
+ java version &quot;1.7.0_45&quot;
+ Java(TM) SE Runtime Environment (build 1.7.0_45-b18)
+ Java HotSpot(TM) 64-Bit Server VM (build 24.45-b08, mixed mode)</code></pre>
+</li>
+</ol>
+
+    <hr>
+    <div class="pagination btn-group">
+      
+        <a class="btn prev" href="/%E9%9A%8F%E7%AC%94/2013/12/14/blogupdate2" title="博客功能更新（二）">&larr; Previous</a>
+      
+        <a class="btn" href="/archive.html">Archive</a>
+      
+        <a class="btn next disabled">Next &rarr;</a>
+      
+    </div>
+    <hr>
   
 
 
+  <!-- Duoshuo Comment BEGIN -->
+    <div id="comments">
+        <div class="ds-thread" data-title="Ubuntu下安装JDK - Lionel Cao"></div>
+    </div>
+<!-- Duoshuo Comment END -->
+
+
+
+
+
+
+	
+  </div>
   
-     
-    	<li><a href="/tags.html#html-ref">html <span>2</span></a></li>
-     
-    	<li><a href="/tags.html#css-ref">css <span>2</span></a></li>
-     
-    	<li><a href="/tags.html#Jekyll-ref">Jekyll <span>2</span></a></li>
+
+  <div class="span4">
+    <section>
+      <h4>Published</h4>
+      <div class="date"><span>14 December 2013</span></div>
+    </section>
+    
+      <section>
+        <h4>Category</h4>
+        <span class="category">
+          Java
+        </span>
+      </section>
+         
+    
+      <section>
+        <h4>Tags</h4>
+        <ul class="tag_box">
+          
+          
+
+
+  
      
     	<li><a href="/tags.html#Ubuntu-ref">Ubuntu <span>2</span></a></li>
      
-    	<li><a href="/tags.html#学习-ref">学习 <span>1</span></a></li>
-     
     	<li><a href="/tags.html#JDK-ref">JDK <span>1</span></a></li>
-     
-    	<li><a href="/tags.html#Markdown-ref">Markdown <span>1</span></a></li>
-     
-    	<li><a href="/tags.html#Install-ref">Install <span>1</span></a></li>
-     
-    	<li><a href="/tags.html#语法-ref">语法 <span>1</span></a></li>
-     
-    	<li><a href="/tags.html#转载-ref">转载 <span>1</span></a></li>
-     
-    	<li><a href="/tags.html#sass-ref">sass <span>1</span></a></li>
-     
-    	<li><a href="/tags.html#github-ref">github <span>2</span></a></li>
-     
-    	<li><a href="/tags.html#博客-ref">博客 <span>2</span></a></li>
      
     	<li><a href="/tags.html#Java-ref">Java <span>1</span></a></li>
      
-    	<li><a href="/tags.html#bootstrap-ref">bootstrap <span>1</span></a></li>
+    	<li><a href="/tags.html#Install-ref">Install <span>1</span></a></li>
     
   
 
 
 
-</ul>
-
-
- 
-  <h2 id="html-ref">html</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/14/blogupdate2">博客功能更新（二）</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/%E8%B5%84%E6%96%99/2013/12/11/markdown">Markdown语法</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="css-ref">css</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/14/blogupdate2">博客功能更新（二）</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/11/blogupdate1">博客功能更新（一）</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="Jekyll-ref">Jekyll</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/11/blogupdate1">博客功能更新（一）</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/07/BlogBegins">个人博客开张</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="Ubuntu-ref">Ubuntu</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/java/2013/12/14/ubuntuinsjdk">Ubuntu下安装JDK</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/14/blogupdate2">博客功能更新（二）</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="学习-ref">学习</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/11/blogupdate1">博客功能更新（一）</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="JDK-ref">JDK</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/java/2013/12/14/ubuntuinsjdk">Ubuntu下安装JDK</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="Markdown-ref">Markdown</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E8%B5%84%E6%96%99/2013/12/11/markdown">Markdown语法</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="Install-ref">Install</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/java/2013/12/14/ubuntuinsjdk">Ubuntu下安装JDK</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="语法-ref">语法</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E8%B5%84%E6%96%99/2013/12/11/markdown">Markdown语法</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="转载-ref">转载</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E8%B5%84%E6%96%99/2013/12/11/markdown">Markdown语法</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="sass-ref">sass</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/11/blogupdate1">博客功能更新（一）</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="github-ref">github</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E8%B5%84%E6%96%99/2013/12/11/markdown">Markdown语法</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/07/BlogBegins">个人博客开张</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="博客-ref">博客</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/11/blogupdate1">博客功能更新（一）</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/07/BlogBegins">个人博客开张</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="Java-ref">Java</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/java/2013/12/14/ubuntuinsjdk">Ubuntu下安装JDK</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="bootstrap-ref">bootstrap</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/14/blogupdate2">博客功能更新（二）</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
-
-
+        </ul>
+      </section>
+             
   </div>
 </div>
 

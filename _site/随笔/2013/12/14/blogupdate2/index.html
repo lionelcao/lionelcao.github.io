@@ -66,17 +66,17 @@
             </a>
              <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="dLabel" role="menu" >
                <li role="presentation" >
-                 <a href = "./categories.html" tabindex="-1" role="menuitem">
+                 <a href = "/categories.html" tabindex="-1" role="menuitem">
                    Categories
                   </a>
                </li>
                <li role="presentation" >
-                 <a href = "./tags.html" tabindex="-1" role="menuitem">
+                 <a href = "/tags.html" tabindex="-1" role="menuitem">
                    Tags
                   </a>
                </li>
                <li role="presentation" >
-                 <a href = "./archive.html" tabindex="-1" role="menuitem">
+                 <a href = "/archive.html" tabindex="-1" role="menuitem">
                    Archive
                   </a>
                </li>
@@ -127,8 +127,11 @@
 
 <h3 id="">今天更新了博客的几个小地方：</h3>
 <!-- more -->
-<pre><code>1. 将Links页更新为_config.yml+html文件中通过ruby调用，同样的方法用在导航栏上实现了标签排序。之前用了一个别人开发的排序插件结果导致导航栏直接消失不见了，但在本地jekyll serve却能看到。诡异的问题，还是自己修改比较靠谱。
-2. 将Categories,Tags,Archive合并成为一个下拉菜单，并调整了css以修改默认外观。由于用的是bootstrap模板，在官网查了下文档，改起来还是比较方便的。修改bootstrap.min.css文件打开太容易卡死，直接怒把default.html中引用换成bootstrap.css。</code></pre>
+<pre><code>1. 将Links页更新为_config.yml+html文件中通过ruby调用，同样的方法用在导航栏上实现了标签排序。
+   之前用了一个别人开发的排序插件结果导致导航栏直接消失不见了，但在本地jekyll serve却能看到。诡异的问题，还是自己修改比较靠谱。
+2. 将Categories,Tags,Archive合并成为一个下拉菜单，并调整了css以修改默认外观。
+   由于用的是bootstrap模板，在官网查了下文档，改起来还是比较方便的。修改bootstrap.min.css文件打开太容易卡死，直接怒把
+   default.html中引用换成bootstrap.css。</code></pre>
 
 <h3 id="_2">下一个版本准备做的事：</h3>
 
@@ -142,7 +145,7 @@
       
         <a class="btn" href="/archive.html">Archive</a>
       
-        <a class="btn next disabled">Next &rarr;</a>
+        <a class="btn next" href="/java/2013/12/14/ubuntuinsjdk" title="Ubuntu下安装JDK">Next &rarr;</a>
       
     </div>
     <hr>
@@ -187,11 +190,11 @@
 
   
      
-    	<li><a href="/tags.html#Ubuntu-ref">Ubuntu <span>1</span></a></li>
+    	<li><a href="/tags.html#Ubuntu-ref">Ubuntu <span>2</span></a></li>
      
     	<li><a href="/tags.html#bootstrap-ref">bootstrap <span>1</span></a></li>
      
-    	<li><a href="/tags.html#html-ref">html <span>1</span></a></li>
+    	<li><a href="/tags.html#html-ref">html <span>2</span></a></li>
      
     	<li><a href="/tags.html#css-ref">css <span>2</span></a></li>
     
@@ -211,7 +214,7 @@
 
       <footer>
 
-        <p>&copy; 2013 北落师门
+        <p>&copy; 2013 北落师门 All Rights Reserved
         </p>
 
       </footer>
