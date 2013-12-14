@@ -28,14 +28,14 @@ tags: [Ubuntu, JDK, Java, Install]
 
 2. 设置环境变量
 
-        $ sudo gedit /etc/profile
+    $ sudo gedit /etc/profile
 
    在文件的最后加上：
 
-        export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45
-        export JRE_HOME=/usr/lib/jdk/jdk1.7.0_45/jre
-        export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
-        export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
+    export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45
+    export JRE_HOME=/usr/lib/jdk/jdk1.7.0_45/jre
+    export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
+    export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
 
 3. 将系统默认的jdk修改过来
 
