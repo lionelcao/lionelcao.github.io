@@ -184,12 +184,12 @@ margin-top: 5px;
 margin-right: 0px;
 margin-bottom: 5px;
 margin-left: 0px;
+}
 
-
-    .entry-title {
+ .content div.row div.span12 div.wrappe.entry-title {
       border-bottom: 1px dashed rgba(0, 0, 0, 0.067);
     }
-    &:hover {
+.content div.row div.span12 div.wrappe:hover {
 transition: all 0.3s;
 transition-property: all;
 transition-duration: 0.3s;
@@ -213,7 +213,7 @@ box-shadow: 2px 3px 4px rgba(255,255,255,0.167);
     p img {
       @include img;
     }
-    .status {
+.content div.row div.span12 div.wrappe.status {
       border-top: 1px dashed rgba(0, 0, 0, 0.067);
       padding-top: 10px;
       color: rgb(119, 119, 119);
@@ -231,7 +231,7 @@ box-shadow: 2px 3px 4px rgba(255,255,255,0.167);
         margin-top: 0px;
       }
     }
-}
+
 /* line 128, ../_sass/_base.scss */
 .content div.row div.span4 h4 {
   margin-top: 10px;

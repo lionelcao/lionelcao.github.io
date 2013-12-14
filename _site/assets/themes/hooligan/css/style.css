@@ -246,6 +246,18 @@ box-shadow: 2px 3px 4px rgba(255,255,255,0.167);
   line-height: 25px;
   margin: 0;
 }
+.links li {
+ padding-top: 8px;
+ padding-bottom: 8px;
+ border-bottom-width: 1px;
+ border-bottom-style: solid;
+ border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+.links span {
+ float: right;
+}
+
+
 
 /* Page header tweaks */
 /* line 142, ../_sass/_base.scss */

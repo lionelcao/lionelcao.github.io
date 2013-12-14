@@ -19,6 +19,16 @@ author :
   weibo : whucaolu
   # feedburner : feedname
 
+
+# Related Links displayed in links page
+links:
+     - title: HAO'S THOUGHT WORKS
+       desc: 学术范的开发者陈浩
+       url: http://www.haoch.me
+     - title: BigData is Something
+       desc: Eddy Cai的百度空间
+       url: http://hi.baidu.com/wzcyc
+
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
 # Most places will/should use BASE_PATH to make the urls

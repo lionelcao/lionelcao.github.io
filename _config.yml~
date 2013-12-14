@@ -5,6 +5,7 @@ permalink: /:categories/:year/:month/:day/:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 pygments: true
 paginate: 5
+paginate_path: "blog/page:num"
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
@@ -17,6 +18,16 @@ author :
   github : lionelcao
   weibo : whucaolu
   # feedburner : feedname
+
+
+# Related Links displayed in links page
+links:
+     - title: HAO'S THOUGHT WORKS
+       desc: 学术范的开发者
+       url: http://www.haoch.me
+     - title: BigData is Something
+       desc: Eddy Cai的百度空间
+       url: http://hi.baidu.com/wzcyc
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 

@@ -7,25 +7,24 @@ weight: 5
 ---
 {% include JB/setup %}
 ##《来自作者的信》
-###你好，旅行者～欢迎访问我的个人主页！
 
-###我是一名数据工程师，2010年毕业于武汉大学计算机学院本科。曾经供职于合众人寿总公司信息管理中心，负责Mis系统、精算准备金系统以及高管经营分析系统的开发和运维。现供职于ebay中国数据平台部，我的工作包括但不限于以下领域：
+你好，旅行者～欢迎访问我的个人主页！
 
-###`Data Warehouse`，`Business Intelligence`，`Hadoop`，`Oracle`，`Teradata`，`Capacity Management`等。
+我是一名数据工程师，2010年毕业于武汉大学计算机学院本科。曾经供职于合众人寿总公司信息管理中心，负责Mis系统、精算准备金系统以及高管经营分析系统的开发和运维。现供职于ebay中国数据平台部，我的工作包括但不限于以下领域：
 
-###我将在这里记录和分享我的工作、生活中的一些点点滴滴。
+`Data Warehouse`，`Business Intelligence`，`Hadoop`，`Oracle`，`Teradata`，`Capacity Management`等。
 
-###你可以通过以下方式与我取得联系：
+我将在这里记录和分享我的工作、生活中的一些点点滴滴。
 
-###Email: <whucaolu@gmail.com>
+你可以通过以下方式与我取得联系：
 
-###Weibo: [靈狐不要冲](http://weibo.com/whucaolu)
+Email: <whucaolu@gmail.com>
 
-###Skype: lionel061201
+Weibo: [靈狐不要冲](http://weibo.com/whucaolu)
 
-###QQ: 516054268
+Skype: lionel061201
 
-###愿大地母亲忽悠着你！
+愿大地母亲忽悠着你！
 
 --------------------------
 <div class="me">
@@ -34,8 +33,8 @@ weight: 5
 </div>
 --------------------------
 ##关于本站
-###本站是曹鲁（[北落师门](http://www.lucao.com.cn)）的个人博客。
+本站是曹鲁（[北落师门](http://www.lucao.com.cn)）的个人博客。
 
-###它的建立得到了来自[Jekyll Bootstrap](http://jekyllbootstrap.com) 以及Jekyll主题[The Hooligan Theme](http://github.com/dhulihan/hooligan)的帮助，同时也要感谢[Github](https://github.com)提供的主机服务。
+它的建立得到了来自[Jekyll Bootstrap](http://jekyllbootstrap.com) 以及Jekyll主题[The Hooligan Theme](http://github.com/dhulihan/hooligan)的帮助，同时也要感谢[Github](https://github.com)提供的主机服务。
 
 
