@@ -18,9 +18,11 @@ JDK: jdk-7u45-linux-x64.tar.gz
         $ sudo mkdir jdk
         $ sudo mv  ~/Downloads/jdk-7u45-linux-x64.tar.gz  /usr/lib/jdk/   //把下载的文件拷贝到新创建的目录下面
         $ sudo tar -zxvg jdk-7u45-linux-x64.tar.gz   //解压缩文件
-        $ sudo gedit /etc/profile
+        
 
-* 配环境变量
+* yaoshia!
+
+        $ sudo gedit /etc/profile
 
         export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45      //加在最后
         export JRE_HOME=/usr/lib/jdk/jdk1.7.0_45/jre
