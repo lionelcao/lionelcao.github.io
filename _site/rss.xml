@@ -5,8 +5,8 @@
         <description>Lionel Cao - 北落师门</description>
         <link>http://lionelcao.github.io</link>
         <link>http://lionelcao.github.io</link>
-        <lastBuildDate>2013-12-14T22:55:24+08:00</lastBuildDate>
-        <pubDate>2013-12-14T22:55:24+08:00</pubDate>
+        <lastBuildDate>2013-12-14T23:00:26+08:00</lastBuildDate>
+        <pubDate>2013-12-14T23:00:26+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -19,8 +19,8 @@
 
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;从Oracle官网下载JDK。将jdk-7u45-linux-x64.tar.gz拷贝到/usr/lib/jdk/目录下面，这里如果没有jdk文件夹，则创建该文件夹:&lt;!-- more --&gt;&lt;/p&gt;
-
+&lt;p&gt;从Oracle官网下载JDK。将jdk-7u45-linux-x64.tar.gz拷贝到/usr/lib/jdk/目录下面，这里如果没有jdk文件夹，则创建该文件夹:&lt;/p&gt;
+&lt;!-- more --&gt;
 &lt;p&gt;创建文件夹jdk&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt; $ cd /usr/lib
@@ -43,11 +43,8 @@
 &lt;p&gt;在文件的最后加上：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt; export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45
-
  export JRE_HOME=/usr/lib/jdk/jdk1.7.0_45/jre
-
  export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
-
  export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 
