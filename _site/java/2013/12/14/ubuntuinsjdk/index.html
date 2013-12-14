@@ -126,7 +126,7 @@
 <h3 id="ubuntu__1204">Ubuntu : 12.04</h3>
 
 <h3 id="jdk_jdk7u45linuxx64targz">JDK: jdk-7u45-linux-x64.tar.gz</h3>
-<!-- more -->
+
 <ol>
 <li>
 <p>从Oracle官网下载JDK。将jdk-7u45-linux-x64.tar.gz拷贝到/usr/lib/jdk/目录下面，这里如果没有jdk文件夹，则创建该文件夹:</p>
@@ -148,11 +148,14 @@
 <li>
 <p>设置环境变量</p>
 
-<p>$ sudo gedit /etc/profile</p>
+<pre><code> $ sudo gedit /etc/profile</code></pre>
 
 <p>在文件的最后加上：</p>
 
-<p>export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45 export JRE_HOME=/usr/lib/jdk/jdk1.7.0_45/jre export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib</p>
+<pre><code> export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45
+ export JRE_HOME=/usr/lib/jdk/jdk1.7.0_45/jre
+ export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
+ export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib</code></pre>
 </li>
 
 <li>

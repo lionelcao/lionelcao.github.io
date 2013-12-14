@@ -9,8 +9,6 @@ tags: [Ubuntu, JDK, Java, Install]
 ###Ubuntu : 12.04
 ###JDK: jdk-7u45-linux-x64.tar.gz
 
-<!-- more -->
-
 1. 从Oracle官网下载JDK。将jdk-7u45-linux-x64.tar.gz拷贝到/usr/lib/jdk/目录下面，这里如果没有jdk文件夹，则创建该文件夹:
 
    创建文件夹jdk
@@ -28,14 +26,14 @@ tags: [Ubuntu, JDK, Java, Install]
 
 2. 设置环境变量
 
-    $ sudo gedit /etc/profile
+        $ sudo gedit /etc/profile
 
    在文件的最后加上：
 
-    export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45
-    export JRE_HOME=/usr/lib/jdk/jdk1.7.0_45/jre
-    export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
-    export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
+        export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45
+        export JRE_HOME=/usr/lib/jdk/jdk1.7.0_45/jre
+        export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
+        export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
 
 3. 将系统默认的jdk修改过来
 
