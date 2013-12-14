@@ -6,8 +6,8 @@ category: "Java"
 tags: [Ubuntu, JDK, Java, Install]
 ---
 {% include JB/setup %}
-###Ubuntu : 12.04
-###JDK: jdk-7u45-linux-x64.tar.gz
+Ubuntu : 12.04
+JDK: jdk-7u45-linux-x64.tar.gz
 
 <!-- more -->
 
@@ -23,9 +23,7 @@ tags: [Ubuntu, JDK, Java, Install]
 
         $ sudo gedit /etc/profile
 
-  在文件的最后加上:
-
-        export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45
+        export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45      //加在最后
         export JRE_HOME=/usr/lib/jdk/jdk1.7.0_45/jre
         export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
         export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
