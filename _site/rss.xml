@@ -5,15 +5,17 @@
         <description>Lionel Cao - 北落师门</description>
         <link>http://lionelcao.github.io</link>
         <link>http://lionelcao.github.io</link>
-        <lastBuildDate>2013-12-15T02:33:36+08:00</lastBuildDate>
-        <pubDate>2013-12-15T02:33:36+08:00</pubDate>
+        <lastBuildDate>2013-12-15T02:46:23+08:00</lastBuildDate>
+        <pubDate>2013-12-15T02:46:23+08:00</pubDate>
         <ttl>1800</ttl>
 
 
         <item>
                 <title>Ubuntu下安装JDK</title>
                 <description>
-&lt;p&gt;Ubuntu : 12.04 JDK: jdk-7u45-linux-x64.tar.gz&lt;/p&gt;
+&lt;p&gt;Ubuntu : 12.04&lt;/p&gt;
+
+&lt;p&gt;JDK: jdk-7u45-linux-x64.tar.gz&lt;/p&gt;
 &lt;!-- more --&gt;
 &lt;ul&gt;
 &lt;li&gt;

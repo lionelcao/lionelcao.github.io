@@ -15,7 +15,7 @@ group: navigation
     {{ post.content | strip_html | truncatewords:50 }}
   {% endif %}
 
-  <div class="status">
+<div class="status">
     <div class="col-md-6 date visible-lg visible-md">
       <span class="icon-time"></span> {{ post.date | date_to_string }}
       <span class="icon-comment"></span><a href="{{ post.url }}#comments"> Comments</a>
@@ -24,7 +24,7 @@ group: navigation
     <a class="btn btn-default btn-sm pull-right" href="{{ post.url }}"><span class="readmore">Read More &raquo; </span></a>
     {% endif %}
    </div>
-    <div class="clearfix"></div>
+    
   </div>
 </div>
 {% endfor %}
