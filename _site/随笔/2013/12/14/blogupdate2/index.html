@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <title>
       
-        Tags - 
+        博客功能更新（二） - 
       
       Lionel Cao
     </title>
-    
+    <meta name="description" content="">
     <meta name="author" content="北落师门">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- HTML5 shim, for IE6-8 support of HTML elements -->
@@ -113,350 +113,95 @@
     <div class="container">
       <div class="content">
         
-<div class="page-header-wrapper">
-	<div class="page-header">
-  		<h1>Tags </h1>
-  	</div>
+<div class="page-header">
+  <h1>
+    博客功能更新（二） 
+    
+  </h1>
 </div>
 
 <div class="row">
-  <div class="span12">
+  <div class="span8">
     
+<p>家里的机器上的<code>Ubuntu</code>一直卡死，基本上每次用半个小时就这样。一直以为是上次手动移动虚拟机文件造成的，结果重新安装了一个还是这样。今天把内存从2G改成4G就好了，于是下午改博客的时候<code>top</code>了一下，Memory果然超过了2G。光一个<code>Firefox</code>就吃掉1G多 ，汗死～</p>
 
-<ul class="tag_box inline">
-    
+<h3 id="">今天更新了博客的几个小地方：</h3>
+<!-- more -->
+<pre><code>1. 将Links页更新为_config.yml+html文件中通过ruby调用，同样的方法用在导航栏上实现了标签排序。之前用了一个别人开发的排序插件结果导致导航栏直接消失不见了，但在本地jekyll serve却能看到。诡异的问题，还是自己修改比较靠谱。
+2. 将Categories,Tags,Archive合并成为一个下拉菜单，并调整了css以修改默认外观。由于用的是bootstrap模板，在官网查了下文档，改起来还是比较方便的。修改bootstrap.min.css文件打开太容易卡死，直接怒把default.html中引用换成bootstrap.css。</code></pre>
+
+<h3 id="_2">下一个版本准备做的事：</h3>
+
+<pre><code>1. 增加回到顶部功能。对于长篇的博客来说，鼠标滚轮实在太吃力了，所以增加一个BackTop吧！
+2. 导航栏锁定，屏幕向下滚动的时候保持导航栏锁定在屏幕顶部以方便切换。</code></pre>
+
+    <hr>
+    <div class="pagination btn-group">
+      
+        <a class="btn prev" href="/%E8%B5%84%E6%96%99/2013/12/11/markdown" title="Markdown语法">&larr; Previous</a>
+      
+        <a class="btn" href="/archive.html">Archive</a>
+      
+        <a class="btn next disabled">Next &rarr;</a>
+      
+    </div>
+    <hr>
   
 
 
+  <!-- Duoshuo Comment BEGIN -->
+    <div id="comments">
+        <div class="ds-thread" data-title="博客功能更新（二） - Lionel Cao"></div>
+    </div>
+<!-- Duoshuo Comment END -->
+
+
+
+
+
+
+	
+  </div>
   
-     
-    	<li><a href="/tags.html#html-ref">html <span>1</span></a></li>
-     
-    	<li><a href="/tags.html#语法-ref">语法 <span>1</span></a></li>
-     
-    	<li><a href="/tags.html#博客-ref">博客 <span>2</span></a></li>
-     
-    	<li><a href="/tags.html#Markdown-ref">Markdown <span>1</span></a></li>
-     
-    	<li><a href="/tags.html#github-ref">github <span>2</span></a></li>
-     
-    	<li><a href="/tags.html#bootstrap-ref">bootstrap <span>1</span></a></li>
+
+  <div class="span4">
+    <section>
+      <h4>Published</h4>
+      <div class="date"><span>14 December 2013</span></div>
+    </section>
+    
+      <section>
+        <h4>Category</h4>
+        <span class="category">
+          随笔
+        </span>
+      </section>
+         
+    
+      <section>
+        <h4>Tags</h4>
+        <ul class="tag_box">
+          
+          
+
+
+  
      
     	<li><a href="/tags.html#Ubuntu-ref">Ubuntu <span>1</span></a></li>
      
-    	<li><a href="/tags.html#Html-ref">Html <span>1</span></a></li>
+    	<li><a href="/tags.html#bootstrap-ref">bootstrap <span>1</span></a></li>
      
-    	<li><a href="/tags.html#转载-ref">转载 <span>1</span></a></li>
-     
-    	<li><a href="/tags.html#sass-ref">sass <span>1</span></a></li>
-     
-    	<li><a href="/tags.html#学习-ref">学习 <span>1</span></a></li>
+    	<li><a href="/tags.html#html-ref">html <span>1</span></a></li>
      
     	<li><a href="/tags.html#css-ref">css <span>2</span></a></li>
-     
-    	<li><a href="/tags.html#Jekyll-ref">Jekyll <span>2</span></a></li>
     
   
 
 
 
-</ul>
-
-
- 
-  <h2 id="html-ref">html</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/14/blogupdate2">博客功能更新（二）</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="语法-ref">语法</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E8%B5%84%E6%96%99/2013/12/11/markdown">Markdown语法</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="博客-ref">博客</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/11/blogupdate1">博客功能更新（一）</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/07/BlogBegins">个人博客开张</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="Markdown-ref">Markdown</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E8%B5%84%E6%96%99/2013/12/11/markdown">Markdown语法</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="github-ref">github</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E8%B5%84%E6%96%99/2013/12/11/markdown">Markdown语法</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/07/BlogBegins">个人博客开张</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="bootstrap-ref">bootstrap</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/14/blogupdate2">博客功能更新（二）</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="Ubuntu-ref">Ubuntu</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/14/blogupdate2">博客功能更新（二）</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="Html-ref">Html</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E8%B5%84%E6%96%99/2013/12/11/markdown">Markdown语法</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="转载-ref">转载</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E8%B5%84%E6%96%99/2013/12/11/markdown">Markdown语法</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="sass-ref">sass</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/11/blogupdate1">博客功能更新（一）</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="学习-ref">学习</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/11/blogupdate1">博客功能更新（一）</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="css-ref">css</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/14/blogupdate2">博客功能更新（二）</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/11/blogupdate1">博客功能更新（一）</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="Jekyll-ref">Jekyll</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/11/blogupdate1">博客功能更新（一）</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/%E9%9A%8F%E7%AC%94/2013/12/07/BlogBegins">个人博客开张</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
-
-
+        </ul>
+      </section>
+             
   </div>
 </div>
 

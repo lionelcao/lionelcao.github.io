@@ -11,6 +11,7 @@ http://lionelcao.github.io/atom.xml
 http://lionelcao.github.io/archive.html
 http://lionelcao.github.io/rss.xml
 
+http://lionelcao.github.io/%E9%9A%8F%E7%AC%94/2013/12/14/blogupdate2
 http://lionelcao.github.io/%E8%B5%84%E6%96%99/2013/12/11/markdown
 http://lionelcao.github.io/%E9%9A%8F%E7%AC%94/2013/12/11/blogupdate1
 http://lionelcao.github.io/%E9%9A%8F%E7%AC%94/2013/12/07/BlogBegins

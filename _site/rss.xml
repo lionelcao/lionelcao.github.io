@@ -5,10 +5,30 @@
         <description>Lionel Cao - 北落师门</description>
         <link>http://lionelcao.github.io</link>
         <link>http://lionelcao.github.io</link>
-        <lastBuildDate>2013-12-14T18:02:13+08:00</lastBuildDate>
-        <pubDate>2013-12-14T18:02:13+08:00</pubDate>
+        <lastBuildDate>2013-12-14T18:53:15+08:00</lastBuildDate>
+        <pubDate>2013-12-14T18:53:15+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>博客功能更新（二）</title>
+                <description>
+&lt;p&gt;家里的机器上的&lt;code&gt;Ubuntu&lt;/code&gt;一直卡死，基本上每次用半个小时就这样。一直以为是上次手动移动虚拟机文件造成的，结果重新安装了一个还是这样。今天把内存从2G改成4G就好了，于是下午改博客的时候&lt;code&gt;top&lt;/code&gt;了一下，Memory果然超过了2G。光一个&lt;code&gt;Firefox&lt;/code&gt;就吃掉1G多 ，汗死～&lt;/p&gt;
+
+&lt;h3 id=&quot;&quot;&gt;今天更新了博客的几个小地方：&lt;/h3&gt;
+&lt;!-- more --&gt;
+&lt;pre&gt;&lt;code&gt;1. 将Links页更新为_config.yml+html文件中通过ruby调用，同样的方法用在导航栏上实现了标签排序。之前用了一个别人开发的排序插件结果导致导航栏直接消失不见了，但在本地jekyll serve却能看到。诡异的问题，还是自己修改比较靠谱。
+2. 将Categories,Tags,Archive合并成为一个下拉菜单，并调整了css以修改默认外观。由于用的是bootstrap模板，在官网查了下文档，改起来还是比较方便的。修改bootstrap.min.css文件打开太容易卡死，直接怒把default.html中引用换成bootstrap.css。&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;_2&quot;&gt;下一个版本准备做的事：&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;1. 增加回到顶部功能。对于长篇的博客来说，鼠标滚轮实在太吃力了，所以增加一个BackTop吧！
+2. 导航栏锁定，屏幕向下滚动的时候保持导航栏锁定在屏幕顶部以方便切换。&lt;/code&gt;&lt;/pre&gt;
+</description>
+                <link>http://lionelcao.github.io/%E9%9A%8F%E7%AC%94/2013/12/14/blogupdate2</link>
+                <guid>http://lionelcao.github.io/%E9%9A%8F%E7%AC%94/2013/12/14/blogupdate2</guid>
+                <pubDate>2013-12-14T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>Markdown语法</title>
@@ -750,31 +770,17 @@ _   底线
 
 &lt;h3 id=&quot;&quot;&gt;今天给博客添加新功能，做了以下几件事：&lt;/h3&gt;
 &lt;!-- more --&gt;
-&lt;ol&gt;
-&lt;li&gt;将disqus评论插件替换为多说评论
-&lt;ol&gt;
-&lt;li&gt;新建了Blog页面，分页预览博客概要，每页5篇&lt;/li&gt;
-
-&lt;li&gt;新建了Links页面，用于添加好友博客地址以及收藏网址&lt;/li&gt;
-
-&lt;li&gt;更新了About页面&lt;/li&gt;
-
-&lt;li&gt;为Blog页面添加了css&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;1. 将disqus评论插件替换为多说评论
+2. 新建了Blog页面，分页预览博客概要，每页5篇
+3. 新建了Links页面，用于添加好友博客地址以及收藏网址
+4. 更新了About页面
+5. 为Blog页面添加了css&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&quot;_2&quot;&gt;接下来准备做的事：&lt;/h3&gt;
 
-&lt;ol&gt;
-&lt;li&gt;将导航条Archive，Tags，Categories合并为一个下拉菜单
-&lt;ol&gt;
-&lt;li&gt;导航条标签排序&lt;/li&gt;
-
-&lt;li&gt;继续学习Hadoop和Java&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;1. 将导航条Archive，Tags，Categories合并为一个下拉菜单
+2. 导航条标签排序
+3. 继续学习Hadoop和Java&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;昨天在微博上看到雷军转发说本周是美国计算机科学教育周，奥巴马呼吁全民写代码，囧！&lt;/p&gt;
 
