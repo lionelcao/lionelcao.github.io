@@ -9,9 +9,9 @@ tags: [Ubuntu, JDK, Java, Install]
 ###Ubuntu : 12.04
 ###JDK: jdk-7u45-linux-x64.tar.gz
 
+<!-- more -->
+
 1. 从Oracle官网下载JDK。将jdk-7u45-linux-x64.tar.gz拷贝到/usr/lib/jdk/目录下面，这里如果没有jdk文件夹，则创建该文件夹:
-   
-   <!-- more -->
 
    创建文件夹jdk
 

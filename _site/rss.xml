@@ -5,8 +5,8 @@
         <description>Lionel Cao - 北落师门</description>
         <link>http://lionelcao.github.io</link>
         <link>http://lionelcao.github.io</link>
-        <lastBuildDate>2013-12-14T23:00:26+08:00</lastBuildDate>
-        <pubDate>2013-12-14T23:00:26+08:00</pubDate>
+        <lastBuildDate>2013-12-14T23:02:19+08:00</lastBuildDate>
+        <pubDate>2013-12-14T23:02:19+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -16,11 +16,11 @@
 &lt;h3 id=&quot;ubuntu__1204&quot;&gt;Ubuntu : 12.04&lt;/h3&gt;
 
 &lt;h3 id=&quot;jdk_jdk7u45linuxx64targz&quot;&gt;JDK: jdk-7u45-linux-x64.tar.gz&lt;/h3&gt;
-
+&lt;!-- more --&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;从Oracle官网下载JDK。将jdk-7u45-linux-x64.tar.gz拷贝到/usr/lib/jdk/目录下面，这里如果没有jdk文件夹，则创建该文件夹:&lt;/p&gt;
-&lt;!-- more --&gt;
+
 &lt;p&gt;创建文件夹jdk&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt; $ cd /usr/lib
