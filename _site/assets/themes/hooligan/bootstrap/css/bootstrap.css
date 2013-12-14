@@ -2401,7 +2401,7 @@ table .span24 {
   padding: 4px 0;
   margin: 1px 0 0;
   list-style: none;
-  background-color: #ffffff;
+  background-color: rgba(40, 40, 40, 0.9);
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
   *border-right-width: 2px;
@@ -2438,7 +2438,7 @@ table .span24 {
   clear: both;
   font-weight: normal;
   line-height: 18px;
-  color: #333333;
+  color: #eeeeee;
   white-space: nowrap;
 }
 

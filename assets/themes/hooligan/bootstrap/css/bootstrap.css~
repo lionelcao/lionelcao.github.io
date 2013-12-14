@@ -1778,7 +1778,7 @@ table .span24 {
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url("../img/glyphicons-halflings-white.png");
+  background-image: url("../img/glyphicons-halflings.png");
   background-position: 14px 14px;
   background-repeat: no-repeat;
 }
@@ -1789,7 +1789,7 @@ table .span24 {
 }
 
 .icon-white {
-  background-image: url("../img/glyphicons-halflings-white.png");
+  background-image: url("../img/glyphicons-halflings.png");
 }
 
 .icon-glass {
@@ -1881,7 +1881,6 @@ table .span24 {
 }
 
 .icon-time {
-  background-image: url("../img/glyphicons-halflings-white.png");
   background-position: -48px -24px;
 }
 
@@ -2402,7 +2401,7 @@ table .span24 {
   padding: 4px 0;
   margin: 1px 0 0;
   list-style: none;
-  background-color: #ffffff;
+  background-color: rgba(40, 40, 40, 0.9);
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
   *border-right-width: 2px;

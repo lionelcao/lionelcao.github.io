@@ -51,11 +51,33 @@
 
           <div class="nav-collapse">
             <ul class="nav">
-              {% assign pages_list = site.pages %}
-              {% assign group = 'navigation' %}
-              {% include JB/pages_list %}
               
-            </ul>
+              {% for link in site.navigation %}
+       <li><a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a></li>
+              {% endfor %}
+       <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Contents
+            <b class="caret"></b>
+            </a>
+             <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="dLabel" role="menu" >
+               <li role="presentation" >
+                 <a href = "./categories.html" tabindex="-1" role="menuitem">
+                   Categories
+                  </a>
+               </li>
+               <li role="presentation" >
+                 <a href = "./tags.html" tabindex="-1" role="menuitem">
+                   Tags
+                  </a>
+               </li>
+               <li role="presentation" >
+                 <a href = "./archive.html" tabindex="-1" role="menuitem">
+                   Archive
+                  </a>
+               </li>
+              </ul>
+            </li>
+        </ul>
             <ul class="nav pull-right social visible-desktop">
               <li class="divider-vertical"></li>
               {% if site.author.github %}
@@ -132,7 +154,7 @@
     <script src="{{ ASSET_PATH }}/bootstrap/js/bootstrap.min.js"></script>
         <!--多说js加载开始，一个页面只需要加载一次 -->
     <script type="text/javascript">
-      var duoshuoQuery = {short_name:"{{ site.JB.comments.duoshuo.name }}"};
+      var duoshuoQuery = {short_name: "lionelcao"};
       (function() {
         var ds = document.createElement('script');
         ds.type = 'text/javascript';ds.async = true;
