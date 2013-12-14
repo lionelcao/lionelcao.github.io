@@ -4,7 +4,7 @@
  <title>Lionel Cao</title>
  <link href="http://lionelcao.github.io/" rel="self"/>
  <link href="http://lionelcao.github.io"/>
- <updated>2013-12-15T02:15:50+08:00</updated>
+ <updated>2013-12-15T02:22:07+08:00</updated>
  <id>http://lionelcao.github.io</id>
  <author>
    <name>北落师门</name>
@@ -18,9 +18,7 @@
    <updated>2013-12-14T00:00:00+08:00</updated>
    <id>http://lionelcao.github.io/java/2013/12/14/ubuntuinsjdk</id>
    <content type="html">
-&lt;h3 id=&quot;ubuntu__1204&quot;&gt;Ubuntu : 12.04&lt;/h3&gt;
-
-&lt;h3 id=&quot;jdk_jdk7u45linuxx64targz&quot;&gt;JDK: jdk-7u45-linux-x64.tar.gz&lt;/h3&gt;
+&lt;p&gt;Ubuntu : 12.04 JDK: jdk-7u45-linux-x64.tar.gz&lt;/p&gt;
 &lt;!-- more --&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -35,11 +33,9 @@
 &lt;li&gt;
 &lt;p&gt;设置环境变量&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;  $ sudo gedit /etc/profile&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  $ sudo gedit /etc/profile
 
-&lt;p&gt;在文件的最后加上:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45
+  export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45      //加在最后
   export JRE_HOME=/usr/lib/jdk/jdk1.7.0_45/jre
   export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
   export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib&lt;/code&gt;&lt;/pre&gt;
