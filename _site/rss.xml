@@ -5,8 +5,8 @@
         <description>Lionel Cao - 北落师门</description>
         <link>http://lionelcao.github.io</link>
         <link>http://lionelcao.github.io</link>
-        <lastBuildDate>2013-12-15T02:10:38+08:00</lastBuildDate>
-        <pubDate>2013-12-15T02:10:38+08:00</pubDate>
+        <lastBuildDate>2013-12-15T02:15:50+08:00</lastBuildDate>
+        <pubDate>2013-12-15T02:15:50+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -17,47 +17,47 @@
 
 &lt;h3 id=&quot;jdk_jdk7u45linuxx64targz&quot;&gt;JDK: jdk-7u45-linux-x64.tar.gz&lt;/h3&gt;
 &lt;!-- more --&gt;
-&lt;ol&gt;
+&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;从Oracle官网下载JDK。将jdk-7u45-linux-x64.tar.gz拷贝到/usr/lib/jdk/目录下面，这里如果没有jdk文件夹，则创建该文件夹:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; $ cd /usr/lib
- $ sudo mkdir jdk
- $ sudo mv  ~/Downloads/jdk-7u45-linux-x64.tar.gz  /usr/lib/jdk/   //把下载的文件拷贝到新创建的目录下面
- $ sudo tar -zxvg jdk-7u45-linux-x64.tar.gz   //解压缩文件&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  $ cd /usr/lib
+  $ sudo mkdir jdk
+  $ sudo mv  ~/Downloads/jdk-7u45-linux-x64.tar.gz  /usr/lib/jdk/   //把下载的文件拷贝到新创建的目录下面
+  $ sudo tar -zxvg jdk-7u45-linux-x64.tar.gz   //解压缩文件&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 
 &lt;li&gt;
 &lt;p&gt;设置环境变量&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; $ sudo gedit /etc/profile&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  $ sudo gedit /etc/profile&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;在文件的最后加上:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45
- export JRE_HOME=/usr/lib/jdk/jdk1.7.0_45/jre
- export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
- export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45
+  export JRE_HOME=/usr/lib/jdk/jdk1.7.0_45/jre
+  export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
+  export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 
 &lt;li&gt;
 &lt;p&gt;将系统默认的jdk修改过来&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; $ sudo update-alternatives --install /usr/bin/java java /usr/lib/jdk/jdk1.7.0_45/bin/java 300
- $ sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jdk/jdk1.7.0_45/bin/javac 300
- $ sudo update-alternatives --config java
- $ sudo update-alternatives --config javac&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  $ sudo update-alternatives --install /usr/bin/java java /usr/lib/jdk/jdk1.7.0_45/bin/java 300
+  $ sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jdk/jdk1.7.0_45/bin/javac 300
+  $ sudo update-alternatives --config java
+  $ sudo update-alternatives --config javac&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 
 &lt;li&gt;
 &lt;p&gt;验证Java版本&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; $ java -version
- java version &amp;quot;1.7.0_45&amp;quot;
- Java(TM) SE Runtime Environment (build 1.7.0_45-b18)
- Java HotSpot(TM) 64-Bit Server VM (build 24.45-b08, mixed mode)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  $ java -version
+  java version &amp;quot;1.7.0_45&amp;quot;
+  Java(TM) SE Runtime Environment (build 1.7.0_45-b18)
+  Java HotSpot(TM) 64-Bit Server VM (build 24.45-b08, mixed mode)&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 </description>
                 <link>http://lionelcao.github.io/java/2013/12/14/ubuntuinsjdk</link>
                 <guid>http://lionelcao.github.io/java/2013/12/14/ubuntuinsjdk</guid>
