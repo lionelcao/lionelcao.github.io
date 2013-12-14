@@ -4,7 +4,7 @@
  <title>Lionel Cao</title>
  <link href="http://lionelcao.github.io/" rel="self"/>
  <link href="http://lionelcao.github.io"/>
- <updated>2013-12-15T02:23:17+08:00</updated>
+ <updated>2013-12-15T02:24:45+08:00</updated>
  <id>http://lionelcao.github.io</id>
  <author>
    <name>北落师门</name>
@@ -28,9 +28,13 @@
   $ sudo mkdir jdk
   $ sudo mv  ~/Downloads/jdk-7u45-linux-x64.tar.gz  /usr/lib/jdk/   //把下载的文件拷贝到新创建的目录下面
   $ sudo tar -zxvg jdk-7u45-linux-x64.tar.gz   //解压缩文件
-  $ sudo gedit /etc/profile
+  $ sudo gedit /etc/profile&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
 
-  export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45      //加在最后
+&lt;li&gt;
+&lt;p&gt;配环境变量&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45      //加在最后
   export JRE_HOME=/usr/lib/jdk/jdk1.7.0_45/jre
   export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
   export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib&lt;/code&gt;&lt;/pre&gt;

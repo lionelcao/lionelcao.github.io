@@ -20,6 +20,8 @@ JDK: jdk-7u45-linux-x64.tar.gz
         $ sudo tar -zxvg jdk-7u45-linux-x64.tar.gz   //解压缩文件
         $ sudo gedit /etc/profile
 
+* 配环境变量
+
         export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45      //加在最后
         export JRE_HOME=/usr/lib/jdk/jdk1.7.0_45/jre
         export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
