@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>
       
-        About - 
+        Ubuntu下配置免密码登录本机（ssh localhost） - 
       
       Lionel Cao
     </title>
@@ -113,41 +113,125 @@
     <div class="container">
       <div class="content">
         
-<div class="page-header-wrapper">
-	<div class="page-header">
-  		<h1>About </h1>
-  	</div>
+<div class="page-header">
+  <h1>
+    Ubuntu下配置免密码登录本机（ssh localhost） 
+    
+  </h1>
 </div>
 
 <div class="row">
-  <div class="span12">
-    <h2 id='id5'>《来自作者的信》</h2>
+  <div class="span8">
+    <h3 id='ubuntu'>Ubuntu下配置免密码登录本机方法如下:</h3>
+<!-- more -->
+<p>1. 生成密钥</p>
 
-<p>你好，旅行者～欢迎访问我的个人主页！</p>
+<pre><code>    $ ssh keygen -t rsa</code></pre>
 
-<p>我是一名数据工程师，2010年毕业于武汉大学计算机学院本科。曾经供职于合众人寿总公司信息管理中心，负责Mis系统、精算准备金系统以及高管经营分析系统的开发和运维。现供职于ebay中国数据平台部，我的工作包括但不限于以下领域：</p>
+<p>全部默认回车</p>
 
-<p><code>Data Warehouse</code>，<code>Business Intelligence</code>，<code>Hadoop</code>，<code>Oracle</code>，<code>Teradata</code>，<code>Capacity Management</code>等。</p>
+<p>2. 将公钥添加到信任列表</p>
 
-<p>我将在这里记录和分享我的工作、生活中的一些点点滴滴。</p>
+<pre><code>    $ cd .ssh/
+    $ cat id_rsa.pub &gt;&gt; authorized_key</code></pre>
 
-<p>你可以通过以下方式与我取得联系：</p>
+<p>3. 验证无密码登录</p>
 
-<p>Email: <a href='mailto:whucaolu@gmail.com'>&#119;&#104;&#117;&#099;&#097;&#111;&#108;&#117;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a></p>
+<pre><code>    $ ssh localhost</code></pre>
 
-<p>Weibo: <a href='http://weibo.com/whucaolu'>靈狐不要冲</a></p>
+<p>a) 出现报错<code>ssh : connect to host localhost port 22:Connection refused</code></p>
 
-<p>Skype: lionel061201</p>
+<pre><code>  错误原因：
+  1. `sshd` 未安装
+  2. `sshd` 未启动
+  3. 防火墙
 
-<p>愿大地母亲忽悠着你！</p>
-<hr /><div class='me'>
-  <img src='images/me.jpg' />
-</div><hr />
-<h2 id='id6'>关于本站</h2>
+    $ ps aux|grep ssh
+    $ ssh net start sshd
 
-<p>本站是曹鲁（<a href='http://www.lucao.com.cn'>北落师门</a>）的个人博客。</p>
+  此处为发现没有安装sshd，因此需要安装openssh-server
 
-<p>它的建立得到了来自<a href='http://jekyllbootstrap.com'>Jekyll Bootstrap</a> 以及Jekyll主题<a href='http://github.com/dhulihan/hooligan'>The Hooligan Theme</a>的帮助，同时也要感谢<a href='https://github.com'>Github</a>提供的主机服务。</p>
+    $ sudo apt-get install openssh-server
+
+  安装完再次验证ssh localhost返回正确信息。</code></pre>
+
+<p>b) 正确信息</p>
+
+<pre><code>    Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.8.0-29-generic x86_64)
+    
+    * Documentation:  https://help.ubuntu.com/
+    
+    200 packages can be updated.
+    104 updates are security updates.
+
+    Last login: Tue Dec 17 22:57:25 2013 from localhost</code></pre>
+
+<p>注：本文部分内容参考网络资料</p>
+    <hr>
+    <div class="pagination btn-group">
+      
+        <a class="btn prev" href="/Java/2013/12/14/ubuntuinsjdk" title="Ubuntu下安装JDK">&larr; Previous</a>
+      
+        <a class="btn" href="/archive.html">Archive</a>
+      
+        <a class="btn next" href="/Web/2013/12/18/jquery3" title="JQuery的3种$()">Next &rarr;</a>
+      
+    </div>
+    <hr>
+  
+
+
+  <!-- Duoshuo Comment BEGIN -->
+    <div id="comments">
+        <div class="ds-thread" data-title="Ubuntu下配置免密码登录本机（ssh localhost） - Lionel Cao"></div>
+    </div>
+<!-- Duoshuo Comment END -->
+
+
+
+
+
+
+	
+  </div>
+  
+
+  <div class="span4">
+    <section>
+      <h4>Published</h4>
+      <div class="date"><span>15 December 2013</span></div>
+    </section>
+    
+      <section>
+        <h4>Category</h4>
+        <span class="category">
+          Linux
+        </span>
+      </section>
+         
+    
+      <section>
+        <h4>Tags</h4>
+        <ul class="tag_box">
+          
+          
+
+
+  
+     
+    	<li><a href="/tags.html#ssh-ref">ssh <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#Ubuntu-ref">Ubuntu <span>3</span></a></li>
+     
+    	<li><a href="/tags.html#hadoop-ref">hadoop <span>1</span></a></li>
+    
+  
+
+
+
+        </ul>
+      </section>
+             
   </div>
 </div>
 

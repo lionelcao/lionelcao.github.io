@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>
       
-        About - 
+        Ubuntu下安装JDK - 
       
       Lionel Cao
     </title>
@@ -113,41 +113,125 @@
     <div class="container">
       <div class="content">
         
-<div class="page-header-wrapper">
-	<div class="page-header">
-  		<h1>About </h1>
-  	</div>
+<div class="page-header">
+  <h1>
+    Ubuntu下安装JDK 
+    
+  </h1>
 </div>
 
 <div class="row">
-  <div class="span12">
-    <h2 id='id5'>《来自作者的信》</h2>
+  <div class="span8">
+    <p>Ubuntu : 12.04</p>
 
-<p>你好，旅行者～欢迎访问我的个人主页！</p>
+<p>JDK: jdk-7u45-linux-x64.tar.gz</p>
+<!-- more -->
+<ul>
+<li>
+<p>从Oracle官网下载JDK。将jdk-7u45-linux-x64.tar.gz拷贝到/usr/lib/jdk/目录下面，这里如果没有jdk文件夹，则创建该文件夹:</p>
 
-<p>我是一名数据工程师，2010年毕业于武汉大学计算机学院本科。曾经供职于合众人寿总公司信息管理中心，负责Mis系统、精算准备金系统以及高管经营分析系统的开发和运维。现供职于ebay中国数据平台部，我的工作包括但不限于以下领域：</p>
+<pre><code>  $ cd /usr/lib
+  $ sudo mkdir jdk
+  $ sudo mv  ~/Downloads/jdk-7u45-linux-x64.tar.gz  /usr/lib/jdk/   //把下载的文件拷贝到新创建的目录下面
+  $ sudo tar -zxvf jdk-7u45-linux-x64.tar.gz   //解压缩文件</code></pre>
+</li>
 
-<p><code>Data Warehouse</code>，<code>Business Intelligence</code>，<code>Hadoop</code>，<code>Oracle</code>，<code>Teradata</code>，<code>Capacity Management</code>等。</p>
+<li>
+<p>Change Profile</p>
 
-<p>我将在这里记录和分享我的工作、生活中的一些点点滴滴。</p>
+<pre><code>  $ sudo gedit /etc/profile
 
-<p>你可以通过以下方式与我取得联系：</p>
+  export JAVA_HOME=/usr/lib/jdk/jdk1.7.0_45      //加在最后
+  export JRE_HOME=/usr/lib/jdk/jdk1.7.0_45/jre
+  export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
+  export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib</code></pre>
+</li>
 
-<p>Email: <a href='mailto:whucaolu@gmail.com'>&#119;&#104;&#117;&#099;&#097;&#111;&#108;&#117;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a></p>
+<li>
+<p>将系统默认的jdk修改过来</p>
 
-<p>Weibo: <a href='http://weibo.com/whucaolu'>靈狐不要冲</a></p>
+<pre><code>  $ sudo update-alternatives --install /usr/bin/java java /usr/lib/jdk/jdk1.7.0_45/bin/java 300
+  $ sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jdk/jdk1.7.0_45/bin/javac 300
+  $ sudo update-alternatives --config java
+  $ sudo update-alternatives --config javac</code></pre>
+</li>
 
-<p>Skype: lionel061201</p>
+<li>
+<p>验证Java版本</p>
 
-<p>愿大地母亲忽悠着你！</p>
-<hr /><div class='me'>
-  <img src='images/me.jpg' />
-</div><hr />
-<h2 id='id6'>关于本站</h2>
+<pre><code>  $ java -version
+  java version &quot;1.7.0_45&quot;
+  Java(TM) SE Runtime Environment (build 1.7.0_45-b18)
+  Java HotSpot(TM) 64-Bit Server VM (build 24.45-b08, mixed mode)</code></pre>
+</li>
+</ul>
+    <hr>
+    <div class="pagination btn-group">
+      
+        <a class="btn prev" href="/随笔/2013/12/14/blogupdate2" title="博客功能更新（二）">&larr; Previous</a>
+      
+        <a class="btn" href="/archive.html">Archive</a>
+      
+        <a class="btn next" href="/Linux/2013/12/15/sshlocalhost" title="Ubuntu下配置免密码登录本机（ssh localhost）">Next &rarr;</a>
+      
+    </div>
+    <hr>
+  
 
-<p>本站是曹鲁（<a href='http://www.lucao.com.cn'>北落师门</a>）的个人博客。</p>
 
-<p>它的建立得到了来自<a href='http://jekyllbootstrap.com'>Jekyll Bootstrap</a> 以及Jekyll主题<a href='http://github.com/dhulihan/hooligan'>The Hooligan Theme</a>的帮助，同时也要感谢<a href='https://github.com'>Github</a>提供的主机服务。</p>
+  <!-- Duoshuo Comment BEGIN -->
+    <div id="comments">
+        <div class="ds-thread" data-title="Ubuntu下安装JDK - Lionel Cao"></div>
+    </div>
+<!-- Duoshuo Comment END -->
+
+
+
+
+
+
+	
+  </div>
+  
+
+  <div class="span4">
+    <section>
+      <h4>Published</h4>
+      <div class="date"><span>14 December 2013</span></div>
+    </section>
+    
+      <section>
+        <h4>Category</h4>
+        <span class="category">
+          Java
+        </span>
+      </section>
+         
+    
+      <section>
+        <h4>Tags</h4>
+        <ul class="tag_box">
+          
+          
+
+
+  
+     
+    	<li><a href="/tags.html#Ubuntu-ref">Ubuntu <span>3</span></a></li>
+     
+    	<li><a href="/tags.html#JDK-ref">JDK <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#Java-ref">Java <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#Install-ref">Install <span>1</span></a></li>
+    
+  
+
+
+
+        </ul>
+      </section>
+             
   </div>
 </div>
 
