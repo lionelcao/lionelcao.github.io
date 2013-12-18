@@ -1,0 +1,331 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      
+        JQuery的3种$() - 
+      
+      Lionel Cao
+    </title>
+    <meta name="description" content="">
+    <meta name="author" content="北落师门">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+    <link href="/assets/themes/hooligan/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/themes/hooligan/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">    
+    <link rel="stylesheet" type="text/css" href="/assets/themes/hooligan/css-social-buttons/css/zocial.stripped.css">
+    <link href="/assets/themes/hooligan/css/pygments.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/hooligan/css/darkstrap.css" rel="stylesheet" type="text/css" media="all">    
+    <link href="/assets/themes/hooligan/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    
+    <!-- fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>      
+
+
+          <a class="brand" href="/">Lionel Cao</a>
+
+
+          <div class="nav-collapse">
+            <ul class="nav">
+              
+              
+       <li><a href="/About.html">About</a></li>
+              
+       <li><a href="/blog/">Blog</a></li>
+              
+       <li><a href="/links.html">Links</a></li>
+              
+       <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Contents
+            <b class="caret"></b>
+            </a>
+             <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="dLabel" role="menu" >
+               <li role="presentation" >
+                 <a href = "/categories.html" tabindex="-1" role="menuitem">
+                   Categories
+                  </a>
+               </li>
+               <li role="presentation" >
+                 <a href = "/tags.html" tabindex="-1" role="menuitem">
+                   Tags
+                  </a>
+               </li>
+               <li role="presentation" >
+                 <a href = "/archive.html" tabindex="-1" role="menuitem">
+                   Archive
+                  </a>
+               </li>
+              </ul>
+            </li>
+        </ul>
+            <ul class="nav pull-right social visible-desktop">
+              <li class="divider-vertical"></li>
+              
+                <li>
+                  <a href="https://github.com/lionelcao" class="zocial github icon" target="_blank">
+                    <span class="hidden-desktop">Github</span>
+                  </a>
+                </li>
+              
+                  
+                                        
+                         
+                                  
+              
+              
+                <li>
+                  <a href="http://weibo.com/whucaolu" class="zocial weibo icon" target="_blank">
+                    <span class="hidden-desktop">Weibo</span>
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="content">
+        
+<div class="page-header">
+  <h1>
+    JQuery的3种$() 
+    
+  </h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    
+<h3 id="1_cssxpathhtml">1. $()可以是<code>$(expresion)</code>，即css选择器、Xpath或html元素，也就是通过上述表达式来匹配目标元素。</h3>
+
+<p>比如：<code>$(&quot;a&quot;)</code>构造的这个对象，是用CSS选择器构建了一个jQuery对象——它选择了所有的<code>&lt;a/&gt;</code>这个标签。如：</p>
+<!-- more -->
+<pre><code>    $(&quot;a&quot;).click(function(){...})</code></pre>
+
+<p>就是在点击页面上的任何一个链接时的触发事件。确切地说，就是jQuery用<code>&lt;a/&gt;</code>这个标签构建了一个对象<code>$(&quot;a&quot;)</code>，函数 <code>click()</code>是这个jQuery对象的一个（事件）方法。</p>
+
+<p>比如有这样一段HTML代码：</p>
+
+<pre><code>    &lt;p&gt;one&lt;/p&gt;
+    &lt;div&gt;
+    &lt;p&gt;two&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;p&gt;three&lt;/p&gt;
+    &lt;a href=&quot;#&quot; id=&quot;test&quot; onClick=&quot;jq()&quot; &gt;jQuery&lt;/a&gt; </code></pre>
+
+<p>而操作这段HTML的是如下一条语句：</p>
+
+<pre><code>    alert($(&quot;div&gt;p&quot;).html());</code></pre>
+
+<p>$()中的是一个查询表达式，也就是用“div&gt;p”这样一个查询表达式构建了一个jQuery对象，然后的<code>“html()”</code>意思是显示其html内容，也就是上面HTML代码段的<code>[two]</code>。再如：</p>
+
+<pre><code>    $(&quot;&lt;div&gt;&lt;p&gt;Hello&lt;/p&gt;&lt;/div&gt;&quot;).appendTo(&quot;body&quot;);</code></pre>
+
+<p>$()中的是一个字符串，用这样一段字串构建了jQuery对象，然后向<body />中添加这一字串。</p>
+
+<h3 id="2_domdomdocumentlocationform">2. $()可以是<code>$(element)</code>，即一个特定的DOM元素。如常用的DOM对象有document、location、form等。如这样一行代码：</h3>
+
+<pre><code>    $(document).find(&quot;div&gt;p&quot;).html());</code></pre>
+
+<p>$()中的document是一个DOM元素，即在全文寻找带<code>&lt;p&gt;</code>的<code>&lt;div&gt;</code>元素，并显示<code>&lt;p&gt;</code>中的内容。</p>
+
+<h3 id="3_">3. $()可以是<code>$(function)</code>，即一个函数，它是<code>$(document).ready()</code>的一个速记方式。如常见的形式是这样的：</h3>
+
+<pre><code>    $(document).ready(function(){
+    alert(&quot;Hello world!&quot;);
+    });</code></pre>
+
+<p>可变形作： $(function(){ alert(“Hello world!”); });</p>
+<hr />
+<h2 id="htmlelementsjquery">对于选择HTML文档中的elements，jQuery有两种方法：</h2>
+
+<h3 id="1_">1. 如<code>$(&quot;div&gt;ul a&quot;)</code>，它的意思是<code>div</code>标签中的<code>ul</code>标签中的<code>a</code>标签。不过，<code>$('div&gt;ul')</code>和<code>$('div ul')</code>是有区别的，<code>$('div&gt;ul')</code>是<code>&lt;div&gt;</code>的直接后代里找<code>&lt;ul&gt;</code>；而<code>$('div ul')</code>是在<code>&lt;div&gt;</code>的所有后代里找<code>&lt;ul&gt;</code>。</h3>
+
+<h3 id="2_jquery">2. 用jQuery对象的几个方法（如方法<code>find()</code>、<code>each()</code>等）</h3>
+
+<p><code>$(&quot;#orderedlist).find(&quot;li&quot;) </code>就像 <code>$(&quot;#orderedlist li&quot;). each()</code>一样迭代了所有的li，而表达式中的“#”表示HTML中的ID，如上例中的“#orderedlist”就表示“ID为orderedlist所在的标签”。</p>
+<hr />
+<h3 id="1_id">1. 标签选择器<code>$('p')</code>、类选择器<code>$('.myClass')</code>、id选择器<code>$('#myId')</code>相对简单，不多说。不过有一点——<code>$('div&gt;ul')</code>和<code>$('div ul')</code>是有区别的，</h3>
+
+<p><code>$('div&gt;ul')</code>是<code>&lt;div&gt;</code>的直接后代里找<code>&lt;ul&gt;</code>；而<code>$('div ul')</code>是在<code>&lt;div&gt;</code>的所有后代里找<code>&lt;ul&gt;</code>。</p>
+
+<p>所以，<code>$('#sId&gt;li')</code>所选择的是id为<code>&quot;sId&quot;</code>的所有<code>&lt;li&gt;</code>孩子节点，即使这个<code>&lt;li&gt;</code>的后代还有<code>&lt;li&gt;</code>也不是它所找的范围（所找到的DOM对象，只是它本级的DOM对象。）。而<code>$('#sId li:not(.horizontal)')</code>，就是指类名<code>&quot;sId&quot;</code>里面的所有<code>li</code>的子孙中没有horizontal类的所有元素。——这里的<code>not()</code>是一个negation pseudo class.</p>
+
+<p>这里返回的是一个jQurey对象，一个数组对象，这个jQuery对象的长度可用<code>.length()</code>得到。</p>
+
+<h3 id="2_xpath">2. XPath选择器</h3>
+
+<p>如：选择所有带有title 属性的链接，我们会这样写：<code>$('a[@title]')</code></p>
+
+<p><code>[]</code>里带<code>@</code>，说明<code>[]</code>里的是元素的属性；是个属性选择器</p>
+
+<p><code>[]</code>里没<code>@</code>，说明<code>[]</code>里的是元素的子孙。</p>
+
+<p><code>$('ul li')</code>和<code>$('ul[li]')</code>虽然返回的都是一个jQuery数组，但两者的含义正好相反。前者是要找<code>&lt;ul&gt;</code>下所有<code>&lt;li&gt;</code>子孙，而后者却是在找所有子孙为<code>&lt;li&gt;</code>的<code>&lt;ul&gt;</code>数组。</p>
+
+<p>在XPath中，要找一个“以…开头”的属性，用<code>^=</code>，如找一个name属性是以mail开头的input元素，就用</p>
+
+<pre><code>    $('input[@name^=&quot;mail&quot;]')</code></pre>
+
+<p>要找一个“以…结尾”的属性，要用<code>$=</code></p>
+
+<p>要找一个“不头不尾”的属性，用<code>*=</code></p>
+
+<h3 id="3_cssxpath">3. 不属于上述的CSS和XPath的选择器，就是自定义的选择器了，用<code>“:”</code>表示</h3>
+
+<p>这里要用的就是<code>:first</code>，<code>:last</code>，<code>:parent</code> ，<code>:hidden</code>，<code>:visible</code>，<code>:odd</code>，<code>:even</code>，<code>:not('xxx')</code>， <code>&quot;:eq(0)&quot;</code>（始于0)，</p>
+
+<p><code>:nth(n</code>，<code>:gt(0)</code>，<code>:lt(0)</code>，<code>:contains(&quot;xxx&quot;)</code></p>
+
+<p>如：<code>$('tr:not([th]):even')</code>意为<code>&lt;tr&gt;</code>元素的子孙中不含<code>&lt;th&gt;</code>的所有子孙的偶数项。</p>
+
+<h3 id="4_">4. 还有几个，简单不解释了</h3>
+
+<pre><code>    $('th').parent()——
+    $('td:contains(&quot;Henry&quot;)').prev()——内容包含有&quot;Henry&quot;的&lt;td&gt;的上一个节点
+    $('td:contains(&quot;Henry&quot;)').next()——内容包含有&quot;Henry&quot;的&lt;td&gt;的下一个节点
+    $('td:contains(&quot;Henry&quot;)').siblings()——内容包含有&quot;Henry&quot;的&lt;td&gt;的所有兄弟节点</code></pre>
+
+<p>还有一个，就是<code>end()</code>，这个方法肯定是用在某个DOM节点执行了某一动作之后，还想在与其相关的节点上执行类似动作，这里就要用到<code>end()</code>。用过<code>end()</code>方法之后，所返回的是执行动作的那个节点的父节点上。举个例子</p>
+
+<pre><code>    $(...).parent().find(...).addClass().end()</code></pre>
+
+<p>这里执行动作的节点是<code>find(...)</code>，是一个数组对象，它所做的动作是<code>“addClass()”</code>，之后，用了个<code>end()</code>，这时所返回的东东就是指向了<code>parent()</code>所指向的节点，也就是执行<code>“addClass()”</code>动作的那个数组对象的父节点。</p>
+
+<h3 id="5_dom">5. 要直接访问DOM元素，可用<code>get(0)</code>的方法，如</h3>
+
+<pre><code>    $('#myelement').get(0)，也可缩写成$('#myelement')[0]</code></pre>
+
+<p>注：本文转载自<a href="http://www.jb51.net/article/21660.htm">http://www.jb51.net/article/21660.htm</a>，格式内容稍有修改。</p>
+
+    <hr>
+    <div class="pagination btn-group">
+      
+        <a class="btn prev" href="/linux/2013/12/15/sshlocalhost" title="Ubuntu下配置免密码登录本机（ssh localhost）">&larr; Previous</a>
+      
+        <a class="btn" href="/archive.html">Archive</a>
+      
+        <a class="btn next disabled">Next &rarr;</a>
+      
+    </div>
+    <hr>
+  
+
+
+  <!-- Duoshuo Comment BEGIN -->
+    <div id="comments">
+        <div class="ds-thread" data-title="JQuery的3种$() - Lionel Cao"></div>
+    </div>
+<!-- Duoshuo Comment END -->
+
+
+
+
+
+
+	
+  </div>
+  
+
+  <div class="span4">
+    <section>
+      <h4>Published</h4>
+      <div class="date"><span>18 December 2013</span></div>
+    </section>
+    
+      <section>
+        <h4>Category</h4>
+        <span class="category">
+          Web
+        </span>
+      </section>
+         
+    
+      <section>
+        <h4>Tags</h4>
+        <ul class="tag_box">
+          
+          
+
+
+  
+     
+    	<li><a href="/tags.html#转载-ref">转载 <span>2</span></a></li>
+     
+    	<li><a href="/tags.html#JQuery-ref">JQuery <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#Web-ref">Web <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#javascript-ref">javascript <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#html-ref">html <span>3</span></a></li>
+    
+  
+
+
+
+        </ul>
+      </section>
+             
+  </div>
+</div>
+
+
+      </div>
+    
+
+      <footer>
+
+        <p>&copy; 2013 北落师门 All Rights Reserved
+        </p>
+
+      </footer>
+    </div> <!-- /container -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/themes/hooligan/js/jquery.min.js"><\/script>')</script>
+    <script src="/assets/themes/hooligan/bootstrap/js/bootstrap.min.js"></script>
+        <!--多说js加载开始，一个页面只需要加载一次 -->
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name: "lionelcao"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = 'http://static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script>
+    <!--多说js加载结束，一个页面只需要加载一次 -->
+
+    
+  </body>
+</html>
+

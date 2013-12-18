@@ -2,7 +2,7 @@
 layout: post
 title: "Markdown语法"
 description: ""
-category: "Syntax"
+category: "资料"
 tags: [转载, Markdown, github, 语法, html]
 ---
 {% include JB/setup %}
