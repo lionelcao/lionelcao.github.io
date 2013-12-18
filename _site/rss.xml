@@ -5,10 +5,77 @@
         <description>Lionel Cao - 北落师门</description>
         <link>http://lionelcao.github.io</link>
         <link>http://lionelcao.github.io</link>
-        <lastBuildDate>2013-12-15T03:01:23+08:00</lastBuildDate>
-        <pubDate>2013-12-15T03:01:23+08:00</pubDate>
+        <lastBuildDate>2013-12-18T23:57:18+08:00</lastBuildDate>
+        <pubDate>2013-12-18T23:57:18+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Ubuntu下配置免密码登录本机（ssh localhost）</title>
+                <description>
+&lt;h3 id=&quot;ubuntu&quot;&gt;Ubuntu下配置免密码登录本机方法如下:&lt;/h3&gt;
+&lt;!-- more --&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;生成密钥&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; $ ssh keygen -t rsa&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;全部默认回车&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;将公钥添加到信任列表&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; $ cd .ssh/
+ $ cat id_rsa.pub &amp;gt;&amp;gt; authorized_key&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;验证无密码登录&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; $ ssh localhost&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;a) 出现报错&lt;code&gt;ssh : connect to host localhost port 22:Connection refused&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;错误原因：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;sshd&lt;/code&gt; 未安装&lt;/li&gt;
+
+&lt;li&gt;&lt;code&gt;sshd&lt;/code&gt; 未启动&lt;/li&gt;
+
+&lt;li&gt;防火墙&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt; $ ps aux|grep ssh
+ $ ssh net start sshd&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;此处为发现没有安装sshd，因此需要安装openssh-server&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; $ sudo apt-get install openssh-server&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装完再次验证ssh localhost返回正确信息。&lt;/p&gt;
+
+&lt;p&gt;b) 正确信息&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.8.0-29-generic x86_64)
+ 
+ * Documentation:  https://help.ubuntu.com/
+ 
+ 200 packages can be updated.
+ 104 updates are security updates.
+
+ Last login: Tue Dec 17 22:57:25 2013 from localhost&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;注：本文部分内容参考网络资料&lt;/p&gt;
+</description>
+                <link>http://lionelcao.github.io/linux/2013/12/15/sshlocalhost</link>
+                <guid>http://lionelcao.github.io/linux/2013/12/15/sshlocalhost</guid>
+                <pubDate>2013-12-15T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>Ubuntu下安装JDK</title>
@@ -24,7 +91,7 @@
 &lt;pre&gt;&lt;code&gt;  $ cd /usr/lib
   $ sudo mkdir jdk
   $ sudo mv  ~/Downloads/jdk-7u45-linux-x64.tar.gz  /usr/lib/jdk/   //把下载的文件拷贝到新创建的目录下面
-  $ sudo tar -zxvg jdk-7u45-linux-x64.tar.gz   //解压缩文件&lt;/code&gt;&lt;/pre&gt;
+  $ sudo tar -zxvf jdk-7u45-linux-x64.tar.gz   //解压缩文件&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 
 &lt;li&gt;

@@ -10,7 +10,9 @@ http://lionelcao.github.io/pages.html
 http://lionelcao.github.io/atom.xml
 http://lionelcao.github.io/archive.html
 http://lionelcao.github.io/rss.xml
+http://lionelcao.github.io/blog/page2/index.html
 
+http://lionelcao.github.io/linux/2013/12/15/sshlocalhost
 http://lionelcao.github.io/java/2013/12/14/ubuntuinsjdk
 http://lionelcao.github.io/%E9%9A%8F%E7%AC%94/2013/12/14/blogupdate2
 http://lionelcao.github.io/%E8%B5%84%E6%96%99/2013/12/11/markdown
