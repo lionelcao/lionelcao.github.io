@@ -4,13 +4,598 @@
  <title>Lionel Cao</title>
  <link href="http://lionelcao.github.io/" rel="self"/>
  <link href="http://lionelcao.github.io"/>
- <updated>2013-12-19T00:53:06+08:00</updated>
+ <updated>2013-12-20T08:16:12+08:00</updated>
  <id>http://lionelcao.github.io</id>
  <author>
    <name>北落师门</name>
    <email>whucaolu@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>SAS Libname</title>
+   <link href="http://lionelcao.github.io/sas/2013/12/20/saslibname"/>
+   <updated>2013-12-20T00:00:00+08:00</updated>
+   <id>http://lionelcao.github.io/sas/2013/12/20/saslibname</id>
+   <content type="html">
+&lt;h1 id=&quot;libname_statement_specifics_for_teradata&quot;&gt;LIBNAME Statement Specifics for Teradata&lt;/h1&gt;
+
+&lt;p&gt;Via &lt;a href=&quot;http://support.sas.com&quot;&gt;http://support.sas.com&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;This section describes the LIBNAME statement that SAS/ACCESS Interface to Teradata supports and includes examples. For a complete description of this feature, see LIBNAME statement.&lt;/p&gt;
+
+&lt;p&gt;Here is the LIBNAME statement syntax for accessing Teradata.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;LIBNAME libref teradata &amp;lt;connection-options&amp;gt; &amp;lt;LIBNAME-options&amp;gt;;&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;h2 id=&quot;arguments&quot;&gt;Arguments&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;libref&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;specifies any SAS name that serves as an alias to associate SAS with a database, schema, server, or group of tables and views.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;teradata&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;specifies the SAS/ACCESS engine name for the Teradata interface.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;connection-options&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;provide connection information and control how SAS manages the timing and concurrence of the connection to the DBMS. Here are the connection options for the Teradata interface.&lt;/p&gt;
+
+&lt;h3 id=&quot;userteradatausername__ldapidldap__ldapidldaprealmname&quot;&gt;USER=&amp;lt;’&amp;gt;Teradata-user-name&amp;lt;’&amp;gt; | &amp;lt;”&amp;gt;ldapid@LDAP&amp;lt;”&amp;gt; | &amp;lt;”&amp;gt;ldapid@LDAPrealm-name&amp;lt;”&amp;gt;&lt;/h3&gt;
+
+&lt;p&gt;specifies a required connection option that specifies a Teradata user name. If the name contains blanks or national characters, enclose it in quotation marks. For LDAP authentication with either a NULL or single realm, append only the @LDAP token to the Teradata user name. In this case, no realm name is needed. If you append a realm name, the LDAP authentication server ignores it and authentication proceeds. However, if multiple realms exist, you must append the realm name to the @LDAP token. In this case, an LDAP server must already be configured to accept authentication requests from the Teradata server.&lt;/p&gt;
+
+&lt;h3 id=&quot;passwordteradatapassword&quot;&gt;PASSWORD=&amp;lt;’&amp;gt;Teradata-password&amp;lt;’&amp;gt;&lt;/h3&gt;
+
+&lt;p&gt;specifies a required connection option that specifies a Teradata password. The password that you specify must be correct for your USER= value. If the password contains spaces or nonalphanumeric characters, you must enclose it in quotation marks. If you do not want to enter your Teradata password in clear text on this statement, see PROC PWENCODE in the Base SAS Procedures Guide for a method for encoding it. For LDAP authentication, you use this password option to specify the authentication string or password. If the authentication string or password includes an embedded @ symbol, a backslash () is required and it must precede the @ symbol. See Teradata LIBNAME Statement Examples.&lt;/p&gt;
+
+&lt;h3 id=&quot;accountaccount_id&quot;&gt;ACCOUNT=&amp;lt;’&amp;gt;account_ID&amp;lt;’&amp;gt;&lt;/h3&gt;
+
+&lt;p&gt;is an optional connection option that specifies the account number that you want to charge for the Teradata session.&lt;/p&gt;
+
+&lt;h3 id=&quot;tdpiddbcname&quot;&gt;TDPID=&amp;lt;’&amp;gt;dbcname&amp;lt;’&amp;gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Alias: SERVER=&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;specifies a required connection option if you run more than one Teradata server. TDPID= operates differently for network-attached and channel-attached systems, as described below.&lt;/p&gt;
+
+&lt;p&gt;For NETWORK-ATTACHED systems (PC and UNIX), dbcname specifies an entry in your (client) HOSTS file that provides an IP address for a database server connection.&lt;/p&gt;
+
+&lt;p&gt;By default, SAS/ACCESS connects to the Teradata server that corresponds to the dbccop1 entry in your HOSTS file. When you run only one Teradata server and your HOSTS file defines the dbccop1 entry correctly, you do not need to specify TDPID=.&lt;/p&gt;
+
+&lt;p&gt;However, if you run more than one Teradata server, you must use the TDPID= option to specifying a dbcname of eight characters or less. SAS/ACCESS adds the specified dbcname to the login string that it submits to Teradata. (Teradata documentation refers to this name as the tdpid component of the login string.)&lt;/p&gt;
+
+&lt;p&gt;After SAS/ACCESS submits a dbcname to Teradata, Teradata searches your HOSTS file for all entries that begin with the same dbcname. For Teradata to recognize the HOSTS file entry, the dbcname suffix must be COPx (x is a number). If there is only one entry that matches the dbcname, x must be 1. If there are multiple entries for the dbcname, x must begin with 1 and increment sequentially for each related entry. (See the example HOSTS file entries below.)&lt;/p&gt;
+
+&lt;p&gt;When there are multiple, matching entries for a dbcname in your HOSTS file, Teradata does simple load balancing by selecting one of the Teradata servers specified for login. Teradata distributes your queries across these servers so that it can return your results as fast as possible.&lt;/p&gt;
+
+&lt;p&gt;The TDPID= examples below assume that your HOSTS file contains these dbcname entries and IP addresses.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    * Example 1: The TDPID= option is not specified, establishing a login to the Teradata server that runs at 10.25.20.34.dbccop1 10.25.20.34
+    * Example 2: Using TDPID= myserver or SERVER=myserver, you specify a login to the Teradata server that runs at 130.96.8.207.myservercop1 130.96.8.207
+    * Example 3: Using TDPID=xyz or SERVER=xyz, you specify a login to a Teradata server that runs at 11.22.33.44 or to a Teradata server that runs at 33.44.55.66.xyzcop1 33.44.55.66 or xyzcop2 11.22.33.44&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For CHANNEL-ATTACHED systems (z/OS), TDPID= specifies the subsystem name. This name must be TDPx, where x can be 0–9, A–Z (not case sensitive), or $, # or @. If there is only one Teradata server, and your z/OS system administrator has set up the HSISPB and HSHSPB modules, you do not need to specify TDPID=. For further information, see your Teradata TDPID documentation for z/OS.&lt;/p&gt;
+
+&lt;h3 id=&quot;databasedatabasename&quot;&gt;DATABASE=&amp;lt;’&amp;gt;database-name&amp;lt;’&amp;gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Alias: DB=&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;specifies an optional connection option that specifies the name of the Teradata database that you want to access. This option enables you to view or modify a different user’s Teradata DBMS tables or views, if you have the required privileges. (For example, to read another user’s tables, you must have the Teradata privilege SELECT for that user’s tables.) If you do not specify DATABASE=, the libref points to your default Teradata database, which is often named the same as your user name. If the database value that you specify contains spaces or nonalphanumeric characters, you must enclose it in quotation marks.&lt;/p&gt;
+
+&lt;h3 id=&quot;schemadatabasename&quot;&gt;SCHEMA=&amp;lt;’&amp;gt;database-name&amp;lt;’&amp;gt;&lt;/h3&gt;
+
+&lt;p&gt;specifies an optional connection option that specifies the database name to use to qualify any database objects that the LIBNAME can reference.&lt;/p&gt;
+
+&lt;h2 id=&quot;libnameoptions&quot;&gt;LIBNAME-options&lt;/h2&gt;
+
+&lt;p&gt;define how SAS processes DBMS objects. Some LIBNAME options can enhance performance, and others determine locking or naming behavior. The following table describes the LIBNAME options for SAS/ACCESS Interface to Teradata, with the applicable default values. For more detail about these options, see LIBNAME Options for Relational Databases.&lt;/p&gt;
+
+&lt;p&gt;SAS/ACCESS LIBNAME Options for Teradata&lt;/p&gt;
+&lt;TABLE bordercolor='#333333' border='1' cellspacing='0'&gt;
+ &lt;TR&gt;
+    &lt;TH&gt;
+       &lt;DIV&gt;&lt;A /&gt;Option
+       &lt;/DIV&gt;
+    &lt;/TH&gt;
+    &lt;TH&gt;
+       &lt;DIV&gt;&lt;A /&gt;Default Value
+       &lt;/DIV&gt;
+    &lt;/TH&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' class='firstRow' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n05764k5zha7vmn1o5jdawotulb2' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;ACCESS=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' class='firstRow' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n159pibn1z2n3cn1idoq4m6lnosl' /&gt;none
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p04thgkccdvuzpn10uqmbaqhv71e' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;AUTHDOMAIN=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0k8ug9swejmqqn1wwew04s9etb1' /&gt;none
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0z7rjsa56bdurn1qiugsoc1w5fj' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;BULKLOAD=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1mwcwh1ehyrutn18crjkfjwqcgr' /&gt;NO
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0xymhulmvfx0gn10od8y1s85ax2' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;CAST=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0r2eh74fh3f9gn1lu12l81747t2' /&gt;none
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0qdvvcr2stqkan0zxm38p7fgs4i' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;CAST_OVERHEAD_MAXPERCENT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1jesfu37mzhk8n1f6622nbbiwaj' /&gt;20%
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1oo2kaka2oas9n19l7lwuwzk4gz' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;CONNECTION=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n12i0w0js77c1qn1o0yyw2s6fulu' /&gt;SHAREDREAD for channel-attached
+          systems (&lt;NOBR&gt;z/OS&lt;/NOBR&gt;); UNIQUE for network attached systems (UNIX and PC platforms)
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p02ybusidxgybxn1me6aj22c7wb7' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;CONNECTION_GROUP=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n08th4dyizgk8xn1sltrqxr6g8co' /&gt;none
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV&gt;&lt;A /&gt;DATABASE= (see &lt;SPAN class='xrefSee'&gt;&lt;A&gt;SCHEMA=&lt;/A&gt;&lt;/SPAN&gt;)
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0xq80qssa4kcxn1vf1hl076mbsw' /&gt;none
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0xy3up1eow6i9n1jq9zvo95b6ia' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBCOMMIT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n08cn7l3d1r3lxn1lzmelep86eut' /&gt;1000 when inserting
+          rows; 0 when updating rows
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1cs45i0jjgzi3n1mink44ngoma6' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBCONINIT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1af5t2uccgeajn16md7ijxbe49l' /&gt;none
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0namyl2zihpcon1s9b6poi8zrbv' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBCONTERM=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1jnvz1of6wj8on1i5ormdv5fcr6' /&gt;none
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1iazm2vn71n0dn1f71wrdo6vrpb' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBCREATE_TABLE_OPTS=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0zixt1051tro0n0za9bhik42xn1' /&gt;none
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1wak7nryeed7cn1bxtf8z98t7i9' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBGEN_NAME=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n16p7fs2inkiwln1gxoki35i8tgv' /&gt;DBMS
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1g87xuya1s575n1q8cm9y6cs7ru' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBINDEX=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0xffoorzjo6hjn1rxhp6n6weawr' /&gt;NO
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0ydlawoa7n1han15kt49tatd64z' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBLIBINIT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n015g55d63l01cn1clrluw5mt0x9' /&gt;none
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0cbefs3pkyex9n1s4x12okrhvkv' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBLIBTERM=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0zuc7cnt2s4jzn13g7r9j0p9c5m' /&gt;none
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1dsjqnbad2cq7n162x6pjh0cuep' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBMSTEMP=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1gpbpy0r1eh54n1pmb4zydoouz7' /&gt;NO
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p07uz46ts55fl1n0zvty9ph1mc1w' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBPROMPT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1u506kke3v4tjn1plev9gdw6qaf' /&gt;NO
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p05c33q85ro00xn0zx1emeylqa82' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBSASLABEL=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p08z4k3gsjx8mqn1jwisiymrogza' /&gt;COMPAT
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1s2wla9zvshlwn15z1g4ijnyebd' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBSLICEPARM=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p12vpxsmirfz2en13vetbgfgsh8e' /&gt;THREADED_APPS,2
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p17tpp9asfmhgnn15zw0g4ng0gui' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DEFER=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p00u7vo9jvz748n1d5fuuylhsype' /&gt;NO
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0ooadnft4qlkpn1drmhgikdyo1s' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DIRECT_EXE=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1p8u8whcw3d79n1pdhxo4fqnq3r' /&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1p0x258ry7e3gn1n9mn1ceijtht' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DIRECT_SQL=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0ny6mm1yyxq4vn1w017yqauzsiy' /&gt;YES
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1t5j3eynzk5lgn1r30b5e1jka09' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;ERRLIMIT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0uuwcwbopb6j3n1l71cqnzp1e4c' /&gt;1 million
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0n3liw9gv20han1vabvlrls7lsw' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;FASTEXPORT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1qtbqoakwbhxen1xim87tn0dlg9' /&gt;NO
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1v7zvniu4kkqxn1x0g5icd8revq' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;LOGDB=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0uz4z24witoi9n1sh2dg2wk7opv' /&gt;Default Teradata database
+          for the libref
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1ou8oc2zbuop2n1xbu2z1npq8n1' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;MODE=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p059eyvz169q7bn1f2cudtsrcgnd' /&gt;ANSI
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n13m2v7iioilifn0zvr8gfhhtsvo' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;MULTISTMT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0maqasjudow9dn1239cgfw4q9dn' /&gt;NO
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n02z5rj1vxeg77n1d1u572hpqw70' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;MULTI_DATASRC_OPT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0whyrkxd4br9zn1t41pptomywzh' /&gt;IN_CLAUSE
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1d3f5xmymtitpn19r9m7dzohv8n' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;PREFETCH=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n09ra3fbud6ul2n1l2ak78qn4qk0' /&gt;not enabled
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1953u6lq6okn1n12918vrrxommk' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;PRESERVE_COL_NAMES=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1bvo5m0kuiz93n1nh8o1jrft7sk' /&gt;YES
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1fv0x5twixip4n15ooervnrh5ry' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;PRESERVE_TAB_NAMES=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1j7gath667iwln18n66oa4566tq' /&gt;YES
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n19tqfynmyefjin174lkyg2vjjiz' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;QUERY_BAND=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1rw1xdqvlf43gn1hqnconzh8s6x' /&gt;none
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0o3a7j4g3tnw0n1vttljf3ir8xk' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;READ_ISOLATION_LEVEL=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1uhqvxaf4ehffn1r1bnv28nimxi' /&gt;see &lt;SPAN class='xrefSee'&gt;&lt;A&gt;Locking in the Teradata Interface&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1mf0qk6b7rzj9n1bnlpnc5y336v' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;READ_LOCK_TYPE=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1nfy3ct8o6lqen167pq29vxj3ma' /&gt;none
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0mdc49xmyckohn1hq7v6p2xydst' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;READ_MODE_WAIT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1jyatir45qeg6n14ozhwdslvx41' /&gt;none
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n13hep1c1oe1vwn1cfw3m6am1egz' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;REREAD_EXPOSURE=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1vxg2q05iin7in1dj1931j3cj7k' /&gt;NO
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n02hgwka1a09kon1exf7dh6q1km0' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;SCHEMA=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0kzhizymixo7an1eacrsoo0rk71' /&gt;your default Teradata
+          database
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p15xjlnfnkzgxcn11c3vz3lnjx24' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;SESSIONS=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1lpbyhx22dtuvn1tstrnw41z10c' /&gt;none
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n15zo8cx2uu8b2n1blqc9hf52oh8' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;SLEEP=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1ggidfblrcfiqn1fsw2m8plnv8q' /&gt;6
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1vpmrub4a4idmn1fm71l8aej6en' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;SPOOL=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1j25qsbv5yjmkn1hxi9ee1m0edf' /&gt;YES
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1pt58gk0fuay5n1ey9i602n1yr3' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;SQL_FUNCTIONS=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1e1clxw1g0gugn19hefh6bdhzo4' /&gt;none
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0e2zg18u1be44n1uofv0drtom3f' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;SQL_FUNCTIONS_COPY=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1mjek46z8zs60n1vk0lopz9y6t1' /&gt;none
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p17byu2ejgvvatn1f0lqe1jzdayb' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;SQLGENERATION=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n096nff715dosln1cc2fhupm1o0d' /&gt;DBMS
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0ybaqwwpn1rsqn17jpogamji8ot' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;TEMPORAL_QUALIFIER=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1sjzszzk30vycn1v1eqw9z36wee' /&gt;CURRENT VALIDTIME for
+          valid-time column; CURRENT TRANSACTIONTIME for transaction-time column
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0xeyfrddyp9yen10gc18sh9rqwi' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;TENACITY=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1hao6h1a0yh03n1lz3p93d5mpv8' /&gt;0 for FastLoad; 4 for
+          FASTEXPORT= and MultiLoad
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1fu0x74em7qapn1t0h4yajb6g4l' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;TPT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0kl8q7my6g9jin17e6y7i6ns7jo' /&gt;YES
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1i8eb6x75dd5nn1vgjnwgpn1my1' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;TR_ENABLE_INTERRUPT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0y4i9u6j3ac90n1ruuerhxpascr' /&gt;NO
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0phqtcbiwqk2yn1mfp8yvprgp9v' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;UPDATE_ISOLATION_LEVEL=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1k591s6p5j9lmn1k4e3p39kuyp5' /&gt;see &lt;SPAN class='xrefSee'&gt;&lt;A&gt;Locking in the Teradata Interface&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p14y1a50swckx1n1x9v1u4mygdjk' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;UPDATE_LOCK_TYPE= LIBNAME Option&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1ud17uh6dfoe8n1l5rxexidzswb' /&gt;none
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0f9ikxt2l823ln1b9ssf75ujxfn' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;UPDATE_MODE_WAIT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0vypcgdhtrr2on1ax5tbb6eqtxy' /&gt;none
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;TR&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='n070psk70999qin167hupbp0a24m' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;UTILCONN_TRANSIENT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;/TD&gt;
+    &lt;TD style='text-align: left' valign='top'&gt;
+       &lt;DIV class='paraTableFirst'&gt;&lt;A name='p047pnwd1a4yqrn1emjq3byouzzw' /&gt;NO
+       &lt;/DIV&gt;
+    &lt;/TD&gt;
+ &lt;/TR&gt;
+ &lt;/TABLE&gt;&lt;hr /&gt;
+&lt;h2 id=&quot;teradata_libname_statement_examples&quot;&gt;Teradata LIBNAME Statement Examples&lt;/h2&gt;
+
+&lt;p&gt;These examples show how to make the proper connection by using the USER= and PASSWORD= connection options. Teradata requires these options, and you must use them together.&lt;/p&gt;
+
+&lt;p&gt;This example shows how to connect to a single or NULL realm.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;libname x teradata user=”johndoe@LDAP” password=”johndoeworld”;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here is an example of how to make the connection to a specific realm where multiple realms are configured.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;libname x teradata user=”johndoe@LDAPjsrealm” password=”johndoeworld”;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here is an example of a configuration with a single or NULL realm that contains a password with an embedded @ symbol. The password must contain a required backslash (), which must precede the embedded @ symbol.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;libname x teradata user=&amp;quot;johndoe@LDAP&amp;quot; password=&amp;quot;johndoe\@world&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+</content>
+ </entry>
  
  <entry>
    <title>JQuery的3种$()</title>
