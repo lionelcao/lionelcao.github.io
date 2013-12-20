@@ -4,7 +4,7 @@
  <title>Lionel Cao</title>
  <link href="http://lionelcao.github.io/" rel="self"/>
  <link href="http://lionelcao.github.io"/>
- <updated>2013-12-20T08:16:12+08:00</updated>
+ <updated>2013-12-20T08:20:35+08:00</updated>
  <id>http://lionelcao.github.io</id>
  <author>
    <name>北落师门</name>
@@ -13,19 +13,17 @@
 
  
  <entry>
-   <title>SAS Libname</title>
+   <title>LIBNAME Statement Specifics for Teradata</title>
    <link href="http://lionelcao.github.io/sas/2013/12/20/saslibname"/>
    <updated>2013-12-20T00:00:00+08:00</updated>
    <id>http://lionelcao.github.io/sas/2013/12/20/saslibname</id>
    <content type="html">
-&lt;h1 id=&quot;libname_statement_specifics_for_teradata&quot;&gt;LIBNAME Statement Specifics for Teradata&lt;/h1&gt;
-
 &lt;p&gt;Via &lt;a href=&quot;http://support.sas.com&quot;&gt;http://support.sas.com&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
 
 &lt;p&gt;This section describes the LIBNAME statement that SAS/ACCESS Interface to Teradata supports and includes examples. For a complete description of this feature, see LIBNAME statement.&lt;/p&gt;
-
+&lt;!-- more --&gt;
 &lt;p&gt;Here is the LIBNAME statement syntax for accessing Teradata.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;LIBNAME libref teradata &amp;lt;connection-options&amp;gt; &amp;lt;LIBNAME-options&amp;gt;;&lt;/code&gt;&lt;/pre&gt;
@@ -95,7 +93,7 @@
 &lt;p&gt;define how SAS processes DBMS objects. Some LIBNAME options can enhance performance, and others determine locking or naming behavior. The following table describes the LIBNAME options for SAS/ACCESS Interface to Teradata, with the applicable default values. For more detail about these options, see LIBNAME Options for Relational Databases.&lt;/p&gt;
 
 &lt;p&gt;SAS/ACCESS LIBNAME Options for Teradata&lt;/p&gt;
-&lt;TABLE bordercolor='#333333' border='1' cellspacing='0'&gt;
+&lt;TABLE border='1' bordercolor='#333333' cellspacing='0'&gt;
  &lt;TR&gt;
     &lt;TH&gt;
        &lt;DIV&gt;&lt;A /&gt;Option
@@ -107,10 +105,10 @@
     &lt;/TH&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' class='firstRow' valign='top'&gt;
+    &lt;TD class='firstRow' style='text-align: left' valign='top'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n05764k5zha7vmn1o5jdawotulb2' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;ACCESS=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' class='firstRow' valign='top'&gt;
+    &lt;TD class='firstRow' style='text-align: left' valign='top'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n159pibn1z2n3cn1idoq4m6lnosl' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;

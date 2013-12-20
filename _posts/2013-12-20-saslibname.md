@@ -1,14 +1,11 @@
 ---
 layout: post
-title: "SAS Libname"
+title: "LIBNAME Statement Specifics for Teradata"
 description: ""
 category: "SAS"
 tags: [sas, libname, syntax, teradata ]
 ---
 {% include JB/setup %}
-LIBNAME Statement Specifics for Teradata
-=========
-
 Via [http://support.sas.com](http://support.sas.com)
 
 ****************************
@@ -16,6 +13,7 @@ Via [http://support.sas.com](http://support.sas.com)
 
 This section describes the LIBNAME statement that SAS/ACCESS Interface to Teradata supports and includes examples. For a complete description of this feature, see LIBNAME statement.
 
+<!-- more -->
 Here is the LIBNAME statement syntax for accessing Teradata.
 
     LIBNAME libref teradata <connection-options> <LIBNAME-options>;
