@@ -22,7 +22,8 @@
     <link href="/assets/themes/hooligan/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">    
     <link rel="stylesheet" type="text/css" href="/assets/themes/hooligan/css-social-buttons/css/zocial.stripped.css">
     <link href="/assets/themes/hooligan/css/pygments.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/themes/hooligan/css/darkstrap.css" rel="stylesheet" type="text/css" media="all">    
+    <link href="/assets/themes/hooligan/css/darkstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/hooligan/css/image.css" rel="stylesheet" type="text/css" media="all">      
     <link href="/assets/themes/hooligan/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
 
     
@@ -127,8 +128,7 @@
 <div class="wrappe">
   <h2 class="h2 entry-title"><a href="/sas/2013/12/20/saslibname">LIBNAME Statement Specifics for Teradata</a></h2>
   
-    
-<p>Via <a href="http://support.sas.com">http://support.sas.com</a></p>
+    <p>Via <a href="http://support.sas.com">http://support.sas.com</a></p>
 <hr />
 <h2 id="overview">Overview</h2>
 
@@ -152,8 +152,7 @@
 <div class="wrappe">
   <h2 class="h2 entry-title"><a href="/web/2013/12/18/jquery3">JQuery的3种$()</a></h2>
   
-    
-<h3 id="1_cssxpathhtml">1. $()可以是<code>$(expresion)</code>，即css选择器、Xpath或html元素，也就是通过上述表达式来匹配目标元素。</h3>
+    <h3 id="1_cssxpathhtml">1. $()可以是<code>$(expresion)</code>，即css选择器、Xpath或html元素，也就是通过上述表达式来匹配目标元素。</h3>
 
 <p>比如：<code>$(&quot;a&quot;)</code>构造的这个对象，是用CSS选择器构建了一个jQuery对象——它选择了所有的<code>&lt;a/&gt;</code>这个标签。如：</p>
 
@@ -175,8 +174,7 @@
 <div class="wrappe">
   <h2 class="h2 entry-title"><a href="/linux/2013/12/15/sshlocalhost">Ubuntu下配置免密码登录本机（ssh localhost）</a></h2>
   
-    
-<h3 id="ubuntu">Ubuntu下配置免密码登录本机方法如下:</h3>
+    <h3 id="ubuntu">Ubuntu下配置免密码登录本机方法如下:</h3>
 
   
 
@@ -196,8 +194,7 @@
 <div class="wrappe">
   <h2 class="h2 entry-title"><a href="/java/2013/12/14/ubuntuinsjdk">Ubuntu下安装JDK</a></h2>
   
-    
-<p>Ubuntu : 12.04</p>
+    <p>Ubuntu : 12.04</p>
 
 <p>JDK: jdk-7u45-linux-x64.tar.gz</p>
 
@@ -219,8 +216,7 @@
 <div class="wrappe">
   <h2 class="h2 entry-title"><a href="/%E9%9A%8F%E7%AC%94/2013/12/14/blogupdate2">博客功能更新（二）</a></h2>
   
-    
-<p>家里的机器上的<code>Ubuntu</code>一直卡死，基本上每次用半个小时就这样。一直以为是上次手动移动虚拟机文件造成的，结果重新安装了一个还是这样。今天把内存从2G改成4G就好了，于是下午改博客的时候<code>top</code>了一下，Memory果然超过了2G。光一个<code>Firefox</code>就吃掉1G多 ，汗死～</p>
+    <p>家里的机器上的<code>Ubuntu</code>一直卡死，基本上每次用半个小时就这样。一直以为是上次手动移动虚拟机文件造成的，结果重新安装了一个还是这样。今天把内存从2G改成4G就好了，于是下午改博客的时候<code>top</code>了一下，Memory果然超过了2G。光一个<code>Firefox</code>就吃掉1G多 ，汗死～</p>
 
 <h3 id="">今天更新了博客的几个小地方：</h3>
 
@@ -283,7 +279,58 @@
       })();
     </script>
     <!--多说js加载结束，一个页面只需要加载一次 -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+						   		   
+	//When you click on a link with class of poplight and the href starts with a # 
+	$('a.poplight[href^=#]').click(function() {
+		var popID = $(this).attr('rel'); //Get Popup Name
+		var popURL = $(this).attr('href'); //Get Popup href to define size
+		console.log(popID);
+                console.log(popURL);		
+		//Pull Query & Variables from href URL
+		var query= popURL.split('?');
+console.log(query);
+		var dim= query[1].split('&');
+console.log(dim);
+		var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+console.log(popWidth); 
+		//Fade in the Popup and add close button
+		$('#' + popID).fadeIn().css({}).prepend('<a href="#" class="close1"><img src="images/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>');
+		
+		//Define margin for center alignment (vertical + horizontal) - we add 80 to the height/width to accomodate for the padding + border width defined in the css
+		var popMargTop = ($('#' + popID).height() + 80) / 2;
+		var popMargLeft = ($('#' + popID).width() + 80) / 2;
+console.log(popMargTop);
+console.log(popMargLeft);
+console.log('1');
+		//Apply Margin to Popup
+		$('#' + popID).css({ 
+			'margin-top' : -popMargTop,
+			'margin-left' : -popMargLeft
+		});
+		
+		//Fade in Background
+		$('body').append('<div id="fade"></div>'); //Add the fade layer to bottom of the body tag.
+		$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer 
+		
+		return false;
+	});
+	
+	
+	//Close Popups and Fade Layer
+	$('a.close1, #fade').live('click', function() { //When clicking on the close or fade layer...
+	  	$('#fade , .popup_block').fadeOut(function() {
+			$('#fade, a.close1').remove();  
+	}); //fade them both out
+	console.log('2');	
+		return false;
+	});
 
+	
+});
+</script>
     
   </body>
 </html>

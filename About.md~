@@ -29,7 +29,7 @@ Skype: lionel061201
 
 --------------------------
 <div class="me">
-  <a href="#?n=me" class="poplight" rel="popup1"><img   src='images/me.jpg' /></a>
+  <a href="#?me" class="poplight" rel="popup1"><img   src='images/me.jpg' /></a>
 </div>
 
 <!--POPUP START-->

@@ -22,7 +22,8 @@
     <link href="/assets/themes/hooligan/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">    
     <link rel="stylesheet" type="text/css" href="/assets/themes/hooligan/css-social-buttons/css/zocial.stripped.css">
     <link href="/assets/themes/hooligan/css/pygments.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/themes/hooligan/css/darkstrap.css" rel="stylesheet" type="text/css" media="all">    
+    <link href="/assets/themes/hooligan/css/darkstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/hooligan/css/image.css" rel="stylesheet" type="text/css" media="all">      
     <link href="/assets/themes/hooligan/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
 
     
@@ -124,8 +125,7 @@
 
 <div class="row">
   <div class="span8">
-    
-<p>断断续续折腾了一个多月，终于把博客搭好了。</p>
+    <p>断断续续折腾了一个多月，终于把博客搭好了。</p>
 
 <p>Web开发基本上0经验，以前零星自己看过一些<code>HTML</code>代码，改过几个页面，当时调几个<code>div</code>的布局就很头疼。好在现在搭个博客也不需要多少开发经验，慢慢研究一下还是搞定了。</p>
 <!-- more -->
@@ -140,7 +140,6 @@
 <p>后面有时间专门整理一份自己的搭github博客的过程吧。对于想拥有一个可以完全自己定制的博客的同学来说，<code>github</code>真是一个不错的选择～<code>喂——你这是在做广告吗亲？！</code></p>
 
 <p>好吧，又到了该睡觉的时间了，今天用的这个中文输入法很不爽，我发誓明天一定要换掉它！！！</p>
-
     <hr>
     <div class="pagination btn-group">
       
@@ -236,7 +235,58 @@
       })();
     </script>
     <!--多说js加载结束，一个页面只需要加载一次 -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+						   		   
+	//When you click on a link with class of poplight and the href starts with a # 
+	$('a.poplight[href^=#]').click(function() {
+		var popID = $(this).attr('rel'); //Get Popup Name
+		var popURL = $(this).attr('href'); //Get Popup href to define size
+		console.log(popID);
+                console.log(popURL);		
+		//Pull Query & Variables from href URL
+		var query= popURL.split('?');
+console.log(query);
+		var dim= query[1].split('&');
+console.log(dim);
+		var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+console.log(popWidth); 
+		//Fade in the Popup and add close button
+		$('#' + popID).fadeIn().css({}).prepend('<a href="#" class="close1"><img src="images/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>');
+		
+		//Define margin for center alignment (vertical + horizontal) - we add 80 to the height/width to accomodate for the padding + border width defined in the css
+		var popMargTop = ($('#' + popID).height() + 80) / 2;
+		var popMargLeft = ($('#' + popID).width() + 80) / 2;
+console.log(popMargTop);
+console.log(popMargLeft);
+console.log('1');
+		//Apply Margin to Popup
+		$('#' + popID).css({ 
+			'margin-top' : -popMargTop,
+			'margin-left' : -popMargLeft
+		});
+		
+		//Fade in Background
+		$('body').append('<div id="fade"></div>'); //Add the fade layer to bottom of the body tag.
+		$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer 
+		
+		return false;
+	});
+	
+	
+	//Close Popups and Fade Layer
+	$('a.close1, #fade').live('click', function() { //When clicking on the close or fade layer...
+	  	$('#fade , .popup_block').fadeOut(function() {
+			$('#fade, a.close1').remove();  
+	}); //fade them both out
+	console.log('2');	
+		return false;
+	});
 
+	
+});
+</script>
     
   </body>
 </html>

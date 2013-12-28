@@ -22,7 +22,8 @@
     <link href="/assets/themes/hooligan/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">    
     <link rel="stylesheet" type="text/css" href="/assets/themes/hooligan/css-social-buttons/css/zocial.stripped.css">
     <link href="/assets/themes/hooligan/css/pygments.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/themes/hooligan/css/darkstrap.css" rel="stylesheet" type="text/css" media="all">    
+    <link href="/assets/themes/hooligan/css/darkstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/hooligan/css/image.css" rel="stylesheet" type="text/css" media="all">      
     <link href="/assets/themes/hooligan/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
 
     
@@ -130,28 +131,28 @@
 
   
      
+    	<li><a href="/categories.html#linux-ref">
+    		linux <span>1</span>
+    	</a></li>
+     
     	<li><a href="/categories.html#sas-ref">
     		sas <span>1</span>
     	</a></li>
      
-    	<li><a href="/categories.html#java-ref">
-    		java <span>1</span>
-    	</a></li>
-     
-    	<li><a href="/categories.html#linux-ref">
-    		linux <span>1</span>
+    	<li><a href="/categories.html#syntax-ref">
+    		syntax <span>1</span>
     	</a></li>
      
     	<li><a href="/categories.html#随笔-ref">
     		随笔 <span>3</span>
     	</a></li>
      
-    	<li><a href="/categories.html#web-ref">
-    		web <span>1</span>
+    	<li><a href="/categories.html#java-ref">
+    		java <span>1</span>
     	</a></li>
      
-    	<li><a href="/categories.html#syntax-ref">
-    		syntax <span>1</span>
+    	<li><a href="/categories.html#web-ref">
+    		web <span>1</span>
     	</a></li>
     
   
@@ -160,6 +161,26 @@
 </ul>
 
 
+ 
+  <h2 id="linux-ref">linux</h2>
+  <ul>
+      
+    
+
+
+  
+    
+      
+      	
+      	<li><a href="/linux/2013/12/15/sshlocalhost">Ubuntu下配置免密码登录本机（ssh localhost）</a></li>
+      	
+      
+    
+  
+
+
+
+  </ul>
  
   <h2 id="sas-ref">sas</h2>
   <ul>
@@ -181,7 +202,7 @@
 
   </ul>
  
-  <h2 id="java-ref">java</h2>
+  <h2 id="syntax-ref">syntax</h2>
   <ul>
       
     
@@ -191,27 +212,7 @@
     
       
       	
-      	<li><a href="/java/2013/12/14/ubuntuinsjdk">Ubuntu下安装JDK</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="linux-ref">linux</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/linux/2013/12/15/sshlocalhost">Ubuntu下配置免密码登录本机（ssh localhost）</a></li>
+      	<li><a href="/syntax/2013/12/11/markdown">Markdown语法</a></li>
       	
       
     
@@ -257,6 +258,26 @@
 
   </ul>
  
+  <h2 id="java-ref">java</h2>
+  <ul>
+      
+    
+
+
+  
+    
+      
+      	
+      	<li><a href="/java/2013/12/14/ubuntuinsjdk">Ubuntu下安装JDK</a></li>
+      	
+      
+    
+  
+
+
+
+  </ul>
+ 
   <h2 id="web-ref">web</h2>
   <ul>
       
@@ -268,26 +289,6 @@
       
       	
       	<li><a href="/web/2013/12/18/jquery3">JQuery的3种$()</a></li>
-      	
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="syntax-ref">syntax</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      	
-      	<li><a href="/syntax/2013/12/11/markdown">Markdown语法</a></li>
       	
       
     
@@ -329,7 +330,58 @@
       })();
     </script>
     <!--多说js加载结束，一个页面只需要加载一次 -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+						   		   
+	//When you click on a link with class of poplight and the href starts with a # 
+	$('a.poplight[href^=#]').click(function() {
+		var popID = $(this).attr('rel'); //Get Popup Name
+		var popURL = $(this).attr('href'); //Get Popup href to define size
+		console.log(popID);
+                console.log(popURL);		
+		//Pull Query & Variables from href URL
+		var query= popURL.split('?');
+console.log(query);
+		var dim= query[1].split('&');
+console.log(dim);
+		var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+console.log(popWidth); 
+		//Fade in the Popup and add close button
+		$('#' + popID).fadeIn().css({}).prepend('<a href="#" class="close1"><img src="images/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>');
+		
+		//Define margin for center alignment (vertical + horizontal) - we add 80 to the height/width to accomodate for the padding + border width defined in the css
+		var popMargTop = ($('#' + popID).height() + 80) / 2;
+		var popMargLeft = ($('#' + popID).width() + 80) / 2;
+console.log(popMargTop);
+console.log(popMargLeft);
+console.log('1');
+		//Apply Margin to Popup
+		$('#' + popID).css({ 
+			'margin-top' : -popMargTop,
+			'margin-left' : -popMargLeft
+		});
+		
+		//Fade in Background
+		$('body').append('<div id="fade"></div>'); //Add the fade layer to bottom of the body tag.
+		$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer 
+		
+		return false;
+	});
+	
+	
+	//Close Popups and Fade Layer
+	$('a.close1, #fade').live('click', function() { //When clicking on the close or fade layer...
+	  	$('#fade , .popup_block').fadeOut(function() {
+			$('#fade, a.close1').remove();  
+	}); //fade them both out
+	console.log('2');	
+		return false;
+	});
 
+	
+});
+</script>
     
   </body>
 </html>

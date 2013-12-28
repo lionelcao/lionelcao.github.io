@@ -5,15 +5,14 @@
         <description>Lionel Cao - 北落师门</description>
         <link>http://lionelcao.github.io</link>
         <link>http://lionelcao.github.io</link>
-        <lastBuildDate>2013-12-20T08:20:35+08:00</lastBuildDate>
-        <pubDate>2013-12-20T08:20:35+08:00</pubDate>
+        <lastBuildDate>2013-12-29T00:49:46+08:00</lastBuildDate>
+        <pubDate>2013-12-29T00:49:46+08:00</pubDate>
         <ttl>1800</ttl>
 
 
         <item>
                 <title>LIBNAME Statement Specifics for Teradata</title>
-                <description>
-&lt;p&gt;Via &lt;a href=&quot;http://support.sas.com&quot;&gt;http://support.sas.com&lt;/a&gt;&lt;/p&gt;
+                <description>&lt;p&gt;Via &lt;a href=&quot;http://support.sas.com&quot;&gt;http://support.sas.com&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
 
@@ -100,355 +99,355 @@
     &lt;/TH&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD class='firstRow' style='text-align: left' valign='top'&gt;
+    &lt;TD class='firstRow' valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n05764k5zha7vmn1o5jdawotulb2' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;ACCESS=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD class='firstRow' style='text-align: left' valign='top'&gt;
+    &lt;TD class='firstRow' valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n159pibn1z2n3cn1idoq4m6lnosl' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p04thgkccdvuzpn10uqmbaqhv71e' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;AUTHDOMAIN=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0k8ug9swejmqqn1wwew04s9etb1' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0z7rjsa56bdurn1qiugsoc1w5fj' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;BULKLOAD=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1mwcwh1ehyrutn18crjkfjwqcgr' /&gt;NO
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0xymhulmvfx0gn10od8y1s85ax2' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;CAST=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0r2eh74fh3f9gn1lu12l81747t2' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0qdvvcr2stqkan0zxm38p7fgs4i' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;CAST_OVERHEAD_MAXPERCENT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1jesfu37mzhk8n1f6622nbbiwaj' /&gt;20%
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1oo2kaka2oas9n19l7lwuwzk4gz' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;CONNECTION=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n12i0w0js77c1qn1o0yyw2s6fulu' /&gt;SHAREDREAD for channel-attached
           systems (&lt;NOBR&gt;z/OS&lt;/NOBR&gt;); UNIQUE for network attached systems (UNIX and PC platforms)
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p02ybusidxgybxn1me6aj22c7wb7' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;CONNECTION_GROUP=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n08th4dyizgk8xn1sltrqxr6g8co' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV&gt;&lt;A /&gt;DATABASE= (see &lt;SPAN class='xrefSee'&gt;&lt;A&gt;SCHEMA=&lt;/A&gt;&lt;/SPAN&gt;)
        &lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0xq80qssa4kcxn1vf1hl076mbsw' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0xy3up1eow6i9n1jq9zvo95b6ia' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBCOMMIT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n08cn7l3d1r3lxn1lzmelep86eut' /&gt;1000 when inserting
           rows; 0 when updating rows
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1cs45i0jjgzi3n1mink44ngoma6' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBCONINIT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1af5t2uccgeajn16md7ijxbe49l' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0namyl2zihpcon1s9b6poi8zrbv' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBCONTERM=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1jnvz1of6wj8on1i5ormdv5fcr6' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1iazm2vn71n0dn1f71wrdo6vrpb' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBCREATE_TABLE_OPTS=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0zixt1051tro0n0za9bhik42xn1' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1wak7nryeed7cn1bxtf8z98t7i9' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBGEN_NAME=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n16p7fs2inkiwln1gxoki35i8tgv' /&gt;DBMS
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1g87xuya1s575n1q8cm9y6cs7ru' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBINDEX=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0xffoorzjo6hjn1rxhp6n6weawr' /&gt;NO
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0ydlawoa7n1han15kt49tatd64z' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBLIBINIT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n015g55d63l01cn1clrluw5mt0x9' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0cbefs3pkyex9n1s4x12okrhvkv' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBLIBTERM=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0zuc7cnt2s4jzn13g7r9j0p9c5m' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1dsjqnbad2cq7n162x6pjh0cuep' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBMSTEMP=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1gpbpy0r1eh54n1pmb4zydoouz7' /&gt;NO
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p07uz46ts55fl1n0zvty9ph1mc1w' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBPROMPT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1u506kke3v4tjn1plev9gdw6qaf' /&gt;NO
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p05c33q85ro00xn0zx1emeylqa82' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBSASLABEL=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p08z4k3gsjx8mqn1jwisiymrogza' /&gt;COMPAT
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1s2wla9zvshlwn15z1g4ijnyebd' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBSLICEPARM=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p12vpxsmirfz2en13vetbgfgsh8e' /&gt;THREADED_APPS,2
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p17tpp9asfmhgnn15zw0g4ng0gui' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DEFER=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p00u7vo9jvz748n1d5fuuylhsype' /&gt;NO
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0ooadnft4qlkpn1drmhgikdyo1s' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DIRECT_EXE=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1p8u8whcw3d79n1pdhxo4fqnq3r' /&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1p0x258ry7e3gn1n9mn1ceijtht' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DIRECT_SQL=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0ny6mm1yyxq4vn1w017yqauzsiy' /&gt;YES
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1t5j3eynzk5lgn1r30b5e1jka09' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;ERRLIMIT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0uuwcwbopb6j3n1l71cqnzp1e4c' /&gt;1 million
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0n3liw9gv20han1vabvlrls7lsw' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;FASTEXPORT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1qtbqoakwbhxen1xim87tn0dlg9' /&gt;NO
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1v7zvniu4kkqxn1x0g5icd8revq' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;LOGDB=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0uz4z24witoi9n1sh2dg2wk7opv' /&gt;Default Teradata database
           for the libref
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1ou8oc2zbuop2n1xbu2z1npq8n1' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;MODE=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p059eyvz169q7bn1f2cudtsrcgnd' /&gt;ANSI
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n13m2v7iioilifn0zvr8gfhhtsvo' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;MULTISTMT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0maqasjudow9dn1239cgfw4q9dn' /&gt;NO
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n02z5rj1vxeg77n1d1u572hpqw70' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;MULTI_DATASRC_OPT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0whyrkxd4br9zn1t41pptomywzh' /&gt;IN_CLAUSE
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1d3f5xmymtitpn19r9m7dzohv8n' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;PREFETCH=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n09ra3fbud6ul2n1l2ak78qn4qk0' /&gt;not enabled
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1953u6lq6okn1n12918vrrxommk' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;PRESERVE_COL_NAMES=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1bvo5m0kuiz93n1nh8o1jrft7sk' /&gt;YES
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1fv0x5twixip4n15ooervnrh5ry' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;PRESERVE_TAB_NAMES=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1j7gath667iwln18n66oa4566tq' /&gt;YES
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n19tqfynmyefjin174lkyg2vjjiz' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;QUERY_BAND=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1rw1xdqvlf43gn1hqnconzh8s6x' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0o3a7j4g3tnw0n1vttljf3ir8xk' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;READ_ISOLATION_LEVEL=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1uhqvxaf4ehffn1r1bnv28nimxi' /&gt;see &lt;SPAN class='xrefSee'&gt;&lt;A&gt;Locking in the Teradata Interface&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1mf0qk6b7rzj9n1bnlpnc5y336v' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;READ_LOCK_TYPE=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1nfy3ct8o6lqen167pq29vxj3ma' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0mdc49xmyckohn1hq7v6p2xydst' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;READ_MODE_WAIT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1jyatir45qeg6n14ozhwdslvx41' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n13hep1c1oe1vwn1cfw3m6am1egz' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;REREAD_EXPOSURE=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1vxg2q05iin7in1dj1931j3cj7k' /&gt;NO
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n02hgwka1a09kon1exf7dh6q1km0' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;SCHEMA=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0kzhizymixo7an1eacrsoo0rk71' /&gt;your default Teradata
           database
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p15xjlnfnkzgxcn11c3vz3lnjx24' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;SESSIONS=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1lpbyhx22dtuvn1tstrnw41z10c' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
@@ -463,37 +462,37 @@
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1vpmrub4a4idmn1fm71l8aej6en' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;SPOOL=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1j25qsbv5yjmkn1hxi9ee1m0edf' /&gt;YES
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1pt58gk0fuay5n1ey9i602n1yr3' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;SQL_FUNCTIONS=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1e1clxw1g0gugn19hefh6bdhzo4' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0e2zg18u1be44n1uofv0drtom3f' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;SQL_FUNCTIONS_COPY=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1mjek46z8zs60n1vk0lopz9y6t1' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p17byu2ejgvvatn1f0lqe1jzdayb' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;SQLGENERATION=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n096nff715dosln1cc2fhupm1o0d' /&gt;DBMS
        &lt;/DIV&gt;
     &lt;/TD&gt;
@@ -519,10 +518,10 @@
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1fu0x74em7qapn1t0h4yajb6g4l' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;TPT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0kl8q7my6g9jin17e6y7i6ns7jo' /&gt;YES
        &lt;/DIV&gt;
     &lt;/TD&gt;
@@ -537,36 +536,36 @@
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0phqtcbiwqk2yn1mfp8yvprgp9v' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;UPDATE_ISOLATION_LEVEL=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1k591s6p5j9lmn1k4e3p39kuyp5' /&gt;see &lt;SPAN class='xrefSee'&gt;&lt;A&gt;Locking in the Teradata Interface&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p14y1a50swckx1n1x9v1u4mygdjk' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;UPDATE_LOCK_TYPE= LIBNAME Option&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1ud17uh6dfoe8n1l5rxexidzswb' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0f9ikxt2l823ln1b9ssf75ujxfn' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;UPDATE_MODE_WAIT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0vypcgdhtrr2on1ax5tbb6eqtxy' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n070psk70999qin167hupbp0a24m' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;UTILCONN_TRANSIENT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p047pnwd1a4yqrn1emjq3byouzzw' /&gt;NO
        &lt;/DIV&gt;
     &lt;/TD&gt;
@@ -586,8 +585,7 @@
 
 &lt;p&gt;Here is an example of a configuration with a single or NULL realm that contains a password with an embedded @ symbol. The password must contain a required backslash (), which must precede the embedded @ symbol.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;libname x teradata user=&amp;quot;johndoe@LDAP&amp;quot; password=&amp;quot;johndoe\@world&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-</description>
+&lt;pre&gt;&lt;code&gt;libname x teradata user=&amp;quot;johndoe@LDAP&amp;quot; password=&amp;quot;johndoe\@world&amp;quot;&lt;/code&gt;&lt;/pre&gt;</description>
                 <link>http://lionelcao.github.io/sas/2013/12/20/saslibname</link>
                 <guid>http://lionelcao.github.io/sas/2013/12/20/saslibname</guid>
                 <pubDate>2013-12-20T00:00:00+08:00</pubDate>
@@ -595,8 +593,7 @@
 
         <item>
                 <title>JQuery的3种$()</title>
-                <description>
-&lt;h3 id=&quot;1_cssxpathhtml&quot;&gt;1. $()可以是&lt;code&gt;$(expresion)&lt;/code&gt;，即css选择器、Xpath或html元素，也就是通过上述表达式来匹配目标元素。&lt;/h3&gt;
+                <description>&lt;h3 id=&quot;1_cssxpathhtml&quot;&gt;1. $()可以是&lt;code&gt;$(expresion)&lt;/code&gt;，即css选择器、Xpath或html元素，也就是通过上述表达式来匹配目标元素。&lt;/h3&gt;
 
 &lt;p&gt;比如：&lt;code&gt;$(&amp;quot;a&amp;quot;)&lt;/code&gt;构造的这个对象，是用CSS选择器构建了一个jQuery对象——它选择了所有的&lt;code&gt;&amp;lt;a/&amp;gt;&lt;/code&gt;这个标签。如：&lt;/p&gt;
 &lt;!-- more --&gt;
@@ -696,8 +693,7 @@
 
 &lt;pre&gt;&lt;code&gt;    $('#myelement').get(0)，也可缩写成$('#myelement')[0]&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;注：本文转载自&lt;a href=&quot;http://www.jb51.net/article/21660.htm&quot;&gt;http://www.jb51.net/article/21660.htm&lt;/a&gt;，格式内容稍有修改。&lt;/p&gt;
-</description>
+&lt;p&gt;注：本文转载自&lt;a href=&quot;http://www.jb51.net/article/21660.htm&quot;&gt;http://www.jb51.net/article/21660.htm&lt;/a&gt;，格式内容稍有修改。&lt;/p&gt;</description>
                 <link>http://lionelcao.github.io/web/2013/12/18/jquery3</link>
                 <guid>http://lionelcao.github.io/web/2013/12/18/jquery3</guid>
                 <pubDate>2013-12-18T00:00:00+08:00</pubDate>
@@ -705,8 +701,7 @@
 
         <item>
                 <title>Ubuntu下配置免密码登录本机（ssh localhost）</title>
-                <description>
-&lt;h3 id=&quot;ubuntu&quot;&gt;Ubuntu下配置免密码登录本机方法如下:&lt;/h3&gt;
+                <description>&lt;h3 id=&quot;ubuntu&quot;&gt;Ubuntu下配置免密码登录本机方法如下:&lt;/h3&gt;
 &lt;!-- more --&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -763,8 +758,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;注：本文部分内容参考网络资料&lt;/p&gt;
-</description>
+&lt;p&gt;注：本文部分内容参考网络资料&lt;/p&gt;</description>
                 <link>http://lionelcao.github.io/linux/2013/12/15/sshlocalhost</link>
                 <guid>http://lionelcao.github.io/linux/2013/12/15/sshlocalhost</guid>
                 <pubDate>2013-12-15T00:00:00+08:00</pubDate>
@@ -772,8 +766,7 @@
 
         <item>
                 <title>Ubuntu下安装JDK</title>
-                <description>
-&lt;p&gt;Ubuntu : 12.04&lt;/p&gt;
+                <description>&lt;p&gt;Ubuntu : 12.04&lt;/p&gt;
 
 &lt;p&gt;JDK: jdk-7u45-linux-x64.tar.gz&lt;/p&gt;
 &lt;!-- more --&gt;
@@ -815,8 +808,7 @@
   Java(TM) SE Runtime Environment (build 1.7.0_45-b18)
   Java HotSpot(TM) 64-Bit Server VM (build 24.45-b08, mixed mode)&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-</description>
+&lt;/ul&gt;</description>
                 <link>http://lionelcao.github.io/java/2013/12/14/ubuntuinsjdk</link>
                 <guid>http://lionelcao.github.io/java/2013/12/14/ubuntuinsjdk</guid>
                 <pubDate>2013-12-14T00:00:00+08:00</pubDate>
@@ -824,8 +816,7 @@
 
         <item>
                 <title>博客功能更新（二）</title>
-                <description>
-&lt;p&gt;家里的机器上的&lt;code&gt;Ubuntu&lt;/code&gt;一直卡死，基本上每次用半个小时就这样。一直以为是上次手动移动虚拟机文件造成的，结果重新安装了一个还是这样。今天把内存从2G改成4G就好了，于是下午改博客的时候&lt;code&gt;top&lt;/code&gt;了一下，Memory果然超过了2G。光一个&lt;code&gt;Firefox&lt;/code&gt;就吃掉1G多 ，汗死～&lt;/p&gt;
+                <description>&lt;p&gt;家里的机器上的&lt;code&gt;Ubuntu&lt;/code&gt;一直卡死，基本上每次用半个小时就这样。一直以为是上次手动移动虚拟机文件造成的，结果重新安装了一个还是这样。今天把内存从2G改成4G就好了，于是下午改博客的时候&lt;code&gt;top&lt;/code&gt;了一下，Memory果然超过了2G。光一个&lt;code&gt;Firefox&lt;/code&gt;就吃掉1G多 ，汗死～&lt;/p&gt;
 
 &lt;h3 id=&quot;&quot;&gt;今天更新了博客的几个小地方：&lt;/h3&gt;
 &lt;!-- more --&gt;
@@ -838,8 +829,7 @@
 &lt;h3 id=&quot;_2&quot;&gt;下一个版本准备做的事：&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;1. 增加回到顶部功能。对于长篇的博客来说，鼠标滚轮实在太吃力了，所以增加一个BackTop吧！
-2. 导航栏锁定，屏幕向下滚动的时候保持导航栏锁定在屏幕顶部以方便切换。&lt;/code&gt;&lt;/pre&gt;
-</description>
+2. 导航栏锁定，屏幕向下滚动的时候保持导航栏锁定在屏幕顶部以方便切换。&lt;/code&gt;&lt;/pre&gt;</description>
                 <link>http://lionelcao.github.io/%E9%9A%8F%E7%AC%94/2013/12/14/blogupdate2</link>
                 <guid>http://lionelcao.github.io/%E9%9A%8F%E7%AC%94/2013/12/14/blogupdate2</guid>
                 <pubDate>2013-12-14T00:00:00+08:00</pubDate>
@@ -847,8 +837,7 @@
 
         <item>
                 <title>Markdown语法</title>
-                <description>
-&lt;p&gt;&lt;a href=&quot;http://wowubuntu.com&quot;&gt;访问 Wow!Ubuntu&lt;/a&gt;&lt;/p&gt;
+                <description>&lt;p&gt;&lt;a href=&quot;http://wowubuntu.com&quot;&gt;访问 Wow!Ubuntu&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; This is Simplelified Chinese Edition Document of Markdown Syntax. If you are seeking for English Edition Document. Please refer to &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown: Syntax&lt;/a&gt;.&lt;/p&gt;
 &lt;!-- more --&gt;
@@ -1571,8 +1560,7 @@ _   底线
 
 &lt;p&gt;*** 如有更好的 Markdown 免费编辑器推荐，请到&lt;a href=&quot;https://gitcafe.com/riku/Markdown-Syntax-CN/tickets/1&quot;&gt;这里反馈&lt;/a&gt;，谢谢！&lt;/p&gt;
 
-&lt;p&gt;(注：本文转载自&lt;a href=&quot;http://wowubuntu.com/markdown/&quot;&gt;Wow!Ubuntu&lt;/a&gt;,部分格式稍有修改。)&lt;/p&gt;
-</description>
+&lt;p&gt;(注：本文转载自&lt;a href=&quot;http://wowubuntu.com/markdown/&quot;&gt;Wow!Ubuntu&lt;/a&gt;,部分格式稍有修改。)&lt;/p&gt;</description>
                 <link>http://lionelcao.github.io/syntax/2013/12/11/markdown</link>
                 <guid>http://lionelcao.github.io/syntax/2013/12/11/markdown</guid>
                 <pubDate>2013-12-11T00:00:00+08:00</pubDate>
@@ -1580,8 +1568,7 @@ _   底线
 
         <item>
                 <title>博客功能更新（一）</title>
-                <description>
-&lt;p&gt;最近为了搭博客，研究了不少&lt;code&gt;jekyll&lt;/code&gt;和&lt;code&gt;web开发&lt;/code&gt;相关的内容，了解到&lt;code&gt;css&lt;/code&gt;的预处理器&lt;code&gt;sass&lt;/code&gt;，简单看了一些介绍，但尚未深入学习和使用。&lt;/p&gt;
+                <description>&lt;p&gt;最近为了搭博客，研究了不少&lt;code&gt;jekyll&lt;/code&gt;和&lt;code&gt;web开发&lt;/code&gt;相关的内容，了解到&lt;code&gt;css&lt;/code&gt;的预处理器&lt;code&gt;sass&lt;/code&gt;，简单看了一些介绍，但尚未深入学习和使用。&lt;/p&gt;
 
 &lt;h3 id=&quot;&quot;&gt;今天给博客添加新功能，做了以下几件事：&lt;/h3&gt;
 &lt;!-- more --&gt;
@@ -1599,8 +1586,7 @@ _   底线
 
 &lt;p&gt;昨天在微博上看到雷军转发说本周是美国计算机科学教育周，奥巴马呼吁全民写代码，囧！&lt;/p&gt;
 
-&lt;p&gt;不过这个看起来弱爆了的小游戏还是蛮有意思的!^_^&lt;a href=&quot;http://learn.code.org/hoc/1&quot;&gt;编程一小时&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;不过这个看起来弱爆了的小游戏还是蛮有意思的!^_^&lt;a href=&quot;http://learn.code.org/hoc/1&quot;&gt;编程一小时&lt;/a&gt;&lt;/p&gt;</description>
                 <link>http://lionelcao.github.io/%E9%9A%8F%E7%AC%94/2013/12/11/blogupdate1</link>
                 <guid>http://lionelcao.github.io/%E9%9A%8F%E7%AC%94/2013/12/11/blogupdate1</guid>
                 <pubDate>2013-12-11T00:00:00+08:00</pubDate>
@@ -1608,8 +1594,7 @@ _   底线
 
         <item>
                 <title>个人博客开张</title>
-                <description>
-&lt;p&gt;断断续续折腾了一个多月，终于把博客搭好了。&lt;/p&gt;
+                <description>&lt;p&gt;断断续续折腾了一个多月，终于把博客搭好了。&lt;/p&gt;
 
 &lt;p&gt;Web开发基本上0经验，以前零星自己看过一些&lt;code&gt;HTML&lt;/code&gt;代码，改过几个页面，当时调几个&lt;code&gt;div&lt;/code&gt;的布局就很头疼。好在现在搭个博客也不需要多少开发经验，慢慢研究一下还是搞定了。&lt;/p&gt;
 &lt;!-- more --&gt;
@@ -1623,8 +1608,7 @@ _   底线
 
 &lt;p&gt;后面有时间专门整理一份自己的搭github博客的过程吧。对于想拥有一个可以完全自己定制的博客的同学来说，&lt;code&gt;github&lt;/code&gt;真是一个不错的选择～&lt;code&gt;喂——你这是在做广告吗亲？！&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;好吧，又到了该睡觉的时间了，今天用的这个中文输入法很不爽，我发誓明天一定要换掉它！！！&lt;/p&gt;
-</description>
+&lt;p&gt;好吧，又到了该睡觉的时间了，今天用的这个中文输入法很不爽，我发誓明天一定要换掉它！！！&lt;/p&gt;</description>
                 <link>http://lionelcao.github.io/%E9%9A%8F%E7%AC%94/2013/12/07/BlogBegins</link>
                 <guid>http://lionelcao.github.io/%E9%9A%8F%E7%AC%94/2013/12/07/BlogBegins</guid>
                 <pubDate>2013-12-07T00:00:00+08:00</pubDate>
