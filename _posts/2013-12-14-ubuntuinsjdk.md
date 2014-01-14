@@ -2,8 +2,8 @@
 layout: post
 title: "Ubuntu下安装JDK"
 description: ""
-category: "Java"
-tags: [Ubuntu, JDK, Java, Install]
+category: "java"
+tags: [ubuntu, jdk, java, install, hadoop]
 ---
 {% include JB/setup %}
 Ubuntu : 12.04

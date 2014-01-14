@@ -6,7 +6,7 @@ category: "Linux"
 tags: [ssh, Ubuntu, hadoop]
 ---
 {% include JB/setup %}
-##Ubuntu下配置免密码登录本机方法如下
+###Ubuntu下配置免密码登录本机方法如下:
 
    <!-- more -->
 1. 生成密钥
@@ -39,6 +39,7 @@ tags: [ssh, Ubuntu, hadoop]
         $ sudo apt-get install openssh-server
 
       安装完再次验证ssh localhost返回正确信息。
+
    b) 正确信息
 
         Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.8.0-29-generic x86_64)

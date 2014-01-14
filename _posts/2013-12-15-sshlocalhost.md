@@ -3,7 +3,7 @@ layout: post
 title: "Ubuntu下配置免密码登录本机（ssh localhost）"
 description: ""
 category: "Linux"
-tags: [ssh, Ubuntu, hadoop]
+tags: [ssh, ubuntu, linux, hadoop]
 ---
 {% include JB/setup %}
 ###Ubuntu下配置免密码登录本机方法如下:

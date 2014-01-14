@@ -3,7 +3,7 @@ layout: post
 title: "博客功能更新（一）"
 description: ""
 category: "随笔"
-tags: [jekyll, blog, css, sass]
+tags: [Jekyll, 博客, css, sass, 学习]
 ---
 {% include JB/setup %}
 

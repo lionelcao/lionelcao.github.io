@@ -2,8 +2,8 @@
 layout: post
 title: "JQuery的3种$()"
 description: ""
-category: "web"
-tags: [reprints, syntax, jQuery, web, javascript, html]
+category: "Web"
+tags: [转载, JQuery, Web, javascript, html]
 ---
 {% include JB/setup %}
 

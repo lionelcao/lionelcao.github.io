@@ -12,6 +12,7 @@ http://lionelcao.github.io/sitemap.txt
 http://lionelcao.github.io/pages.html
 http://lionelcao.github.io/blog/page2/index.html
 
+http://lionelcao.github.io/syntax/2014/01/13/regular-expression
 http://lionelcao.github.io/sas/2013/12/20/saslibname
 http://lionelcao.github.io/web/2013/12/18/jquery3
 http://lionelcao.github.io/linux/2013/12/15/sshlocalhost

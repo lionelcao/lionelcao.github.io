@@ -142,8 +142,14 @@ hr {
   display: block;
   margin: 10px auto;
 }
+/*.content div.row div.span12 div.image0{
+  margin:0 auto;
+  width:50%
+}*/
 .content div.row div.span12 div.image1 {
-  text-align: center;
+  
+  margin:0 auto;
+  width:60%
 }
 .content div.row div.span12 div.me {
   width: 400px;
