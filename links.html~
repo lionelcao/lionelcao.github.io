@@ -14,7 +14,6 @@ group: navigation
 </li>
 {% endfor %}
 </ul>
-
 <h2>Resources</h2>
 <ul class="links">
 {% for link in site.resources %}
@@ -23,7 +22,6 @@ group: navigation
 </li>
 {% endfor %}
 </ul>
-
 <h2>Sports</h2>
 <ul class="links">
 {% for link in site.sports %}

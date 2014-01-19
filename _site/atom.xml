@@ -4,13 +4,101 @@
  <title>Lionel Cao</title>
  <link href="http://lionelcao.github.io/" rel="self"/>
  <link href="http://lionelcao.github.io"/>
- <updated>2014-01-15T00:03:28+08:00</updated>
+ <updated>2014-01-20T00:31:12+08:00</updated>
  <id>http://lionelcao.github.io</id>
  <author>
    <name>北落师门</name>
    <email>whucaolu@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Teradata Study Notes-Introduction to the Teradata Database(1)</title>
+   <link href="http://lionelcao.github.io/database/2014/01/19/tdnotes1"/>
+   <updated>2014-01-19T00:00:00+08:00</updated>
+   <id>http://lionelcao.github.io/database/2014/01/19/tdnotes1</id>
+   <content type="html">&lt;p&gt;注：本文仅作个人学习笔记用，版权为Teradata公司所有，严禁转载。&lt;/p&gt;
+
+&lt;h2 id=&quot;module_1__teradata_database_overview&quot;&gt;Module 1 - Teradata Database Overview&lt;/h2&gt;
+&lt;!-- more --&gt;
+&lt;h3 id=&quot;what_is_the_teradata_database&quot;&gt;What is the Teradata Database?&lt;/h3&gt;
+
+&lt;p&gt;Relational Database Management System关系型数据库&lt;/p&gt;
+
+&lt;p&gt;Built on a Parallel Architecture建造于并行架构之上&lt;/p&gt;
+
+&lt;p&gt;Supported Operating System:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Microsoft Windows Enterprise Server(Windows2000/2003 Server)
+SuSE Linux(SLES 10 and 11)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;O/S is open architecture&lt;/p&gt;
+
+&lt;h3 id=&quot;teradata_parallel_architecture&quot;&gt;Teradata Parallel Architecture&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;• Linear Scalability (10GB to 50+PB)线性可扩展
+• Hashing provides automatic data distribution哈希提供自动数据分布
+• ANSI Standard SQL - allows ad hoc queries,interface with BI tools and other databases支持ANSI标准SQL
+• Parallel-Aware Optimizer并行感知优化器
+• Single Administrative View单独管理界面&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;teradata_database_advantages&quot;&gt;Teradata Database Advantages&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;• Proven Linear Scalability - increased workload without decreased throughput
+经过验证的线性可扩展性 - 增加负载量而并不减少吞吐量
+• Most Concurrent Users - multiple complex queries
+支持大量并发用户 - 多种复杂查询
+• Unconditional Parallelism - sorts, aggregations and full-table scans are performed in parallel
+无条件并行处理 - 排序，聚合以及全表扫描都并发处理
+• Mature Optimizer - robust and parallel aware, handles complex queries, multiple joins per query, ad hoc processing
+成熟的优化工具 - 强大且能够并行感知，处理复杂查询，每次查询的多个连接，即席处理 
+• File System – manages data and disk space automatically and makes the rebuilding of indexes unnecessary
+文件系统 - 自动管理数据和磁盘空间，不需要重建索引
+• Low TCO - ease of setup and maintenance, robust parallel utilities, no re-orgs, automatic data distribution, low disk to data ratio, robust expansion utility
+低总拥有成本 - 易于设置和维护，强大的并行实用程序，无需重新组织，数据自动分配，低磁盘数据比，强大的扩展功能 
+• High Availability - no single point of failure, fault-tolerant architecture
+高可用性 - 没有单点故障，容错体系结构 
+• Single View of the Business - single database server for multiple clients
+业务视角唯一 - 多个客户端访问同一个数据库服务器&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;teradata_database_manageability&quot;&gt;Teradata Database Manageability&lt;/h3&gt;
+
+&lt;p&gt;Things Teradata Database Administrators never have to do!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;• Reorganize data or index space
+重新组织数据或索引的空间 
+• Pre-allocate table or index space
+预分配表或索引的空间 
+• Physically format partitions or disk space
+物理格式化，分区或磁盘空间
+• Pre-prepare data for loading (convert, sort, split, etc.)
+预先为数据加载做准备（转换，排序，分割等）
+• Ensure that queries run in parallel
+确保查询的并行运行 
+• Unload/reload data spaces due to expansion
+因扩容卸载/重装数据空间&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;teradata_database_features&quot;&gt;Teradata Database Features&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;• Designed to process large quantities of detail data
+专为处理大量的明细数据而设计
+• Ideal for data warehouse applications
+适用于数据仓库应用程序
+• Parallelism makes easy access to very large tables possible
+并行架构使轻松访问大表变得可能
+• Open architecture - uses industry standard components
+开放式架构 - 采用业界标准组件
+• Runs on industry standard Operating Systems
+运行于业界标准的操作系统
+• Performance increase is linear as components are added
+性能的增长与组件增加线性相关
+• Runs as a database server to client applications
+对于客户端程序来说运行起来像是只有一个数据库服务器
+• Runs on multiple hardware platforms (SMP) and Teradata hardware (MPP)
+可运行于多种硬件平台（SMP）和Teradata硬件（MPP）&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注：本文仅作个人学习笔记用，版权为Teradata公司所有，严禁转载。&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Regular Expression</title>
@@ -417,9 +505,9 @@ ab*(c|ε)指示开始于一个a接着零或多个b和最终可选的一个c的�
  
  <entry>
    <title>LIBNAME Statement Specifics for Teradata</title>
-   <link href="http://lionelcao.github.io/sas/2013/12/20/saslibname"/>
+   <link href="http://lionelcao.github.io/tools/2013/12/20/saslibname"/>
    <updated>2013-12-20T00:00:00+08:00</updated>
-   <id>http://lionelcao.github.io/sas/2013/12/20/saslibname</id>
+   <id>http://lionelcao.github.io/tools/2013/12/20/saslibname</id>
    <content type="html">&lt;p&gt;Via &lt;a href=&quot;http://support.sas.com&quot;&gt;http://support.sas.com&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
@@ -507,355 +595,355 @@ ab*(c|ε)指示开始于一个a接着零或多个b和最终可选的一个c的�
     &lt;/TH&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top' class='firstRow'&gt;
+    &lt;TD class='firstRow' valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n05764k5zha7vmn1o5jdawotulb2' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;ACCESS=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top' class='firstRow'&gt;
+    &lt;TD class='firstRow' valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n159pibn1z2n3cn1idoq4m6lnosl' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p04thgkccdvuzpn10uqmbaqhv71e' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;AUTHDOMAIN=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0k8ug9swejmqqn1wwew04s9etb1' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0z7rjsa56bdurn1qiugsoc1w5fj' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;BULKLOAD=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1mwcwh1ehyrutn18crjkfjwqcgr' /&gt;NO
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0xymhulmvfx0gn10od8y1s85ax2' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;CAST=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0r2eh74fh3f9gn1lu12l81747t2' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0qdvvcr2stqkan0zxm38p7fgs4i' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;CAST_OVERHEAD_MAXPERCENT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1jesfu37mzhk8n1f6622nbbiwaj' /&gt;20%
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1oo2kaka2oas9n19l7lwuwzk4gz' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;CONNECTION=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n12i0w0js77c1qn1o0yyw2s6fulu' /&gt;SHAREDREAD for channel-attached
           systems (&lt;NOBR&gt;z/OS&lt;/NOBR&gt;); UNIQUE for network attached systems (UNIX and PC platforms)
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p02ybusidxgybxn1me6aj22c7wb7' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;CONNECTION_GROUP=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n08th4dyizgk8xn1sltrqxr6g8co' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV&gt;&lt;A /&gt;DATABASE= (see &lt;SPAN class='xrefSee'&gt;&lt;A&gt;SCHEMA=&lt;/A&gt;&lt;/SPAN&gt;)
        &lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0xq80qssa4kcxn1vf1hl076mbsw' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0xy3up1eow6i9n1jq9zvo95b6ia' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBCOMMIT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n08cn7l3d1r3lxn1lzmelep86eut' /&gt;1000 when inserting
           rows; 0 when updating rows
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1cs45i0jjgzi3n1mink44ngoma6' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBCONINIT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1af5t2uccgeajn16md7ijxbe49l' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0namyl2zihpcon1s9b6poi8zrbv' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBCONTERM=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1jnvz1of6wj8on1i5ormdv5fcr6' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1iazm2vn71n0dn1f71wrdo6vrpb' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBCREATE_TABLE_OPTS=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0zixt1051tro0n0za9bhik42xn1' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1wak7nryeed7cn1bxtf8z98t7i9' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBGEN_NAME=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n16p7fs2inkiwln1gxoki35i8tgv' /&gt;DBMS
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1g87xuya1s575n1q8cm9y6cs7ru' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBINDEX=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0xffoorzjo6hjn1rxhp6n6weawr' /&gt;NO
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0ydlawoa7n1han15kt49tatd64z' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBLIBINIT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n015g55d63l01cn1clrluw5mt0x9' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0cbefs3pkyex9n1s4x12okrhvkv' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBLIBTERM=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0zuc7cnt2s4jzn13g7r9j0p9c5m' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1dsjqnbad2cq7n162x6pjh0cuep' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBMSTEMP=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1gpbpy0r1eh54n1pmb4zydoouz7' /&gt;NO
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p07uz46ts55fl1n0zvty9ph1mc1w' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBPROMPT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1u506kke3v4tjn1plev9gdw6qaf' /&gt;NO
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p05c33q85ro00xn0zx1emeylqa82' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBSASLABEL=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p08z4k3gsjx8mqn1jwisiymrogza' /&gt;COMPAT
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1s2wla9zvshlwn15z1g4ijnyebd' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DBSLICEPARM=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p12vpxsmirfz2en13vetbgfgsh8e' /&gt;THREADED_APPS,2
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p17tpp9asfmhgnn15zw0g4ng0gui' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DEFER=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p00u7vo9jvz748n1d5fuuylhsype' /&gt;NO
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0ooadnft4qlkpn1drmhgikdyo1s' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DIRECT_EXE=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1p8u8whcw3d79n1pdhxo4fqnq3r' /&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1p0x258ry7e3gn1n9mn1ceijtht' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;DIRECT_SQL=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0ny6mm1yyxq4vn1w017yqauzsiy' /&gt;YES
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1t5j3eynzk5lgn1r30b5e1jka09' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;ERRLIMIT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0uuwcwbopb6j3n1l71cqnzp1e4c' /&gt;1 million
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0n3liw9gv20han1vabvlrls7lsw' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;FASTEXPORT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1qtbqoakwbhxen1xim87tn0dlg9' /&gt;NO
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1v7zvniu4kkqxn1x0g5icd8revq' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;LOGDB=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0uz4z24witoi9n1sh2dg2wk7opv' /&gt;Default Teradata database
           for the libref
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1ou8oc2zbuop2n1xbu2z1npq8n1' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;MODE=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p059eyvz169q7bn1f2cudtsrcgnd' /&gt;ANSI
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n13m2v7iioilifn0zvr8gfhhtsvo' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;MULTISTMT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0maqasjudow9dn1239cgfw4q9dn' /&gt;NO
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n02z5rj1vxeg77n1d1u572hpqw70' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;MULTI_DATASRC_OPT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0whyrkxd4br9zn1t41pptomywzh' /&gt;IN_CLAUSE
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1d3f5xmymtitpn19r9m7dzohv8n' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;PREFETCH=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n09ra3fbud6ul2n1l2ak78qn4qk0' /&gt;not enabled
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1953u6lq6okn1n12918vrrxommk' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;PRESERVE_COL_NAMES=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1bvo5m0kuiz93n1nh8o1jrft7sk' /&gt;YES
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1fv0x5twixip4n15ooervnrh5ry' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;PRESERVE_TAB_NAMES=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1j7gath667iwln18n66oa4566tq' /&gt;YES
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n19tqfynmyefjin174lkyg2vjjiz' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;QUERY_BAND=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1rw1xdqvlf43gn1hqnconzh8s6x' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0o3a7j4g3tnw0n1vttljf3ir8xk' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;READ_ISOLATION_LEVEL=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1uhqvxaf4ehffn1r1bnv28nimxi' /&gt;see &lt;SPAN class='xrefSee'&gt;&lt;A&gt;Locking in the Teradata Interface&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1mf0qk6b7rzj9n1bnlpnc5y336v' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;READ_LOCK_TYPE=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1nfy3ct8o6lqen167pq29vxj3ma' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0mdc49xmyckohn1hq7v6p2xydst' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;READ_MODE_WAIT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1jyatir45qeg6n14ozhwdslvx41' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n13hep1c1oe1vwn1cfw3m6am1egz' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;REREAD_EXPOSURE=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1vxg2q05iin7in1dj1931j3cj7k' /&gt;NO
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n02hgwka1a09kon1exf7dh6q1km0' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;SCHEMA=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0kzhizymixo7an1eacrsoo0rk71' /&gt;your default Teradata
           database
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p15xjlnfnkzgxcn11c3vz3lnjx24' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;SESSIONS=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1lpbyhx22dtuvn1tstrnw41z10c' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
@@ -870,37 +958,37 @@ ab*(c|ε)指示开始于一个a接着零或多个b和最终可选的一个c的�
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1vpmrub4a4idmn1fm71l8aej6en' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;SPOOL=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1j25qsbv5yjmkn1hxi9ee1m0edf' /&gt;YES
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1pt58gk0fuay5n1ey9i602n1yr3' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;SQL_FUNCTIONS=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1e1clxw1g0gugn19hefh6bdhzo4' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0e2zg18u1be44n1uofv0drtom3f' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;SQL_FUNCTIONS_COPY=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1mjek46z8zs60n1vk0lopz9y6t1' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p17byu2ejgvvatn1f0lqe1jzdayb' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;SQLGENERATION=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n096nff715dosln1cc2fhupm1o0d' /&gt;DBMS
        &lt;/DIV&gt;
     &lt;/TD&gt;
@@ -926,10 +1014,10 @@ ab*(c|ε)指示开始于一个a接着零或多个b和最终可选的一个c的�
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1fu0x74em7qapn1t0h4yajb6g4l' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;TPT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0kl8q7my6g9jin17e6y7i6ns7jo' /&gt;YES
        &lt;/DIV&gt;
     &lt;/TD&gt;
@@ -944,36 +1032,36 @@ ab*(c|ε)指示开始于一个a接着零或多个b和最终可选的一个c的�
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0phqtcbiwqk2yn1mfp8yvprgp9v' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;UPDATE_ISOLATION_LEVEL=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p1k591s6p5j9lmn1k4e3p39kuyp5' /&gt;see &lt;SPAN class='xrefSee'&gt;&lt;A&gt;Locking in the Teradata Interface&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p14y1a50swckx1n1x9v1u4mygdjk' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;UPDATE_LOCK_TYPE= LIBNAME Option&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n1ud17uh6dfoe8n1l5rxexidzswb' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p0f9ikxt2l823ln1b9ssf75ujxfn' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;UPDATE_MODE_WAIT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n0vypcgdhtrr2on1ax5tbb6eqtxy' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n070psk70999qin167hupbp0a24m' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;UTILCONN_TRANSIENT=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top'&gt;
+    &lt;TD valign='top' style='text-align: left'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='p047pnwd1a4yqrn1emjq3byouzzw' /&gt;NO
        &lt;/DIV&gt;
     &lt;/TD&gt;

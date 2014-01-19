@@ -43,7 +43,7 @@ resources:
        url: http://www.info.teradata.com/
      - title: Hadoop 2.2.0 Documentation
        desc: Hadoop文档
-       url: http://hadoop.apache.org/docs/r2.2.0/
+       http://hadoop.apache.org/docs/r2.2.0/
 sports:
      - title: 新浪竞技风暴
        desc: 新浪体育

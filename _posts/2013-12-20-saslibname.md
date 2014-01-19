@@ -2,7 +2,7 @@
 layout: post
 title: "LIBNAME Statement Specifics for Teradata"
 description: ""
-category: "SAS"
+category: "tools"
 tags: [sas, libname, syntax, teradata ]
 ---
 {% include JB/setup %}
