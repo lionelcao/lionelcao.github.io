@@ -183,7 +183,7 @@ console.log(dim);
 		var popWidth = dim[0].split('=')[1]; //Gets the first query string value
 console.log(popWidth); 
 		//Fade in the Popup and add close button
-		$('#' + popID).fadeIn().css({}).prepend('<a href="#" class="close"><img src="images/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>');
+		$('#' + popID).fadeIn().css({}).prepend('<a href="#" class="close1"><img src="images/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>');
 		
 		//Define margin for center alignment (vertical + horizontal) - we add 80 to the height/width to accomodate for the padding + border width defined in the css
 		var popMargTop = ($('#' + popID).height() + 80) / 2;
@@ -206,9 +206,9 @@ console.log('1');
 	
 	
 	//Close Popups and Fade Layer
-	$('a.close, #fade').live('click', function() { //When clicking on the close or fade layer...
+	$('a.close1, #fade').live('click', function() { //When clicking on the close or fade layer...
 	  	$('#fade , .popup_block').fadeOut(function() {
-			$('#fade, a.close').remove();  
+			$('#fade, a.close1').remove();  
 	}); //fade them both out
 	console.log('2');	
 		return false;

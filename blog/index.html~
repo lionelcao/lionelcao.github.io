@@ -12,7 +12,7 @@ group: navigation
   {% if post.content contains "<!-- more -->" %}
     {{ post.content | split:'<!-- more -->' | first }}
   {% else %}
-    {{ post.content | strip_html | truncatewords:50 }}
+    {{ post.content | strip_html | truncatewords:100 }}
   {% endif %}
 
 <div class="status">
@@ -45,8 +45,8 @@ group: navigation
   {% endif %}
   <span><a class="btn btn-default btn-sm disabled">Page: {{paginator.page}} of {{paginator.total_pages}}</a></span>
   {% if paginator.next_page %}
-    <a class="btn btn-default btn-sm" href="./page{{paginator.next_page}}/">Next &raquo;</a>
-    <a class="btn btn-default btn-sm" href="./page{{paginator.total_pages}}/">Last</a>
+    <a class="btn btn-default btn-sm" href="/page{{paginator.next_page}}/">Next &raquo;</a>
+    <a class="btn btn-default btn-sm" href="/page{{paginator.total_pages}}/">Last</a>
   {% else if paginator.page == paginator.total_pages %}
     <span><a class="btn btn-default btn-sm disabled">Next &raquo;</a></span>
     <span><a class="btn btn-default btn-sm disabled">Last</a></span>
