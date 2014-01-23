@@ -11,7 +11,9 @@ http://lionelcao.github.io/About.html
 http://lionelcao.github.io/sitemap.txt
 http://lionelcao.github.io/pages.html
 http://lionelcao.github.io/blog/page2/index.html
+http://lionelcao.github.io/blog/page3/index.html
 
+http://lionelcao.github.io/database/2014/01/23/tdnotes2
 http://lionelcao.github.io/database/2014/01/19/tdnotes1
 http://lionelcao.github.io/syntax/2014/01/13/regular-expression
 http://lionelcao.github.io/tools/2013/12/20/saslibname

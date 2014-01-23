@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>
       
-        Teradata Study Notes-Introduction to the Teradata Database(1) - 
+        Blog - 
       
       Lionel Cao
     </title>
@@ -114,161 +114,55 @@
     <div class="container">
       <div class="content">
         
-<div class="page-header">
-  <h1>
-    Teradata Study Notes-Introduction to the Teradata Database(1) 
-    
-  </h1>
+<div class="page-header-wrapper">
+	<div class="page-header">
+  		<h1>Blog </h1>
+  	</div>
 </div>
 
 <div class="row">
-  <div class="span8">
-    <p>注：本文仅作个人学习笔记用，版权为Teradata公司所有，严禁转载。</p>
+  <div class="span12">
+    
 
-<h2 id="module_1__teradata_database_overview">Module 1 - Teradata Database Overview</h2>
-<!-- more -->
-<h3 id="what_is_the_teradata_database">What is the Teradata Database?</h3>
 
-<p>Relational Database Management System关系型数据库</p>
+<div class="wrappe">
+  <h2 class="h2 entry-title"><a href="/%E9%9A%8F%E7%AC%94/2013/12/07/BlogBegins">个人博客开张</a></h2>
+  
+    <p>断断续续折腾了一个多月，终于把博客搭好了。</p>
 
-<p>Built on a Parallel Architecture建造于并行架构之上</p>
+<p>Web开发基本上0经验，以前零星自己看过一些<code>HTML</code>代码，改过几个页面，当时调几个<code>div</code>的布局就很头疼。好在现在搭个博客也不需要多少开发经验，慢慢研究一下还是搞定了。</p>
 
-<p>Supported Operating System:</p>
-
-<pre><code>Microsoft Windows Enterprise Server(Windows2000/2003 Server)
-SuSE Linux(SLES 10 and 11)</code></pre>
-
-<p>O/S is open architecture</p>
-
-<h3 id="teradata_parallel_architecture">Teradata Parallel Architecture</h3>
-
-<pre><code>• Linear Scalability (10GB to 50+PB)线性可扩展
-• Hashing provides automatic data distribution哈希提供自动数据分布
-• ANSI Standard SQL - allows ad hoc queries,interface with BI tools and other databases支持ANSI标准SQL
-• Parallel-Aware Optimizer并行感知优化器
-• Single Administrative View单独管理界面</code></pre>
-
-<h3 id="teradata_database_advantages">Teradata Database Advantages</h3>
-
-<pre><code>• Proven Linear Scalability - increased workload without decreased throughput
-经过验证的线性可扩展性 - 增加负载量而并不减少吞吐量
-• Most Concurrent Users - multiple complex queries
-支持大量并发用户 - 多种复杂查询
-• Unconditional Parallelism - sorts, aggregations and full-table scans are performed in parallel
-无条件并行处理 - 排序，聚合以及全表扫描都并发处理
-• Mature Optimizer - robust and parallel aware, handles complex queries, multiple joins per query, ad hoc processing
-成熟的优化工具 - 强大且能够并行感知，处理复杂查询，每次查询的多个连接，即席处理 
-• File System – manages data and disk space automatically and makes the rebuilding of indexes unnecessary
-文件系统 - 自动管理数据和磁盘空间，不需要重建索引
-• Low TCO - ease of setup and maintenance, robust parallel utilities, no re-orgs, automatic data distribution, low disk to data ratio, robust expansion utility
-低总拥有成本 - 易于设置和维护，强大的并行实用程序，无需重新组织，数据自动分配，低磁盘数据比，强大的扩展功能 
-• High Availability - no single point of failure, fault-tolerant architecture
-高可用性 - 没有单点故障，容错体系结构 
-• Single View of the Business - single database server for multiple clients
-业务视角唯一 - 多个客户端访问同一个数据库服务器</code></pre>
-
-<h3 id="teradata_database_manageability">Teradata Database Manageability</h3>
-
-<p>Things Teradata Database Administrators never have to do!</p>
-
-<pre><code>• Reorganize data or index space
-重新组织数据或索引的空间 
-• Pre-allocate table or index space
-预分配表或索引的空间 
-• Physically format partitions or disk space
-物理格式化，分区或磁盘空间
-• Pre-prepare data for loading (convert, sort, split, etc.)
-预先为数据加载做准备（转换，排序，分割等）
-• Ensure that queries run in parallel
-确保查询的并行运行 
-• Unload/reload data spaces due to expansion
-因扩容卸载/重装数据空间</code></pre>
-
-<h3 id="teradata_database_features">Teradata Database Features</h3>
-
-<pre><code>• Designed to process large quantities of detail data
-专为处理大量的明细数据而设计
-• Ideal for data warehouse applications
-适用于数据仓库应用程序
-• Parallelism makes easy access to very large tables possible
-并行架构使轻松访问大表变得可能
-• Open architecture - uses industry standard components
-开放式架构 - 采用业界标准组件
-• Runs on industry standard Operating Systems
-运行于业界标准的操作系统
-• Performance increase is linear as components are added
-性能的增长与组件增加线性相关
-• Runs as a database server to client applications
-对于客户端程序来说运行起来像是只有一个数据库服务器
-• Runs on multiple hardware platforms (SMP) and Teradata hardware (MPP)
-可运行于多种硬件平台（SMP）和Teradata硬件（MPP）</code></pre>
-
-<p>注：本文仅作个人学习笔记用，版权为Teradata公司所有，严禁转载。</p>
-    <hr>
-    <div class="pagination btn-group">
-      
-        <a class="btn prev" href="/syntax/2014/01/13/regular-expression" title="Regular Expression">&larr; Previous</a>
-      
-        <a class="btn" href="/archive.html">Archive</a>
-      
-        <a class="btn next" href="/database/2014/01/23/tdnotes2" title="Teradata Study Notes-Introduction to the Teradata Database(2)">Next &rarr;</a>
-      
-    </div>
-    <hr>
   
 
-
-  <!-- Duoshuo Comment BEGIN -->
-    <div id="comments">
-        <div class="ds-thread" data-title="Teradata Study Notes-Introduction to the Teradata Database(1) - Lionel Cao"></div>
-    </div>
-<!-- Duoshuo Comment END -->
-
-
-
-
-
-
-	
+<div class="status">
+    <div class="col-md-6 date visible-lg visible-md">
+      <span class="icon-time"></span> 07 Dec 2013
+      <span class="icon-comment"></span><a href="/%E9%9A%8F%E7%AC%94/2013/12/07/BlogBegins#comments"> Comments</a>
+    
+    
+    <a class="btn btn-default btn-sm pull-right" href="/%E9%9A%8F%E7%AC%94/2013/12/07/BlogBegins"><span class="readmore">Read More &raquo; </span></a>
+    
+   </div>
+    <div class="clearfix"></div>
   </div>
+</div>
+
+
+<!-- Pagination links -->
+<div class="pull-right">
   
-
-  <div class="span4">
-    <section>
-      <h4>Published</h4>
-      <div class="date"><span>19 January 2014</span></div>
-    </section>
     
-      <section>
-        <h4>Category</h4>
-        <span class="category">
-          database
-        </span>
-      </section>
-         
-    
-      <section>
-        <h4>Tags</h4>
-        <ul class="tag_box">
-          
-          
-
-
-  
-     
-    	<li><a href="/tags.html#teradata-ref">teradata <span>4</span></a></li>
-     
-    	<li><a href="/tags.html#introduction-ref">introduction <span>2</span></a></li>
-     
-    	<li><a href="/tags.html#database-ref">database <span>2</span></a></li>
+    <a class="btn btn-default btn-sm" href="/">Home</a>
+    <a class="btn btn-default btn-sm" href="/blog/page2/">&laquo; Prev</a>
     
   
+  <span><a class="btn btn-default btn-sm disabled">Page: 3 of 3</a></span>
+  
+    <span><a class="btn btn-default btn-sm disabled">Next &raquo;</a></span>
+    <span><a class="btn btn-default btn-sm disabled">Last</a></span>
+  
+</div>
 
-
-
-        </ul>
-      </section>
-             
   </div>
 </div>
 
