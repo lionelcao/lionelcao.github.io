@@ -5,8 +5,8 @@
         <description>Lionel Cao - 北落师门</description>
         <link>http://lionelcao.github.io</link>
         <link>http://lionelcao.github.io</link>
-        <lastBuildDate>2014-01-24T00:12:17+08:00</lastBuildDate>
-        <pubDate>2014-01-24T00:12:17+08:00</pubDate>
+        <lastBuildDate>2014-01-24T00:24:33+08:00</lastBuildDate>
+        <pubDate>2014-01-24T00:24:33+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -14,13 +14,16 @@
                 <title>Teradata Study Notes-Introduction to the Teradata Database(2)</title>
                 <description>&lt;p&gt;注：本文仅作个人学习笔记用，版权为Teradata公司所有，严禁转载。&lt;/p&gt;
 
-&lt;h2 id=&quot;module2_relational_database_concepts&quot;&gt;Module2 Relational Database Concepts&lt;/h2&gt;
-
+&lt;h2 id=&quot;module2__relational_database_concepts&quot;&gt;Module2 - Relational Database Concepts&lt;/h2&gt;
+&lt;!-- more --&gt;
 &lt;h3 id=&quot;what_is_a_database&quot;&gt;What is a Database?&lt;/h3&gt;
 
 &lt;p&gt;A database is a collection of permanently stored data that is:&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;p&gt;Logically related - the data relates to other data (tables to tables). Shared - many users may access the data. Protected - access to data is controlled. Managed - the data has integrity and value.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Logically related - the data relates to other data (tables to tables).
+Shared - many users may access the data.
+Protected - access to data is controlled.
+Managed - the data has integrity and value.&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&quot;logicalrelational_modeling&quot;&gt;Logical/Relational Modeling&lt;/h3&gt;
 
@@ -112,7 +115,7 @@ Involves removing redundant attributes, keys, and relationships from the concept
 • No need to know the access path
 • Solidly founded in set theory&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&quot;module3_teradata_and_the_data_warehouse&quot;&gt;Module3 Teradata and the Data Warehouse&lt;/h2&gt;
+&lt;h2 id=&quot;module3__teradata_and_the_data_warehouse&quot;&gt;Module3 - Teradata and the Data Warehouse&lt;/h2&gt;
 
 &lt;h3 id=&quot;evolution_of_data_processing&quot;&gt;Evolution of Data Processing&lt;/h3&gt;
 
@@ -525,7 +528,7 @@ ab*(c|ε)指示开始于一个a接着零或多个b和最终可选的一个c的�
 &lt;h2 id=&quot;_8&quot;&gt;表达式全集&lt;/h2&gt;
 
 &lt;p&gt;正则表达式有多種不同的风格。下表是在PCRE中元字符及其在正则表达式上下文中的行为的一个完整列表，适用于Perl或者Python编程语言（grep或者egrep的正则表达式文法是PCRE的子集）：&lt;/p&gt;
-&lt;table border='2' cellspacing='0' bordercolor='#CCCCCC'&gt;
+&lt;table bordercolor='#CCCCCC' border='2' cellspacing='0'&gt;
 &lt;tr&gt;
 &lt;th&gt;字符&lt;/th&gt;
 &lt;th&gt;描述&lt;/th&gt;
@@ -827,7 +830,7 @@ ab*(c|ε)指示开始于一个a接着零或多个b和最终可选的一个c的�
 &lt;p&gt;define how SAS processes DBMS objects. Some LIBNAME options can enhance performance, and others determine locking or naming behavior. The following table describes the LIBNAME options for SAS/ACCESS Interface to Teradata, with the applicable default values. For more detail about these options, see LIBNAME Options for Relational Databases.&lt;/p&gt;
 
 &lt;p&gt;SAS/ACCESS LIBNAME Options for Teradata&lt;/p&gt;
-&lt;TABLE border='1' cellspacing='0' bordercolor='#333333'&gt;
+&lt;TABLE bordercolor='#333333' border='1' cellspacing='0'&gt;
  &lt;TR&gt;
     &lt;TH&gt;
        &lt;DIV&gt;&lt;A /&gt;Option
@@ -839,10 +842,10 @@ ab*(c|ε)指示开始于一个a接着零或多个b和最终可选的一个c的�
     &lt;/TH&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD class='firstRow' style='text-align: left' valign='top'&gt;
+    &lt;TD style='text-align: left' valign='top' class='firstRow'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n05764k5zha7vmn1o5jdawotulb2' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;ACCESS=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD class='firstRow' style='text-align: left' valign='top'&gt;
+    &lt;TD style='text-align: left' valign='top' class='firstRow'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n159pibn1z2n3cn1idoq4m6lnosl' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;

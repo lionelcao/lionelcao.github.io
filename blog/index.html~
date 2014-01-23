@@ -32,7 +32,10 @@ group: navigation
 <!-- Pagination links -->
 <div class="pull-right">
   {% if paginator.previous_page %}
-    {% if paginator.previous_page %}
+    {% if paginator.previous_page ==1 %}
+    <a class="btn btn-default btn-sm" href="/">Home</a>
+    <a class="btn btn-default btn-sm" href="/blog">&laquo; Prev</a>
+  {% else %}
     <a class="btn btn-default btn-sm" href="/">Home</a>
     <a class="btn btn-default btn-sm" href="/blog/page{{paginator.previous_page}}/">&laquo; Prev</a>
     {% endif %}
