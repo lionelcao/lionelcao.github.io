@@ -51,6 +51,9 @@ sports:
      - title: 在腾讯，在现场
        desc: 腾讯体育
        url: http://sports.qq.com/
+     - title: 5live Sport
+       desc: BBC Radio
+       url: http://www.bbc.co.uk/radio/player/bbc_radio_five_live
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 

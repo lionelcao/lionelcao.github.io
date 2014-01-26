@@ -1,0 +1,528 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      
+        Teradata Study Notes-Introduction to the Teradata Database(3) - 
+      
+      Lionel Cao
+    </title>
+    <meta name="description" content="">
+    <meta name="author" content="北落师门">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+    <link href="/assets/themes/hooligan/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/themes/hooligan/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">    
+    <link rel="stylesheet" type="text/css" href="/assets/themes/hooligan/css-social-buttons/css/zocial.stripped.css">
+    <link href="/assets/themes/hooligan/css/pygments.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/hooligan/css/darkstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/hooligan/css/image.css" rel="stylesheet" type="text/css" media="all">      
+    <link href="/assets/themes/hooligan/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    
+    <!-- fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>      
+
+
+          <a class="brand" href="/">Lionel Cao</a>
+
+
+          <div class="nav-collapse">
+            <ul class="nav">
+              
+              
+       <li><a href="/About.html">About</a></li>
+              
+       <li><a href="/blog/">Blog</a></li>
+              
+       <li><a href="/links.html">Links</a></li>
+              
+       <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Contents
+            <b class="caret"></b>
+            </a>
+             <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="dLabel" role="menu" >
+               <li role="presentation" >
+                 <a href = "/archive.html" tabindex="-1" role="menuitem">
+                   Archive
+                  </a>
+               </li>
+               <li role="presentation" >
+                 <a href = "/categories.html" tabindex="-1" role="menuitem">
+                   Categories
+                  </a>
+               </li>
+               <li role="presentation" >
+                 <a href = "/tags.html" tabindex="-1" role="menuitem">
+                   Tags
+                  </a>
+               </li>
+              </ul>
+            </li>
+        </ul>
+            <ul class="nav pull-right social visible-desktop">
+              <li class="divider-vertical"></li>
+              
+                <li>
+                  <a href="https://github.com/lionelcao" class="zocial github icon" target="_blank">
+                    <span class="hidden-desktop">Github</span>
+                  </a>
+                </li>
+              
+                  
+                                        
+                         
+                                  
+              
+              
+                <li>
+                  <a href="http://weibo.com/whucaolu" class="zocial weibo icon" target="_blank">
+                    <span class="hidden-desktop">Weibo</span>
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="content">
+        
+<div class="page-header">
+  <h1>
+    Teradata Study Notes-Introduction to the Teradata Database(3) 
+    
+  </h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p>注：本文仅作个人学习笔记用，版权为Teradata公司所有，严禁转载。</p>
+
+<h2 id="what_is_a_node">What is a node?</h2>
+
+<p>Teradata software, gateway software and channel-driver software run as processes</p>
+<!-- more -->
+<p>Parsing Engines(PE) and Access Module Processors(AMP) are Virtual Processors(Vproc) which run under control of Parallel Database Extensions(PDE)</p>
+
+<p>Each AMP is associated with a Virtual Disk (Vdisk)</p>
+
+<p>A single node is called a Symmetric Multi-Processor (SMP)</p>
+
+<p>All AMPs and PEs communicate via the BYNET</p>
+
+<h2 id="what_is_teradata_virtual_storage_tvs">What is Teradata Virtual Storage (TVS)?</h2>
+
+<pre><code>• TVS (Teradata 13.0) is a change to the way in which Teradata accesses storage.
+• Purpose is to manage a Multi-Temperature Data Warehouse.
+• Pools all of the cylinders within a clique's disk space and allocates cylinders from this storage pool to individual AMPs.</code></pre>
+
+<h3 id="advantages_include">Advantages include:</h3>
+
+<pre><code>• Simplifies adding storage to existing cliques
+  – Improved control over storage growth. You can add storage to the clique-storage-pool versus to every AMP.
+  – Allows sharing of storage devices among AMPs which is more cost effective.
+• Enables mixing drive sizes / speeds / technologies
+  – Enables the “mixing” of storage devices (e.g., spinning disks, Solid State Disks – SSD).
+• Enables non-intrusive migration of data
+  – The most frequently accessed data (hot data) can migrate to the high performing cylinders and infrequently accessed data (cold data) can migrate to the lower performing cylinders.</code></pre>
+
+<h3 id="teradata_virtual_storage_concepts">Teradata Virtual Storage Concepts</h3>
+
+<p>The facing page illustrates the conceptual differences with and without Teradata Virtual Storage. One of the benefits of Teradata Virtual Storage is the ease of adding storage to an existing system.</p>
+
+<p>Before Teradata Virtual Storage:</p>
+
+<p>Existing systems have integral number of drives/AMP</p>
+
+<p>Adding storage requires an additional drive or two per AMP – this means a 50% or 100% increase in capacity</p>
+
+<p>With Teradata Virtual Storage, you can add any number of drives.</p>
+
+<p>Added drives are shared by all AMPs within a clique</p>
+
+<p>These new disks may have different capacities and / or performance than those disks which already reside in the system.</p>
+
+<h3 id="storage_performance_relative_response_times__eg_fast_medium_slow">Storage Performance relative response times – (e.g., fast, medium, slow).</h3>
+
+<pre><code>• Profiles the performance of all the disk drives (e.g., SSD versus spinning disks)
+• Identifies performance zones (usually 10) on each spinning disk drive</code></pre>
+
+<h3 id="data_access_frequency__referred_to_as_data_temperature_eg_hot_warm_cold">Data Access Frequency – referred to as “Data Temperature” (e.g., hot, warm, cold).</h3>
+
+<pre><code>• TVS records information about data access (called Profiling and Metric Collection)
+   – How long it takes to access data (I/O response times)
+   – How often data is accessed (effectively the data temperature)</code></pre>
+
+<h3 id="tvs_places_data_for_optimal_access_based_upon_storage_performance_type_of_data_wal_depot_spool_etc_and_the_results_of_metric_collection">TVS places data for optimal access based upon storage performance, type of data (WAL, Depot, Spool, etc.) and the results of metric collection.</h3>
+
+<pre><code>• Initial Data Placement
+• Migration of data based upon data temperature</code></pre>
+
+<h3 id="three_types_of_data_migration">Three types of Data Migration:</h3>
+
+<pre><code>• Background Process During Queries – moves 10% of data in about one week
+• Optimize Storage Command (Database off-hours) - moves 10% of data in about 8 hours
+   – Ignores other work – just runs “flat out”
+• Anticipatory migration to make room in fast reserve, fast or warm storage for hotter data(when needed)</code></pre>
+
+<h2 id="multitemperature_data_example">Multi-Temperature Data Example</h2>
+
+<p>The facing page illustrates an example of using a Multi-Temperature Warehouse.</p>
+
+<p>Example of Multi-Temperature with a PPI Table:</p>
+
+<p>If this is time based (e.g., DATE), then rows of the table are physically grouped by DATE and the groups ordered by DATE, even though hash ordered within the partition for each DATE value.</p>
+
+<p>Because the rows are logically grouped together, they reside in a set of cylinders.</p>
+
+<p>Based on usage patterns, all the cylinders of a partition will have same temperature.</p>
+
+<p>As usage drops, a partition cools off, and eventually its cylinders get migrated out of FAST to MEDIUM, then eventually to SLOW storage.</p>
+
+<p>Newly loaded partition will assume temperature of previous latest (probably HOT).</p>
+
+<p>While TVS can monitor data temperatures, it can’t change or manipulate the temperature of your data because data temperatures are primarily dictated by the workloads that are run on the warehouse. That is, the more queries that are run against a particular table (or tables) the higher its temperature(s). The only way to change a table’s temperature is to alter the number of queries that are run against it.</p>
+
+<p>For technical accuracy, TVS temperature is measured at a cylinder level <code>not a data level</code>.</p>
+
+<h2 id="teradata_compression_comparison">Teradata Compression Comparison</h2>
+
+<pre><code>• Multi-Value Compression vs. VARCHAR
+• Algorithmic Compression
+• Block Level Compression</code></pre>
+
+<p>A business can choose any combination or all three on a column/table.</p>
+
+<h2 id="major_components_of_the_teradata_database">Major Components of the Teradata Database</h2>
+
+<p>We have looked at the overall node, and now we will describe the components that make up a node in detail.</p>
+
+<h3 id="parsing_engine_pe">Parsing Engine (PE)</h3>
+
+<p>The Parsing Engine (PE) is a virtual processor (vproc) that interprets SQL requests, receives input records, and passes data. To do that it sends the messages over the BYNET to the AMPs.</p>
+
+<p>Note: PDE controls the virtual processors (vprocs).</p>
+
+<h3 id="bynet">BYNET</h3>
+
+<p>The BYNET is the message-passing layer. It determines which AMP(s) (Access Module Processor) should receive a message.</p>
+
+<h3 id="access_module_processor_amp">Access Module Processor (AMP)</h3>
+
+<p>The AMP is a virtual processor (vproc) designed for and dedicated to managing a portion of the entire database. It performs all database management functions such as sorting, aggregating, and formatting data. The AMP receives data from the PE, formats rows, and distributes them to the disk storage units it controls. The AMP also retrieves the rows requested by the Parsing Engine.</p>
+
+<p>Note: PDE controls the virtual processors (vprocs).</p>
+
+<h3 id="disks">Disks</h3>
+
+<p>Disks are disk drives associated with an AMP that store the data rows. On current systems, they are implemented using a disk array.</p>
+
+<h3 id="what_happens_when_a_query_is_submitted">What Happens When a Query is Submitted?</h3>
+
+<pre><code>1. The Parser evaluates the SQL for proper syntax.
+2. The Optimizer develops the least expensive plan.
+3. The BYNET passes the steps from the Dispatcher to the AMPs.</code></pre>
+
+<h2 id="the_parsing_engine_pe">The Parsing Engine (PE)</h2>
+
+<p>The Parsing Engine is responsible for:</p>
+
+<pre><code>• Managing individual sessions(up to 120 sessions per PE)
+• Parsing and optimizing your SQL requests
+• Building query plans with the parallel-aware, cost-based, intelligent Optimizer
+• Dispatching the optimized plan to the AMPs
+• EBCDIC/ASCII input conversion(if necessary)
+• Sending the answer set response back to the requesting client</code></pre>
+
+<h2 id="the_bynet">The BYNET</h2>
+
+<p>Dual redundant, fault-tolerant, bi-directional interconnect network that enables:</p>
+
+<pre><code>• Automatic load balancing of message traffic
+• Automatic reconfiguration after fault detection
+• Scalable bandwidth as nodes are added</code></pre>
+
+<p>The BYNET connects and communicates with all the AMPs and PEs in the system:</p>
+
+<pre><code>• Between nodes, the BYNET hardware carries broadcast and point-to-point communications
+• On a node, BYNET software and PDE together control which AMPs receive a multicast communication
+• Merges the final answer set</code></pre>
+
+<h2 id="the_access_module_processor_amp">The Access Module Processor (AMP)</h2>
+
+<p>The AMP is responsible for:</p>
+
+<pre><code>• Storing rows to and retrieving rows from its vdisk 
+• Lock management 
+• Sorting rows and aggregating columns
+• Join processing
+• Output conversion and formatting (ASCII, EBCDIC)
+• Creating answer sets for clients
+• Disk space management and accounting
+• Special utility protocols
+• Recovery processing</code></pre>
+
+<h2 id="teradata_database_software">Teradata Database Software</h2>
+
+<p>The Teradata Database requires three distinct pieces of software: <code>TPA</code>, <code>PDE</code>, and <code>OS</code>.</p>
+
+<p>A Linux or Windows operating system (OS) and a Teradata Database software license are necessary for each node.</p>
+
+<p>A Trusted Parallel Application (TPA) implements virtual processors and runs on the OS with PDE. The Teradata Database is the only TPA that runs on Teradata. The components of the Teradata Database software include:</p>
+
+<pre><code>•Channel Driver 
+•Teradata Gateway 
+•AMP 
+•PE</code></pre>
+
+<p>Parallel Database Extensions (PDE) was added to the operating system to support the parallel software environment. PDE controls the virtual processor (vproc) resources.</p>
+
+<p>A virtual processor (vproc) is a collection of software processes running under the multi-tasking environment of the operating system.</p>
+
+<p>The client may be a mainframe system, such as IBM or Amdahl, which is channel-attached to the Teradata Database, or it may be a PC, UNIX, or Linux-based system that is LAN-attached.</p>
+
+<p>The client application submits a SQL request to the database, receives the response, and submits the response to the user. This application could be a business intelligence (BI) tool or data integration (DI/ETL/ELT) tool, submitting queries to Teradata or loading/updating tables in the database.</p>
+
+<h2 id="layers_of_the_data_warehouse_architecture">Layers of the Data Warehouse Architecture</h2>
+
+<p>There are several “layers” that make up the EDW environment. These layers include:</p>
+
+<h3 id="staging_layer">Staging Layer</h3>
+
+<p>Staging – the primary purpose of the staging layer is to perform data transformation and loading during either the ETL or ELT process.</p>
+
+<h3 id="access_layer">Access Layer</h3>
+
+<p>Access is often provided via views and business intelligence (BI) tools; whether a Teradata application or a 3rd party tool.</p>
+
+<h3 id="physical_layer">Physical Layer</h3>
+
+<p>Physical – the physical layer is where denormalizations that will make access more efficient occur; pre-aggregations, summary tables, join indexes, etc.</p>
+
+<h3 id="data_lab">Data Lab</h3>
+
+<p>This is Teradata’s implementation of a controlled “sandbox” environment. It enables rapid loading and analysis of new data combined with existing warehouse data. It quickly assimilates untested data into a “non-production” portion of the warehouse, providing a self-provisioning, self-service environment for prototyping and analysis on new, un-cleansed data, which is temporary in nature. 注：本文仅作个人学习笔记用，版权为Teradata公司所有，严禁转载。 Data Lab is comprised of two Viewpoint portlets.</p>
+
+<h2 id="channelattached_client_software">Channel-Attached Client Software</h2>
+
+<h3 id="cli_calllevel_interface">CLI (Call-Level Interface)</h3>
+
+<pre><code>• Request and response control
+• Buffer allocation and initialization
+• Lowest level interface to the Teradata Database
+• Library of routines for blocking/unblocking requests and responses to/from RDBMS
+• Performs logon and logoff functions</code></pre>
+
+<h3 id="tdp_teradata_director_program">TDP (Teradata Director Program)</h3>
+
+<pre><code>• Manages session traffic between CLI and the Teradata Database
+• Session balancing across multiple PEs
+• Failure notification (application failure, Teradata Database restart)
+• Logging, verification, recovery, restart, security</code></pre>
+
+<p>• Connection made via HCA, Bus &amp; Tag or ESCON cables, Channel Driver, and PE</p>
+
+<h2 id="networkattached_client_software">Network-Attached Client Software</h2>
+
+<h3 id="odbc">ODBC</h3>
+
+<pre><code>• Call-level interface
+• Teradata Database ODBC driver is used to connect applications with the Teradata Database</code></pre>
+
+<h3 id="jdbc">JDBC</h3>
+
+<pre><code>• API - allows platform independent JAVA applications to access Teradata.</code></pre>
+
+<h3 id="mtdp_micro_teradata_director_program">MTDP (Micro Teradata Director Program)</h3>
+
+<pre><code>• Performs many TDP functions including session management but not session balancing across PEs</code></pre>
+
+<h3 id="mosi_micro_operating_system_interface">MOSI (Micro Operating System Interface)</h3>
+
+<pre><code>• Provides O/S and network protocol independent interface</code></pre>
+
+<h3 id="ole_db">OLE DB</h3>
+
+<pre><code>• Microsoft API that provides uniform access</code></pre>
+
+<p>• Connection made via Ethernet or LAN card, cables, Teradata Gateway, and PE.</p>
+
+<p>• Multiple LAN connections for redundancy.</p>
+    <hr>
+    <div class="pagination btn-group">
+      
+        <a class="btn prev" href="/hardware/2014/01/25/serverarch" title="服务器三大体系SMP、NUMA、MPP介绍">&larr; Previous</a>
+      
+        <a class="btn" href="/archive.html">Archive</a>
+      
+        <a class="btn next disabled">Next &rarr;</a>
+      
+    </div>
+    <hr>
+  
+
+
+  <!-- Duoshuo Comment BEGIN -->
+    <div id="comments">
+        <div class="ds-thread" data-title="Teradata Study Notes-Introduction to the Teradata Database(3) - Lionel Cao"></div>
+    </div>
+<!-- Duoshuo Comment END -->
+
+
+
+
+
+
+	
+  </div>
+  
+
+  <div class="span4">
+    <section>
+      <h4>Published</h4>
+      <div class="date"><span>26 January 2014</span></div>
+    </section>
+    
+      <section>
+        <h4>Category</h4>
+        <span class="category">
+          database
+        </span>
+      </section>
+         
+    
+      <section>
+        <h4>Tags</h4>
+        <ul class="tag_box">
+          
+          
+
+
+  
+     
+    	<li><a href="/tags.html#teradata-ref">teradata <span>5</span></a></li>
+     
+    	<li><a href="/tags.html#introduction-ref">introduction <span>3</span></a></li>
+     
+    	<li><a href="/tags.html#database-ref">database <span>3</span></a></li>
+    
+  
+
+
+
+        </ul>
+      </section>
+             
+  </div>
+</div>
+
+
+      </div>
+    
+
+      <footer>
+
+        <p>&copy; 2014 北落师门 All Rights Reserved
+        </p>
+
+      </footer>
+    </div> <!-- /container -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/themes/hooligan/js/jquery.min.js"><\/script>')</script>
+    <script src="/assets/themes/hooligan/bootstrap/js/bootstrap.min.js"></script>
+        <!--多说js加载开始，一个页面只需要加载一次 -->
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name: "lionelcao"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = 'http://static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script>
+    <!--多说js加载结束，一个页面只需要加载一次 -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+						   		   
+	//When you click on a link with class of poplight and the href starts with a # 
+	$('a.poplight[href^=#]').click(function() {
+		var popID = $(this).attr('rel'); //Get Popup Name
+		var popURL = $(this).attr('href'); //Get Popup href to define size
+		console.log(popID);
+                console.log(popURL);		
+		//Pull Query & Variables from href URL
+		var query= popURL.split('?');
+console.log(query);
+		var dim= query[1].split('&');
+console.log(dim);
+		var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+console.log(popWidth); 
+		//Fade in the Popup and add close button
+		$('#' + popID).fadeIn().css({}).prepend('<a href="#" class="close1"><img src="images/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>');
+		
+		//Define margin for center alignment (vertical + horizontal) - we add 80 to the height/width to accomodate for the padding + border width defined in the css
+		var popMargTop = ($('#' + popID).height() + 80) / 2;
+		var popMargLeft = ($('#' + popID).width() + 80) / 2;
+console.log(popMargTop);
+console.log(popMargLeft);
+console.log('1');
+		//Apply Margin to Popup
+		$('#' + popID).css({ 
+			'margin-top' : -popMargTop,
+			'margin-left' : -popMargLeft
+		});
+		
+		//Fade in Background
+		$('body').append('<div id="fade"></div>'); //Add the fade layer to bottom of the body tag.
+		$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer 
+		
+		return false;
+	});
+	
+	
+	//Close Popups and Fade Layer
+	$('a.close1, #fade').live('click', function() { //When clicking on the close or fade layer...
+	  	$('#fade , .popup_block').fadeOut(function() {
+			$('#fade, a.close1').remove();  
+	}); //fade them both out
+	console.log('2');	
+		return false;
+	});
+
+	
+});
+</script>
+    
+  </body>
+</html>
+

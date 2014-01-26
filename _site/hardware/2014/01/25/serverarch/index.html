@@ -131,7 +131,7 @@
 
 <p>　　SMP服务器的主要特征是共享，系统中所有资源（CPU、内存、I/O等）都是共享的。也正是由于这种特征，导致了SMP服务器的主要问题，那就是它的扩展能力非常有限。对于SMP服务器而言，每一个共享的环节都可能造成SMP服务器扩展时的瓶颈，而最受限制的则是内存。由于每个CPU必须通过相同的内存总线访问相同的内存资源，因此随着CPU数量的增加，内存访问冲突将迅速增加，最终会造成CPU资源的浪费，使 CPU性能的有效性大大降低。实验证明，SMP服务器CPU利用率最好的情况是2至4个CPU。</p>
 
-<p><img src="/images/smp.jpg" alt="smp" /></p>
+<p><img alt="smp" src="/images/smp.jpg" /></p>
 
 <p>　　图1.SMP服务器CPU利用率状态</p>
 
@@ -139,7 +139,7 @@
 
 <p>　　由于SMP在扩展能力上的限制，人们开始探究如何进行有效地扩展从而构建大型系统的技术，NUMA就是这种努力下的结果之一。利用NUMA技术，可以把几十个CPU（甚至上百个CPU）组合在一个服务器内。其CPU模块结构如图2所示：</p>
 
-<p><img src="/images/numa.jpg" alt="muma" /></p>
+<p><img alt="muma" src="/images/numa.jpg" /></p>
 
 <p>　　图2.NUMA服务器CPU模块结构</p>
 
@@ -147,7 +147,7 @@
 
 <p>　　但NUMA技术同样有一定缺陷，由于访问远地内存的延时远远超过本地内存，因此当CPU数量增加时，系统性能无法线性增加。如HP公司发布Superdome服务器时，曾公布了它与HP其它UNIX服务器的相对性能值，结果发现，64路CPU的Superdome （NUMA结构）的相对性能值是20，而8路N4000（共享的SMP结构）的相对性能值是6.3。从这个结果可以看到，8倍数量的CPU换来的只是3倍性能的提升。</p>
 
-<p><img src="/images/mpp.jpg" alt="mpp" /></p>
+<p><img alt="mpp" src="/images/mpp.jpg" /></p>
 
 <p>　　图3.MPP服务器架构图</p>
 
@@ -183,7 +183,7 @@
       
         <a class="btn" href="/archive.html">Archive</a>
       
-        <a class="btn next disabled">Next &rarr;</a>
+        <a class="btn next" href="/database/2014/01/26/tdnotes3" title="Teradata Study Notes-Introduction to the Teradata Database(3)">Next &rarr;</a>
       
     </div>
     <hr>

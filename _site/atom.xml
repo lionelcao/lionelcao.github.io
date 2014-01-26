@@ -4,13 +4,272 @@
  <title>Lionel Cao</title>
  <link href="http://lionelcao.github.io/" rel="self"/>
  <link href="http://lionelcao.github.io"/>
- <updated>2014-01-25T22:18:41+08:00</updated>
+ <updated>2014-01-27T00:00:46+08:00</updated>
  <id>http://lionelcao.github.io</id>
  <author>
    <name>北落师门</name>
    <email>whucaolu@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Teradata Study Notes-Introduction to the Teradata Database(3)</title>
+   <link href="http://lionelcao.github.io/database/2014/01/26/tdnotes3"/>
+   <updated>2014-01-26T00:00:00+08:00</updated>
+   <id>http://lionelcao.github.io/database/2014/01/26/tdnotes3</id>
+   <content type="html">&lt;p&gt;注：本文仅作个人学习笔记用，版权为Teradata公司所有，严禁转载。&lt;/p&gt;
+
+&lt;h2 id=&quot;what_is_a_node&quot;&gt;What is a node?&lt;/h2&gt;
+
+&lt;p&gt;Teradata software, gateway software and channel-driver software run as processes&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;Parsing Engines(PE) and Access Module Processors(AMP) are Virtual Processors(Vproc) which run under control of Parallel Database Extensions(PDE)&lt;/p&gt;
+
+&lt;p&gt;Each AMP is associated with a Virtual Disk (Vdisk)&lt;/p&gt;
+
+&lt;p&gt;A single node is called a Symmetric Multi-Processor (SMP)&lt;/p&gt;
+
+&lt;p&gt;All AMPs and PEs communicate via the BYNET&lt;/p&gt;
+
+&lt;h2 id=&quot;what_is_teradata_virtual_storage_tvs&quot;&gt;What is Teradata Virtual Storage (TVS)?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;• TVS (Teradata 13.0) is a change to the way in which Teradata accesses storage.
+• Purpose is to manage a Multi-Temperature Data Warehouse.
+• Pools all of the cylinders within a clique's disk space and allocates cylinders from this storage pool to individual AMPs.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;advantages_include&quot;&gt;Advantages include:&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;• Simplifies adding storage to existing cliques
+  – Improved control over storage growth. You can add storage to the clique-storage-pool versus to every AMP.
+  – Allows sharing of storage devices among AMPs which is more cost effective.
+• Enables mixing drive sizes / speeds / technologies
+  – Enables the “mixing” of storage devices (e.g., spinning disks, Solid State Disks – SSD).
+• Enables non-intrusive migration of data
+  – The most frequently accessed data (hot data) can migrate to the high performing cylinders and infrequently accessed data (cold data) can migrate to the lower performing cylinders.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;teradata_virtual_storage_concepts&quot;&gt;Teradata Virtual Storage Concepts&lt;/h3&gt;
+
+&lt;p&gt;The facing page illustrates the conceptual differences with and without Teradata Virtual Storage. One of the benefits of Teradata Virtual Storage is the ease of adding storage to an existing system.&lt;/p&gt;
+
+&lt;p&gt;Before Teradata Virtual Storage:&lt;/p&gt;
+
+&lt;p&gt;Existing systems have integral number of drives/AMP&lt;/p&gt;
+
+&lt;p&gt;Adding storage requires an additional drive or two per AMP – this means a 50% or 100% increase in capacity&lt;/p&gt;
+
+&lt;p&gt;With Teradata Virtual Storage, you can add any number of drives.&lt;/p&gt;
+
+&lt;p&gt;Added drives are shared by all AMPs within a clique&lt;/p&gt;
+
+&lt;p&gt;These new disks may have different capacities and / or performance than those disks which already reside in the system.&lt;/p&gt;
+
+&lt;h3 id=&quot;storage_performance_relative_response_times__eg_fast_medium_slow&quot;&gt;Storage Performance relative response times – (e.g., fast, medium, slow).&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;• Profiles the performance of all the disk drives (e.g., SSD versus spinning disks)
+• Identifies performance zones (usually 10) on each spinning disk drive&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;data_access_frequency__referred_to_as_data_temperature_eg_hot_warm_cold&quot;&gt;Data Access Frequency – referred to as “Data Temperature” (e.g., hot, warm, cold).&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;• TVS records information about data access (called Profiling and Metric Collection)
+   – How long it takes to access data (I/O response times)
+   – How often data is accessed (effectively the data temperature)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;tvs_places_data_for_optimal_access_based_upon_storage_performance_type_of_data_wal_depot_spool_etc_and_the_results_of_metric_collection&quot;&gt;TVS places data for optimal access based upon storage performance, type of data (WAL, Depot, Spool, etc.) and the results of metric collection.&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;• Initial Data Placement
+• Migration of data based upon data temperature&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;three_types_of_data_migration&quot;&gt;Three types of Data Migration:&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;• Background Process During Queries – moves 10% of data in about one week
+• Optimize Storage Command (Database off-hours) - moves 10% of data in about 8 hours
+   – Ignores other work – just runs “flat out”
+• Anticipatory migration to make room in fast reserve, fast or warm storage for hotter data(when needed)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;multitemperature_data_example&quot;&gt;Multi-Temperature Data Example&lt;/h2&gt;
+
+&lt;p&gt;The facing page illustrates an example of using a Multi-Temperature Warehouse.&lt;/p&gt;
+
+&lt;p&gt;Example of Multi-Temperature with a PPI Table:&lt;/p&gt;
+
+&lt;p&gt;If this is time based (e.g., DATE), then rows of the table are physically grouped by DATE and the groups ordered by DATE, even though hash ordered within the partition for each DATE value.&lt;/p&gt;
+
+&lt;p&gt;Because the rows are logically grouped together, they reside in a set of cylinders.&lt;/p&gt;
+
+&lt;p&gt;Based on usage patterns, all the cylinders of a partition will have same temperature.&lt;/p&gt;
+
+&lt;p&gt;As usage drops, a partition cools off, and eventually its cylinders get migrated out of FAST to MEDIUM, then eventually to SLOW storage.&lt;/p&gt;
+
+&lt;p&gt;Newly loaded partition will assume temperature of previous latest (probably HOT).&lt;/p&gt;
+
+&lt;p&gt;While TVS can monitor data temperatures, it can’t change or manipulate the temperature of your data because data temperatures are primarily dictated by the workloads that are run on the warehouse. That is, the more queries that are run against a particular table (or tables) the higher its temperature(s). The only way to change a table’s temperature is to alter the number of queries that are run against it.&lt;/p&gt;
+
+&lt;p&gt;For technical accuracy, TVS temperature is measured at a cylinder level &lt;code&gt;not a data level&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;teradata_compression_comparison&quot;&gt;Teradata Compression Comparison&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;• Multi-Value Compression vs. VARCHAR
+• Algorithmic Compression
+• Block Level Compression&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A business can choose any combination or all three on a column/table.&lt;/p&gt;
+
+&lt;h2 id=&quot;major_components_of_the_teradata_database&quot;&gt;Major Components of the Teradata Database&lt;/h2&gt;
+
+&lt;p&gt;We have looked at the overall node, and now we will describe the components that make up a node in detail.&lt;/p&gt;
+
+&lt;h3 id=&quot;parsing_engine_pe&quot;&gt;Parsing Engine (PE)&lt;/h3&gt;
+
+&lt;p&gt;The Parsing Engine (PE) is a virtual processor (vproc) that interprets SQL requests, receives input records, and passes data. To do that it sends the messages over the BYNET to the AMPs.&lt;/p&gt;
+
+&lt;p&gt;Note: PDE controls the virtual processors (vprocs).&lt;/p&gt;
+
+&lt;h3 id=&quot;bynet&quot;&gt;BYNET&lt;/h3&gt;
+
+&lt;p&gt;The BYNET is the message-passing layer. It determines which AMP(s) (Access Module Processor) should receive a message.&lt;/p&gt;
+
+&lt;h3 id=&quot;access_module_processor_amp&quot;&gt;Access Module Processor (AMP)&lt;/h3&gt;
+
+&lt;p&gt;The AMP is a virtual processor (vproc) designed for and dedicated to managing a portion of the entire database. It performs all database management functions such as sorting, aggregating, and formatting data. The AMP receives data from the PE, formats rows, and distributes them to the disk storage units it controls. The AMP also retrieves the rows requested by the Parsing Engine.&lt;/p&gt;
+
+&lt;p&gt;Note: PDE controls the virtual processors (vprocs).&lt;/p&gt;
+
+&lt;h3 id=&quot;disks&quot;&gt;Disks&lt;/h3&gt;
+
+&lt;p&gt;Disks are disk drives associated with an AMP that store the data rows. On current systems, they are implemented using a disk array.&lt;/p&gt;
+
+&lt;h3 id=&quot;what_happens_when_a_query_is_submitted&quot;&gt;What Happens When a Query is Submitted?&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;1. The Parser evaluates the SQL for proper syntax.
+2. The Optimizer develops the least expensive plan.
+3. The BYNET passes the steps from the Dispatcher to the AMPs.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;the_parsing_engine_pe&quot;&gt;The Parsing Engine (PE)&lt;/h2&gt;
+
+&lt;p&gt;The Parsing Engine is responsible for:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;• Managing individual sessions(up to 120 sessions per PE)
+• Parsing and optimizing your SQL requests
+• Building query plans with the parallel-aware, cost-based, intelligent Optimizer
+• Dispatching the optimized plan to the AMPs
+• EBCDIC/ASCII input conversion(if necessary)
+• Sending the answer set response back to the requesting client&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;the_bynet&quot;&gt;The BYNET&lt;/h2&gt;
+
+&lt;p&gt;Dual redundant, fault-tolerant, bi-directional interconnect network that enables:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;• Automatic load balancing of message traffic
+• Automatic reconfiguration after fault detection
+• Scalable bandwidth as nodes are added&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The BYNET connects and communicates with all the AMPs and PEs in the system:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;• Between nodes, the BYNET hardware carries broadcast and point-to-point communications
+• On a node, BYNET software and PDE together control which AMPs receive a multicast communication
+• Merges the final answer set&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;the_access_module_processor_amp&quot;&gt;The Access Module Processor (AMP)&lt;/h2&gt;
+
+&lt;p&gt;The AMP is responsible for:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;• Storing rows to and retrieving rows from its vdisk 
+• Lock management 
+• Sorting rows and aggregating columns
+• Join processing
+• Output conversion and formatting (ASCII, EBCDIC)
+• Creating answer sets for clients
+• Disk space management and accounting
+• Special utility protocols
+• Recovery processing&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;teradata_database_software&quot;&gt;Teradata Database Software&lt;/h2&gt;
+
+&lt;p&gt;The Teradata Database requires three distinct pieces of software: &lt;code&gt;TPA&lt;/code&gt;, &lt;code&gt;PDE&lt;/code&gt;, and &lt;code&gt;OS&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;A Linux or Windows operating system (OS) and a Teradata Database software license are necessary for each node.&lt;/p&gt;
+
+&lt;p&gt;A Trusted Parallel Application (TPA) implements virtual processors and runs on the OS with PDE. The Teradata Database is the only TPA that runs on Teradata. The components of the Teradata Database software include:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;•Channel Driver 
+•Teradata Gateway 
+•AMP 
+•PE&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Parallel Database Extensions (PDE) was added to the operating system to support the parallel software environment. PDE controls the virtual processor (vproc) resources.&lt;/p&gt;
+
+&lt;p&gt;A virtual processor (vproc) is a collection of software processes running under the multi-tasking environment of the operating system.&lt;/p&gt;
+
+&lt;p&gt;The client may be a mainframe system, such as IBM or Amdahl, which is channel-attached to the Teradata Database, or it may be a PC, UNIX, or Linux-based system that is LAN-attached.&lt;/p&gt;
+
+&lt;p&gt;The client application submits a SQL request to the database, receives the response, and submits the response to the user. This application could be a business intelligence (BI) tool or data integration (DI/ETL/ELT) tool, submitting queries to Teradata or loading/updating tables in the database.&lt;/p&gt;
+
+&lt;h2 id=&quot;layers_of_the_data_warehouse_architecture&quot;&gt;Layers of the Data Warehouse Architecture&lt;/h2&gt;
+
+&lt;p&gt;There are several “layers” that make up the EDW environment. These layers include:&lt;/p&gt;
+
+&lt;h3 id=&quot;staging_layer&quot;&gt;Staging Layer&lt;/h3&gt;
+
+&lt;p&gt;Staging – the primary purpose of the staging layer is to perform data transformation and loading during either the ETL or ELT process.&lt;/p&gt;
+
+&lt;h3 id=&quot;access_layer&quot;&gt;Access Layer&lt;/h3&gt;
+
+&lt;p&gt;Access is often provided via views and business intelligence (BI) tools; whether a Teradata application or a 3rd party tool.&lt;/p&gt;
+
+&lt;h3 id=&quot;physical_layer&quot;&gt;Physical Layer&lt;/h3&gt;
+
+&lt;p&gt;Physical – the physical layer is where denormalizations that will make access more efficient occur; pre-aggregations, summary tables, join indexes, etc.&lt;/p&gt;
+
+&lt;h3 id=&quot;data_lab&quot;&gt;Data Lab&lt;/h3&gt;
+
+&lt;p&gt;This is Teradata’s implementation of a controlled “sandbox” environment. It enables rapid loading and analysis of new data combined with existing warehouse data. It quickly assimilates untested data into a “non-production” portion of the warehouse, providing a self-provisioning, self-service environment for prototyping and analysis on new, un-cleansed data, which is temporary in nature. 注：本文仅作个人学习笔记用，版权为Teradata公司所有，严禁转载。 Data Lab is comprised of two Viewpoint portlets.&lt;/p&gt;
+
+&lt;h2 id=&quot;channelattached_client_software&quot;&gt;Channel-Attached Client Software&lt;/h2&gt;
+
+&lt;h3 id=&quot;cli_calllevel_interface&quot;&gt;CLI (Call-Level Interface)&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;• Request and response control
+• Buffer allocation and initialization
+• Lowest level interface to the Teradata Database
+• Library of routines for blocking/unblocking requests and responses to/from RDBMS
+• Performs logon and logoff functions&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;tdp_teradata_director_program&quot;&gt;TDP (Teradata Director Program)&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;• Manages session traffic between CLI and the Teradata Database
+• Session balancing across multiple PEs
+• Failure notification (application failure, Teradata Database restart)
+• Logging, verification, recovery, restart, security&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;• Connection made via HCA, Bus &amp;amp; Tag or ESCON cables, Channel Driver, and PE&lt;/p&gt;
+
+&lt;h2 id=&quot;networkattached_client_software&quot;&gt;Network-Attached Client Software&lt;/h2&gt;
+
+&lt;h3 id=&quot;odbc&quot;&gt;ODBC&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;• Call-level interface
+• Teradata Database ODBC driver is used to connect applications with the Teradata Database&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;jdbc&quot;&gt;JDBC&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;• API - allows platform independent JAVA applications to access Teradata.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;mtdp_micro_teradata_director_program&quot;&gt;MTDP (Micro Teradata Director Program)&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;• Performs many TDP functions including session management but not session balancing across PEs&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;mosi_micro_operating_system_interface&quot;&gt;MOSI (Micro Operating System Interface)&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;• Provides O/S and network protocol independent interface&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;ole_db&quot;&gt;OLE DB&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;• Microsoft API that provides uniform access&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;• Connection made via Ethernet or LAN card, cables, Teradata Gateway, and PE.&lt;/p&gt;
+
+&lt;p&gt;• Multiple LAN connections for redundancy.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>服务器三大体系SMP、NUMA、MPP介绍</title>
@@ -25,7 +284,7 @@
 
 &lt;p&gt;　　SMP服务器的主要特征是共享，系统中所有资源（CPU、内存、I/O等）都是共享的。也正是由于这种特征，导致了SMP服务器的主要问题，那就是它的扩展能力非常有限。对于SMP服务器而言，每一个共享的环节都可能造成SMP服务器扩展时的瓶颈，而最受限制的则是内存。由于每个CPU必须通过相同的内存总线访问相同的内存资源，因此随着CPU数量的增加，内存访问冲突将迅速增加，最终会造成CPU资源的浪费，使 CPU性能的有效性大大降低。实验证明，SMP服务器CPU利用率最好的情况是2至4个CPU。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/smp.jpg&quot; alt=&quot;smp&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;smp&quot; src=&quot;/images/smp.jpg&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;　　图1.SMP服务器CPU利用率状态&lt;/p&gt;
 
@@ -33,7 +292,7 @@
 
 &lt;p&gt;　　由于SMP在扩展能力上的限制，人们开始探究如何进行有效地扩展从而构建大型系统的技术，NUMA就是这种努力下的结果之一。利用NUMA技术，可以把几十个CPU（甚至上百个CPU）组合在一个服务器内。其CPU模块结构如图2所示：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/numa.jpg&quot; alt=&quot;muma&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;muma&quot; src=&quot;/images/numa.jpg&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;　　图2.NUMA服务器CPU模块结构&lt;/p&gt;
 
@@ -41,7 +300,7 @@
 
 &lt;p&gt;　　但NUMA技术同样有一定缺陷，由于访问远地内存的延时远远超过本地内存，因此当CPU数量增加时，系统性能无法线性增加。如HP公司发布Superdome服务器时，曾公布了它与HP其它UNIX服务器的相对性能值，结果发现，64路CPU的Superdome （NUMA结构）的相对性能值是20，而8路N4000（共享的SMP结构）的相对性能值是6.3。从这个结果可以看到，8倍数量的CPU换来的只是3倍性能的提升。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/mpp.jpg&quot; alt=&quot;mpp&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;mpp&quot; src=&quot;/images/mpp.jpg&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;　　图3.MPP服务器架构图&lt;/p&gt;
 
@@ -907,10 +1166,10 @@ ab*(c|ε)指示开始于一个a接着零或多个b和最终可选的一个c的�
     &lt;/TH&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD class='firstRow' style='text-align: left' valign='top'&gt;
+    &lt;TD style='text-align: left' valign='top' class='firstRow'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n05764k5zha7vmn1o5jdawotulb2' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;ACCESS=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD class='firstRow' style='text-align: left' valign='top'&gt;
+    &lt;TD style='text-align: left' valign='top' class='firstRow'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n159pibn1z2n3cn1idoq4m6lnosl' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
