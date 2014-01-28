@@ -6,6 +6,8 @@ category: "database"
 tags: [teradata, introduction, database]
 ---
 {% include JB/setup %}
+注：本文仅作个人学习笔记用，版权为Teradata公司所有，严禁转载。
+
 ##Module 1 - Teradata Database Overview
 
    <!-- more -->

@@ -6,6 +6,8 @@ category: "database"
 tags: [teradata, introduction, database]
 ---
 {% include JB/setup %}
+注：本文仅作个人学习笔记用，版权为Teradata公司所有，严禁转载。
+##Module4 Components and Architecture
 ##What is a node?
 Teradata software, gateway software and channel-driver software run as processes
 
@@ -20,19 +22,19 @@ All AMPs and PEs communicate via the BYNET
 
 ##What is Teradata Virtual Storage (TVS)?
 
-• TVS (Teradata 13.0) is a change to the way in which Teradata accesses storage.
-• Purpose is to manage a Multi-Temperature Data Warehouse.
-• Pools all of the cylinders within a clique's disk space and allocates cylinders from this storage pool to individual AMPs.
+    • TVS (Teradata 13.0) is a change to the way in which Teradata accesses storage.
+    • Purpose is to manage a Multi-Temperature Data Warehouse.
+    • Pools all of the cylinders within a clique's disk space and allocates cylinders from this storage pool to individual AMPs.
 
 ###Advantages include:
 
-• Simplifies adding storage to existing cliques
-   – Improved control over storage growth. You can add storage to the clique-storage-pool versus to every AMP.
-   – Allows sharing of storage devices among AMPs which is more cost effective.
-• Enables mixing drive sizes / speeds / technologies
-   – Enables the “mixing” of storage devices (e.g., spinning disks, Solid State Disks – SSD).
-• Enables non-intrusive migration of data
-   – The most frequently accessed data (hot data) can migrate to the high performing cylinders and infrequently accessed data (cold data) can migrate to the lower performing cylinders.
+    • Simplifies adding storage to existing cliques
+      – Improved control over storage growth. You can add storage to the clique-storage-pool versus to every AMP.
+      – Allows sharing of storage devices among AMPs which is more cost effective.
+    • Enables mixing drive sizes / speeds / technologies
+      – Enables the “mixing” of storage devices (e.g., spinning disks, Solid State Disks – SSD).
+    • Enables non-intrusive migration of data
+      – The most frequently accessed data (hot data) can migrate to the high performing cylinders and infrequently accessed data (cold data) can migrate to the lower performing cylinders.
 
 ###Teradata Virtual Storage Concepts
 The facing page illustrates the conceptual differences with and without Teradata Virtual Storage. One of the benefits of Teradata Virtual Storage is the ease of adding storage to an existing system.
@@ -51,28 +53,26 @@ These new disks may have different capacities and / or performance than those di
 
 ###Storage Performance relative response times – (e.g., fast, medium, slow).
 
-• Profiles the performance of all the disk drives (e.g., SSD versus spinning disks)
-• Identifies performance zones (usually 10) on each spinning disk drive
+    • Profiles the performance of all the disk drives (e.g., SSD versus spinning disks)
+    • Identifies performance zones (usually 10) on each spinning disk drive
 
 ###Data Access Frequency – referred to as "Data Temperature" (e.g., hot, warm, cold).
 
-• TVS records information about data access (called Profiling and Metric Collection)
+    • TVS records information about data access (called Profiling and Metric Collection)
+       – How long it takes to access data (I/O response times)
+       – How often data is accessed (effectively the data temperature)
 
-    – How long it takes to access data (I/O response times)
-    – How often data is accessed (effectively the data temperature)
+###TVS places data for optimal access based upon storage performance, type of data (WAL, Depot, Spool, etc.) and the results of metric collection.
 
-TVS places data for optimal access based upon storage performance, type of data (WAL,
-Depot, Spool, etc.) and the results of metric collection.
+    • Initial Data Placement
+    • Migration of data based upon data temperature
 
-• Initial Data Placement
-• Migration of data based upon data temperature
+###Three types of Data Migration:
 
-Three types of Data Migration:
-
-• Background Process During Queries – moves 10% of data in about one week
-• Optimize Storage Command (Database off-hours) - moves 10% of data in about 8 hours
-    – Ignores other work – just runs “flat out”
-• Anticipatory migration to make room in fast reserve, fast or warm storage for hotter data(when needed)
+    • Background Process During Queries – moves 10% of data in about one week
+    • Optimize Storage Command (Database off-hours) - moves 10% of data in about 8 hours
+       – Ignores other work – just runs “flat out”
+    • Anticipatory migration to make room in fast reserve, fast or warm storage for hotter data(when needed)
 
 ##Multi-Temperature Data Example
 The facing page illustrates an example of using a Multi-Temperature Warehouse.
@@ -95,9 +95,9 @@ For technical accuracy, TVS temperature is measured at a cylinder level `not a d
 
 ##Teradata Compression Comparison
 
-    Multi-Value Compression vs. VARCHAR
-    Algorithmic Compression
-    Block Level Compression
+    • Multi-Value Compression vs. VARCHAR
+    • Algorithmic Compression
+    • Block Level Compression
 
 A business can choose any combination or all three on a column/table.
 
@@ -193,7 +193,7 @@ Access is often provided via views and business intelligence (BI) tools; whether
 Physical – the physical layer is where denormalizations that will make access more efficient occur; pre-aggregations, summary tables, join indexes, etc.
 ###Data Lab
 This is Teradata’s implementation of a controlled “sandbox” environment. It enables rapid loading and analysis of new data combined with existing warehouse data. It quickly assimilates untested data into a “non-production” portion of the warehouse, providing a self-provisioning, self-service environment for prototyping and analysis on new, un-cleansed data, which is temporary in nature. 
-
+注：本文仅作个人学习笔记用，版权为Teradata公司所有，严禁转载。
 Data Lab is comprised of two Viewpoint portlets. 
 
 ##Channel-Attached Client Software
@@ -237,4 +237,5 @@ Data Lab is comprised of two Viewpoint portlets.
     • Microsoft API that provides uniform access
 
 • Connection made via Ethernet or LAN card, cables, Teradata Gateway, and PE.
+
 • Multiple LAN connections for redundancy.

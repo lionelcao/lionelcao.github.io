@@ -127,7 +127,7 @@
 
 <h2 id="module2__relational_database_concepts">Module2 - Relational Database Concepts</h2>
 <!-- more -->
-<h3 id="what_is_a_database">What is a Database?</h3>
+<h2 id="what_is_a_database">What is a Database?</h2>
 
 <p>A database is a collection of permanently stored data that is:</p>
 
@@ -136,7 +136,7 @@ Shared - many users may access the data.
 Protected - access to data is controlled.
 Managed - the data has integrity and value.</code></pre>
 
-<h3 id="logicalrelational_modeling">Logical/Relational Modeling</h3>
+<h2 id="logicalrelational_modeling">Logical/Relational Modeling</h2>
 
 <p>The Logical Model</p>
 
@@ -153,7 +153,7 @@ Is generic - the logical model is the template for physical implementation on an
 <pre><code>Process of reducing a complex data structure into a simple, stable one
 Involves removing redundant attributes, keys, and relationships from the conceptual data model</code></pre>
 
-<h3 id="relational_databases">Relational Databases</h3>
+<h2 id="relational_databases">Relational Databases</h2>
 
 <p>Relational databases are solidly founded on Set Theory and are based on the Relational Model.</p>
 
@@ -163,7 +163,7 @@ Involves removing redundant attributes, keys, and relationships from the concept
 
 <p>A row is one instance of all the columns of a table.</p>
 
-<h3 id="3nf_vs_star_schema_model">3NF vs. Star Schema Model</h3>
+<h2 id="3nf_vs_star_schema_model">3NF vs. Star Schema Model</h2>
 
 <p>A normalized model includes:</p>
 
@@ -186,7 +186,7 @@ Involves removing redundant attributes, keys, and relationships from the concept
 <pre><code>• They tend to have fewer entities
 • They advocate a greater level of denormalization</code></pre>
 
-<h3 id="primary_key">Primary Key</h3>
+<h2 id="primary_key">Primary Key</h2>
 
 <p>Primary Key (PK) values uniquely identify each row in a table.</p>
 
@@ -211,7 +211,7 @@ Involves removing redundant attributes, keys, and relationships from the concept
 • FK values may be changed.
 • FK values must exist elsewhere as a PK (i.e. have referential integrity).</code></pre>
 
-<h3 id="relational_advantages">Relational Advantages</h3>
+<h2 id="relational_advantages">Relational Advantages</h2>
 
 <p>Advantages of a Relational Database compared to other database methodologies include:</p>
 
@@ -228,14 +228,14 @@ Involves removing redundant attributes, keys, and relationships from the concept
 
 <h2 id="module3__teradata_and_the_data_warehouse">Module3 - Teradata and the Data Warehouse</h2>
 
-<h3 id="evolution_of_data_processing">Evolution of Data Processing</h3>
+<h2 id="evolution_of_data_processing">Evolution of Data Processing</h2>
 
 <pre><code>On-line Transaction Processing (OLTP)
 Decision Support Systems (DSS)
 On-line Analytical Processing (OLAP)
 Data Mining (DM)</code></pre>
 
-<h3 id="row_versus_set_processing">Row versus Set Processing</h3>
+<h2 id="row_versus_set_processing">Row versus Set Processing</h2>
 
 <p>What is Row-by-Row Processing?</p>
 
@@ -255,7 +255,7 @@ Data Mining (DM)</code></pre>
 • Single session processing which takes advantage of parallel processing
 • Efficient updates of large amounts of data.</code></pre>
 
-<h3 id="response_time_versus_throughput">Response Time versus Throughput</h3>
+<h2 id="response_time_versus_throughput">Response Time versus Throughput</h2>
 
 <p>When determining how fast something is, there are two kinds of measures. You can measure how long it takes to do something or you can measure how much gets done per unit time. The former is referred to as response time, access time, transmission time, or execution time depending on the context. The latter is referred to as throughput.</p>
 
@@ -267,7 +267,7 @@ Data Mining (DM)</code></pre>
 
 <p>A throughput measure is an amount of something per unit time. For operating systems, throughput is often measured as tasks or transactions per unit time. For storage systems or networks throughput is measured as bytes or bits per unit time. For processors, the number of instructions executed per unit time is an important component of performance.</p>
 
-<h3 id="what_does_this_mean_to_teradata">What Does this Mean to Teradata?</h3>
+<h2 id="what_does_this_mean_to_teradata">What Does this Mean to Teradata?</h2>
 
 <pre><code>Response time measures the average duration of queries and throughput measures quantity of queries completed during a time interval.
 Throughput is a measure of the amount of work processed while response time is a measure of process completion.
@@ -276,7 +276,7 @@ Throughput is the number of queries executed in an hour and response time is the
 
 <p>In order to improve both response time and throughput on a Teradata system, you could increase CPU power (i.e., add nodes), implement workload management to control resources, and decrease the number of concurrent users.</p>
 
-<h3 id="the_advantage_of_using_detail_data">The Advantage of Using Detail Data</h3>
+<h2 id="the_advantage_of_using_detail_data">The Advantage of Using Detail Data</h2>
 
 <p>Until recently, most business decisions were based on summary data.</p>
 
@@ -297,7 +297,7 @@ Enough computer power to access and produce reports on the data</code></pre>
 
 <p>Consider your own business and how it uses data. Is that data detailed or summarized? If it’s summarized, are there questions it cannot answer?</p>
 
-<h3 id="data_warehouse_usage_evolution">Data Warehouse Usage Evolution</h3>
+<h2 id="data_warehouse_usage_evolution">Data Warehouse Usage Evolution</h2>
 
 <pre><code>Stage 1 - Reporting: What happened?
           Primarily Batch Pre-Defined Reports
@@ -310,7 +310,7 @@ Stage 4 - Operationalizing: What is happening?
 Stage 5 - Active Warehousing: Make it happen!
           Event Based Triggering Takes Hold</code></pre>
 
-<h3 id="active_enterprise_intelligence">Active Enterprise Intelligence</h3>
+<h2 id="active_enterprise_intelligence">Active Enterprise Intelligence</h2>
 
 <p>Active Enterprise Intelligence is the seamless integration of the ADW into the customer’s existing business and technical architectures.</p>
 
@@ -322,7 +322,7 @@ Stage 5 - Active Warehousing: Make it happen!
 Provides a single view of the business, across appropriate business functions, and enables new operational users, processes, and applications. (Enterprise)
 Supports traditional strategic users and new operational users of the Enterprise Data Warehouse. Most importantly, it enables the linkage and alignment of operational systems, business processes and people with corporate goals so companies may execute on their strategies. (Intelligence)</code></pre>
 
-<h3 id="active_data_warehousing">Active Data Warehousing</h3>
+<h2 id="active_data_warehousing">Active Data Warehousing</h2>
 
 <p>ADW is traditional Data Warehousing (EDW) with some active elements:</p>
 
@@ -348,7 +348,7 @@ Supports traditional strategic users and new operational users of the Enterprise
 • Availability and Reliability - 7 x 24
 • Data Freshness - accurate, up-to-the-minute data, including access to ODS data</code></pre>
 
-<h3 id="the_data_warehouse">The Data Warehouse</h3>
+<h2 id="the_data_warehouse">The Data Warehouse</h2>
 
 <p>A data warehouse is a central, enterprise-wide database that contains information extracted from the operational systems (this is where the saying, “Load once, use many” comes from).</p>
 
@@ -359,7 +359,7 @@ Responds to users &quot;what if&quot; queries
 Minimizes data movement/synchronization
 Provides a single view of the business</code></pre>
 
-<h3 id="data_marts">Data Marts</h3>
+<h2 id="data_marts">Data Marts</h2>
 
 <p>A data mart is a special purpose subset of data used by a particular department, function or application.</p>
 
@@ -420,11 +420,11 @@ Provides a single view of the business</code></pre>
 
   
      
-    	<li><a href="/tags.html#teradata-ref">teradata <span>5</span></a></li>
+    	<li><a href="/tags.html#teradata-ref">teradata <span>6</span></a></li>
      
-    	<li><a href="/tags.html#introduction-ref">introduction <span>3</span></a></li>
+    	<li><a href="/tags.html#introduction-ref">introduction <span>4</span></a></li>
      
-    	<li><a href="/tags.html#database-ref">database <span>3</span></a></li>
+    	<li><a href="/tags.html#database-ref">database <span>4</span></a></li>
     
   
 

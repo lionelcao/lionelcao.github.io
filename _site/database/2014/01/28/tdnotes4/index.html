@@ -1,0 +1,598 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      
+        Teradata Study Notes-Introduction to the Teradata Database(4) - 
+      
+      Lionel Cao
+    </title>
+    <meta name="description" content="">
+    <meta name="author" content="北落师门">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+    <link href="/assets/themes/hooligan/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/themes/hooligan/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">    
+    <link rel="stylesheet" type="text/css" href="/assets/themes/hooligan/css-social-buttons/css/zocial.stripped.css">
+    <link href="/assets/themes/hooligan/css/pygments.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/hooligan/css/darkstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/hooligan/css/image.css" rel="stylesheet" type="text/css" media="all">      
+    <link href="/assets/themes/hooligan/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    
+    <!-- fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>      
+
+
+          <a class="brand" href="/">Lionel Cao</a>
+
+
+          <div class="nav-collapse">
+            <ul class="nav">
+              
+              
+       <li><a href="/About.html">About</a></li>
+              
+       <li><a href="/blog/">Blog</a></li>
+              
+       <li><a href="/links.html">Links</a></li>
+              
+       <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Contents
+            <b class="caret"></b>
+            </a>
+             <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="dLabel" role="menu" >
+               <li role="presentation" >
+                 <a href = "/archive.html" tabindex="-1" role="menuitem">
+                   Archive
+                  </a>
+               </li>
+               <li role="presentation" >
+                 <a href = "/categories.html" tabindex="-1" role="menuitem">
+                   Categories
+                  </a>
+               </li>
+               <li role="presentation" >
+                 <a href = "/tags.html" tabindex="-1" role="menuitem">
+                   Tags
+                  </a>
+               </li>
+              </ul>
+            </li>
+        </ul>
+            <ul class="nav pull-right social visible-desktop">
+              <li class="divider-vertical"></li>
+              
+                <li>
+                  <a href="https://github.com/lionelcao" class="zocial github icon" target="_blank">
+                    <span class="hidden-desktop">Github</span>
+                  </a>
+                </li>
+              
+                  
+                                        
+                         
+                                  
+              
+              
+                <li>
+                  <a href="http://weibo.com/whucaolu" class="zocial weibo icon" target="_blank">
+                    <span class="hidden-desktop">Weibo</span>
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="content">
+        
+<div class="page-header">
+  <h1>
+    Teradata Study Notes-Introduction to the Teradata Database(4) 
+    
+  </h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p>注：本文仅作个人学习笔记用，版权为Teradata公司所有，严禁转载。</p>
+
+<h2 id="module5_databases_and_users">Module5 Databases and Users</h2>
+
+<h2 id="databases_and_users_defined">Databases and Users Defined</h2>
+
+<p>A Database is created with the CREATE DATABASE command.</p>
+<!-- more -->
+<p>A User is created with the CREATE USER command.</p>
+
+<p>The only difference between a Database and a User is that a User has a password and may logon to the system.</p>
+
+<p>Databases and Users are repositories for Database Objects:</p>
+
+<pre><code>Tables – rows and columns of data 
+Views – predefined subsets of existing tables
+Macros – predefined, stored SQL statements
+Triggers – SQL statements associated with a table
+Stored Procedures – program stored within Teradata
+User Defined Function – C program that provides additional SQL functionality</code></pre>
+
+<h2 id="teradata_database_space">Teradata Database Space</h2>
+
+<p>Database objects require space in a Database or User as follows:</p>
+
+<pre><code>Tables - require Perm Space
+Views - do not require Perm Space
+Macros - do not require Perm Space
+Triggers - do not require Perm Space
+Stored Procedures - require Perm Space
+UDFs – require Perm Space</code></pre>
+
+<p>Space limits are specified for each database and for each user:</p>
+
+<p>Perm Space</p>
+
+<pre><code>- maximum amount of space available for permanent tables and index  subtables</code></pre>
+
+<p>Spool Space</p>
+
+<pre><code>- maximum amount of work space available for request processing
+- holds intermediate query result sets.</code></pre>
+
+<p>Temp Space</p>
+
+<pre><code>- maximum amount of space available for global temporary tables
+- available to the user until their session is terminated</code></pre>
+
+<h3 id="a_database_or_user_with_no_perm_space_may_not_contain_permanent_tables_but_may_contain_views_and_macros">A database or user with no perm space may not contain permanent tables but may contain views and macros.</h3>
+
+<h2 id="space_management">Space Management</h2>
+
+<p>The initial Teradata Database system comes with several users and databases:</p>
+
+<pre><code>- Users: DBC, SysAdmin, SystemFE, TDPuser
+- Databases:  Crashdumps, Default, All and Public</code></pre>
+
+<p>A new database or user must be created from an existing database or user.</p>
+
+<p>All Perm Space limits are subtracted from the owner.</p>
+
+<p>Perm Space is a zero-sum game – the total of all Perm Space limits must equal the total amount of disk space available.</p>
+
+<p>Perm Space currently not being used is available as Spool Space or Temp Space.</p>
+
+<h2 id="database_security">Database Security</h2>
+
+<p>There are several mechanisms to authenticate access to the Teradata Database:</p>
+
+<pre><code>LDAP
+Single Sign-On
+Passwords</code></pre>
+
+<p>After users have logged on to Teradata and have been authenticated, they are authorized access to only those objects allowed by their database privileges:</p>
+
+<pre><code>Privileges, or Access Rights</code></pre>
+
+<p>In addition to authentication and privileges, there are several database objects or constructs that allow for a more secure database environment. These include:</p>
+
+<pre><code>Views
+Macros
+Stored Procedures
+UDFs
+Roles – a collection of Access Rights
+Row Level Security</code></pre>
+
+<h2 id="module6_data_distribution_and_access">Module6 Data Distribution and Access</h2>
+
+<h2 id="how_does_the_teradata_database_distribute_rows">How Does the Teradata Database Distribute Rows?</h2>
+
+<p>The Teradata Database uses a hashing algorithm to randomly distribute table rows across the AMPs.</p>
+
+<p>The Primary Index choice determines whether the rows of a table will be evenly or unevenly distributed across the AMPs.</p>
+
+<p>Evenly distributed table rows result in evenly distributed workloads.</p>
+
+<p>Each AMP is responsible for its subset of the rows of each table.</p>
+
+<p>The rows are not placed in any particular order.</p>
+
+<h3 id="the_benefits_of_unordered_rows_include">The benefits of unordered rows include:</h3>
+
+<pre><code>No maintenance needed to preserve order.
+The order is independent of any query being submitted.</code></pre>
+
+<h3 id="the_benefits_of_hashed_distribution_include">The benefits of hashed distribution include:</h3>
+
+<pre><code>The distribution is the same regardless of data volume.
+The distribution is based on row content, not data demographics.</code></pre>
+
+<h2 id="primary_keypk_vs_primary_indexpi">Primary Key(PK) vs. Primary Index(PI)</h2>
+
+<p>The PK is a relational modeling convention which uniquely identifies each row.</p>
+
+<p>The PI is a Teradata convention which determines row distribution and access.</p>
+
+<p>A well designed database will have tables where the PI is the same as the PK as well as tables where the PI is defined on columns different from the PK.</p>
+
+<p>Join performance and known access paths might dictate a PI that is different from the PK.</p>
+
+<h3 id="primary_key_pk">Primary Key (PK)</h3>
+
+<pre><code>• Logical concept of data modeling
+• Teradata does not need the PK defined
+• No limit on the number of columns
+• Documented in the logical data model
+• Value must be unique
+• Uniquely identifies each row
+• Value should not change
+• May not be NULL
+• Does not imply access path
+• Chosen for logical correctness</code></pre>
+
+<h3 id="primary_index_pi">Primary Index (PI)</h3>
+
+<pre><code>• Mechanism for row distribution and access 
+• A table must have one Primary Index
+• May be from 1 to 64 columns
+• Defined in the CREATE TABLE statement
+• Value may be unique or non-unique
+• Used to place a row on an AMP
+• Value may be changed (Updated)
+• May be NULL
+• Defines the most efficient access path
+• Chosen for physical performance</code></pre>
+
+<p>The physical mechanism used to assign a row to an AMP</p>
+
+<p>A table must have a Primary Index</p>
+
+<p>The Primary Index of the table cannot be changed</p>
+
+<h3 id="upi">UPI</h3>
+
+<pre><code>• If the index choice of column(s) is unique, we call this a UPI (Unique Primary Index).
+• A UPI choice will result in even distribution of the rows of the table across all AMPs.</code></pre>
+
+<p>Reasons to Choose a UPI: UPI’s guarantee even data distribution, eliminate duplicate row checking, and are always a one-AMP operation.</p>
+
+<h3 id="nupi">NUPI</h3>
+
+<pre><code>• If the index choice of column(s) isn’t unique, we call this a NUPI (Non-Unique Primary Index).
+• A NUPI choice will result in even distribution of the rows of the table proportional to the degree of uniqueness of the index.
+• NUPIs can cause skewed data.</code></pre>
+
+<h2 id="why_would_you_choose_an_index_that_is_different_from_the_primary_key">Why would you choose an Index that is different from the Primary Key?</h2>
+
+<pre><code>• Join performance
+• Known access paths</code></pre>
+
+<h2 id="defining_the_primary_index">Defining the Primary Index</h2>
+
+<p>The Primary Index (PI) is defined at table creation.</p>
+
+<p>Every table must have one Primary Index.</p>
+
+<p>The Primary Index may consist of 1 to 64 columns.</p>
+
+<p>The Primary Index of a table may not be changed.</p>
+
+<p>The Primary Index is the mechanism used to assign a row to an AMP.</p>
+
+<p>The Primary Index may be Unique (UPI) or Non-Unique (NUPI).</p>
+
+<p>Unique Primary Indexes result in even row distribution and eliminate duplicate row checking.</p>
+
+<p>Non-Unique Primary Indexes result in even row distribution proportional to the number of duplicate values. This may cause skewed distribution.</p>
+
+<h3 id="upi_2">UPI</h3>
+
+<pre><code>CREATE TABLE Table1
+ ( Col1  INTEGER
+  ,Col2  INTEGER
+  ,Col3  INTEGER )
+UNIQUE PRIMARY INDEX (Col1);</code></pre>
+
+<h3 id="nupi_2">NUPI</h3>
+
+<pre><code>CREATE TABLE Table2
+ ( Col1  INTEGER
+  ,Col2  INTEGER
+  ,Col3  INTEGER )
+PRIMARY INDEX (Col2);</code></pre>
+
+<h2 id="row_distribution_via_hashing">Row Distribution via Hashing</h2>
+
+<h3 id="index_value">Index Value</h3>
+
+<h3 id="hashing_algorithm">Hashing Algorithm</h3>
+
+<pre><code>A Row's Primary Index value is passed into the Hashing Algorithm.
+The Hashing Algorithm is designed to ensure even distribution of unique values across all AMPs.</code></pre>
+
+<h3 id="row_hash">Row Hash</h3>
+
+<pre><code>The Hashing Algorithm outputs a 32-bit Row-Hash value.
+The first 16-bits (the Hash Bucket Number) are used as a pointer into the Hash Map.
+Hash values are calculated using the hashing algorithm.</code></pre>
+
+<h3 id="hash_map">Hash Map</h3>
+
+<pre><code>The Hash Map is uniquely configured for each system.
+The Hash Map is an array which associates the DSW with a specific AMP.</code></pre>
+
+<h3 id="amp">AMP</h3>
+
+<pre><code>Two systems with the same number of AMPs will have the same Hash Map.
+Changing the number of AMPs in a system requires a change to the Hash Map.</code></pre>
+
+<h2 id="what_is_a_nopi_table">What is a NoPI Table?</h2>
+
+<h3 id="what_is_a_no_primary_index_nopi_table">What is a No Primary Index (NoPI) Table?</h3>
+
+<p>It is simply a table without a primary index.</p>
+
+<p>As rows are inserted into a NoPI table, they are appended at the end of the table and never inserted in the middle of a hash sequence.</p>
+
+<p>Organizing/sorting rows based on row hash is therefore avoided.</p>
+
+<h3 id="basic_concepts">Basic Concepts</h3>
+
+<p>Rows will still be distributed between AMPs. New code (Random Generator) will determine which AMP will receive rows or blocks of rows. Within an AMP, rows are simply appended to the end of the table. Rows will have a unique RowID – the Uniqueness Value is incremented.</p>
+
+<h3 id="benefits">Benefits</h3>
+
+<p>A NoPI table will reduce skew in intermediate ETL tables which have no natural Primary Index.</p>
+
+<p>Loads (FastLoad and TPump Array Insert) into a NoPI staging table are faster.</p>
+
+<h2 id="teradata_columnar">Teradata Columnar</h2>
+
+<h3 id="description">Description</h3>
+
+<p>Columnar (or Column Partitioning) is a new physical database design implementation option that allows sets of columns (including just a single column) of a table or join index to be stored in separate partitions.</p>
+
+<p>This is effectively an I/O reduction feature to improve performance for suitable classes of workloads.</p>
+
+<p>This allows the capability for a table or join index to be column (vertically) partitioned, row (horizontally) partitioned or both by using the already existing multilevel partitioning capability.</p>
+
+<h3 id="considerations">Considerations</h3>
+
+<p>Note that column partitioning is a physical database design choice and may not be suitable for all workloads using that table/join index.</p>
+
+<p>It is especially suitable if both a small number of rows are selected and a few columns are projected.</p>
+
+<p><strong>When individual rows are deleted, they are not physically deleted, but are marked as deleted.</strong></p>
+
+<h2 id="teradata_columnar_benefits">Teradata Columnar Benefits</h2>
+
+<p><strong>Benefits of using the Teradata Columnar feature include:</strong></p>
+
+<h3 id="improved_query_performance">Improved query performance</h3>
+
+<pre><code>Column partitioning can be used to improve query performance via column partition elimination.  Column partition elimination reduces the need to access all the data in a row while row partition elimination reduces the need to access all the rows. </code></pre>
+
+<h3 id="reduced_disk_space">Reduced disk space</h3>
+
+<pre><code>The feature also allows for the possibility of using a new auto-compression capability which allows data to be automatically (as applicable) compressed as physical rows are inserted into a column-partitioned table or join index.</code></pre>
+
+<h3 id="increased_flexibility">Increased flexibility</h3>
+
+<pre><code>Provides a new physical database design option to improve performance for suitable classes of workloads.</code></pre>
+
+<h3 id="reduced_io">Reduced I/O</h3>
+
+<pre><code>Allows fast and efficient access to selected data from column partitions, thus reducing query I/O.</code></pre>
+
+<h3 id="ease_of_use">Ease of use</h3>
+
+<pre><code>Provides simple default syntax for the CREATE TABLE and CREATE JOIN INDEX statements.  No change is needed to queries.</code></pre>
+
+<h2 id="unique_primary_index_upi_access">Unique Primary Index (UPI) Access</h2>
+
+<p>Accessing a table using a Primary Index is the most efficient way to access the data and is always a one-AMP operation. In the case of a UPI, the one-AMP access can return, at most, one row. In the example on the facing page, we are looking for the row whose primary index value is 45.</p>
+
+<p>By specifying the PI value as part of our selection criteria, we are guaranteed that only the AMP containing the specified row will be searched.</p>
+
+<p>The correct AMP is located by taking the PI value and passing it through the hashing algorithm. Hashing takes place in the Parsing Engine. The output of the hashing algorithm contains information that will point to a specific AMP. Once it has isolated the appropriate AMP, finding the row is quick and efficient.</p>
+
+<h2 id="nonunique_primary_index_nupi_access">Non-Unique Primary Index (NUPI) Access</h2>
+
+<p>Accessing a table using a Non-Unique Primary Index (NUPI) is also a one-AMP operation. In the case of a NUPI, the one-AMP access can return zero to many rows. In the example on the facing page, we are looking for the rows whose primary index value is 555-7777.</p>
+
+<p>By specifying the PI value as part of our selection criteria, we are once again guaranteeing that only the AMP containing the required rows will need to be searched.</p>
+
+<p>The correct AMP is located by taking the PI value and passing it through the hashing algorithm executed in the Parsing Engine. The output of the hashing algorithm will once again point to a specific AMP. Once it has isolated the appropriate AMP, it must find all rows that have the specified value. In the example, the AMP returns two rows.</p>
+
+<h2 id="upi_row_distribution">UPI Row Distribution</h2>
+
+<p><img alt="UPI" src="/images/UPI.png" /></p>
+
+<h2 id="nupi_row_distribution">NUPI Row Distribution</h2>
+
+<p><img alt="NUPI" src="/images/NUPI.png" /></p>
+
+<h2 id="highly_nonunique_nupi_row_distribution">Highly Non-Unique NUPI Row Distribution</h2>
+
+<p><img alt="HNUPI" src="/images/HNUPI.png" /></p>
+
+<h2 id="partitioned_primary_index_ppi">Partitioned Primary Index (PPI)</h2>
+
+<h2 id="multilevel_partitioned_primary_index_mlppi">Multi-Level Partitioned Primary Index (MLPPI)</h2>
+    <hr>
+    <div class="pagination btn-group">
+      
+        <a class="btn prev" href="/database/2014/01/26/tdnotes3" title="Teradata Study Notes-Introduction to the Teradata Database(3)">&larr; Previous</a>
+      
+        <a class="btn" href="/archive.html">Archive</a>
+      
+        <a class="btn next disabled">Next &rarr;</a>
+      
+    </div>
+    <hr>
+  
+
+
+  <!-- Duoshuo Comment BEGIN -->
+    <div id="comments">
+        <div class="ds-thread" data-title="Teradata Study Notes-Introduction to the Teradata Database(4) - Lionel Cao"></div>
+    </div>
+<!-- Duoshuo Comment END -->
+
+
+
+
+
+
+	
+  </div>
+  
+
+  <div class="span4">
+    <section>
+      <h4>Published</h4>
+      <div class="date"><span>28 January 2014</span></div>
+    </section>
+    
+      <section>
+        <h4>Category</h4>
+        <span class="category">
+          database
+        </span>
+      </section>
+         
+    
+      <section>
+        <h4>Tags</h4>
+        <ul class="tag_box">
+          
+          
+
+
+  
+     
+    	<li><a href="/tags.html#teradata-ref">teradata <span>6</span></a></li>
+     
+    	<li><a href="/tags.html#introduction-ref">introduction <span>4</span></a></li>
+     
+    	<li><a href="/tags.html#database-ref">database <span>4</span></a></li>
+    
+  
+
+
+
+        </ul>
+      </section>
+             
+  </div>
+</div>
+
+
+      </div>
+    
+
+      <footer>
+
+        <p>&copy; 2014 北落师门 All Rights Reserved
+        </p>
+
+      </footer>
+    </div> <!-- /container -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/themes/hooligan/js/jquery.min.js"><\/script>')</script>
+    <script src="/assets/themes/hooligan/bootstrap/js/bootstrap.min.js"></script>
+        <!--多说js加载开始，一个页面只需要加载一次 -->
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name: "lionelcao"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = 'http://static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script>
+    <!--多说js加载结束，一个页面只需要加载一次 -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+						   		   
+	//When you click on a link with class of poplight and the href starts with a # 
+	$('a.poplight[href^=#]').click(function() {
+		var popID = $(this).attr('rel'); //Get Popup Name
+		var popURL = $(this).attr('href'); //Get Popup href to define size
+		console.log(popID);
+                console.log(popURL);		
+		//Pull Query & Variables from href URL
+		var query= popURL.split('?');
+console.log(query);
+		var dim= query[1].split('&');
+console.log(dim);
+		var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+console.log(popWidth); 
+		//Fade in the Popup and add close button
+		$('#' + popID).fadeIn().css({}).prepend('<a href="#" class="close1"><img src="images/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>');
+		
+		//Define margin for center alignment (vertical + horizontal) - we add 80 to the height/width to accomodate for the padding + border width defined in the css
+		var popMargTop = ($('#' + popID).height() + 80) / 2;
+		var popMargLeft = ($('#' + popID).width() + 80) / 2;
+console.log(popMargTop);
+console.log(popMargLeft);
+console.log('1');
+		//Apply Margin to Popup
+		$('#' + popID).css({ 
+			'margin-top' : -popMargTop,
+			'margin-left' : -popMargLeft
+		});
+		
+		//Fade in Background
+		$('body').append('<div id="fade"></div>'); //Add the fade layer to bottom of the body tag.
+		$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer 
+		
+		return false;
+	});
+	
+	
+	//Close Popups and Fade Layer
+	$('a.close1, #fade').live('click', function() { //When clicking on the close or fade layer...
+	  	$('#fade , .popup_block').fadeOut(function() {
+			$('#fade, a.close1').remove();  
+	}); //fade them both out
+	console.log('2');	
+		return false;
+	});
+
+	
+});
+</script>
+    
+  </body>
+</html>
+

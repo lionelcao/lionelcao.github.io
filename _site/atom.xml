@@ -4,7 +4,7 @@
  <title>Lionel Cao</title>
  <link href="http://lionelcao.github.io/" rel="self"/>
  <link href="http://lionelcao.github.io"/>
- <updated>2014-01-27T00:00:46+08:00</updated>
+ <updated>2014-01-28T16:19:26+08:00</updated>
  <id>http://lionelcao.github.io</id>
  <author>
    <name>北落师门</name>
@@ -13,11 +13,342 @@
 
  
  <entry>
+   <title>Teradata Study Notes-Introduction to the Teradata Database(4)</title>
+   <link href="http://lionelcao.github.io/database/2014/01/28/tdnotes4"/>
+   <updated>2014-01-28T00:00:00+08:00</updated>
+   <id>http://lionelcao.github.io/database/2014/01/28/tdnotes4</id>
+   <content type="html">&lt;p&gt;注：本文仅作个人学习笔记用，版权为Teradata公司所有，严禁转载。&lt;/p&gt;
+
+&lt;h2 id=&quot;module5_databases_and_users&quot;&gt;Module5 Databases and Users&lt;/h2&gt;
+
+&lt;h2 id=&quot;databases_and_users_defined&quot;&gt;Databases and Users Defined&lt;/h2&gt;
+
+&lt;p&gt;A Database is created with the CREATE DATABASE command.&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;A User is created with the CREATE USER command.&lt;/p&gt;
+
+&lt;p&gt;The only difference between a Database and a User is that a User has a password and may logon to the system.&lt;/p&gt;
+
+&lt;p&gt;Databases and Users are repositories for Database Objects:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Tables – rows and columns of data 
+Views – predefined subsets of existing tables
+Macros – predefined, stored SQL statements
+Triggers – SQL statements associated with a table
+Stored Procedures – program stored within Teradata
+User Defined Function – C program that provides additional SQL functionality&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;teradata_database_space&quot;&gt;Teradata Database Space&lt;/h2&gt;
+
+&lt;p&gt;Database objects require space in a Database or User as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Tables - require Perm Space
+Views - do not require Perm Space
+Macros - do not require Perm Space
+Triggers - do not require Perm Space
+Stored Procedures - require Perm Space
+UDFs – require Perm Space&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Space limits are specified for each database and for each user:&lt;/p&gt;
+
+&lt;p&gt;Perm Space&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- maximum amount of space available for permanent tables and index  subtables&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Spool Space&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- maximum amount of work space available for request processing
+- holds intermediate query result sets.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Temp Space&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- maximum amount of space available for global temporary tables
+- available to the user until their session is terminated&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;a_database_or_user_with_no_perm_space_may_not_contain_permanent_tables_but_may_contain_views_and_macros&quot;&gt;A database or user with no perm space may not contain permanent tables but may contain views and macros.&lt;/h3&gt;
+
+&lt;h2 id=&quot;space_management&quot;&gt;Space Management&lt;/h2&gt;
+
+&lt;p&gt;The initial Teradata Database system comes with several users and databases:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- Users: DBC, SysAdmin, SystemFE, TDPuser
+- Databases:  Crashdumps, Default, All and Public&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A new database or user must be created from an existing database or user.&lt;/p&gt;
+
+&lt;p&gt;All Perm Space limits are subtracted from the owner.&lt;/p&gt;
+
+&lt;p&gt;Perm Space is a zero-sum game – the total of all Perm Space limits must equal the total amount of disk space available.&lt;/p&gt;
+
+&lt;p&gt;Perm Space currently not being used is available as Spool Space or Temp Space.&lt;/p&gt;
+
+&lt;h2 id=&quot;database_security&quot;&gt;Database Security&lt;/h2&gt;
+
+&lt;p&gt;There are several mechanisms to authenticate access to the Teradata Database:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;LDAP
+Single Sign-On
+Passwords&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;After users have logged on to Teradata and have been authenticated, they are authorized access to only those objects allowed by their database privileges:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Privileges, or Access Rights&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In addition to authentication and privileges, there are several database objects or constructs that allow for a more secure database environment. These include:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Views
+Macros
+Stored Procedures
+UDFs
+Roles – a collection of Access Rights
+Row Level Security&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;module6_data_distribution_and_access&quot;&gt;Module6 Data Distribution and Access&lt;/h2&gt;
+
+&lt;h2 id=&quot;how_does_the_teradata_database_distribute_rows&quot;&gt;How Does the Teradata Database Distribute Rows?&lt;/h2&gt;
+
+&lt;p&gt;The Teradata Database uses a hashing algorithm to randomly distribute table rows across the AMPs.&lt;/p&gt;
+
+&lt;p&gt;The Primary Index choice determines whether the rows of a table will be evenly or unevenly distributed across the AMPs.&lt;/p&gt;
+
+&lt;p&gt;Evenly distributed table rows result in evenly distributed workloads.&lt;/p&gt;
+
+&lt;p&gt;Each AMP is responsible for its subset of the rows of each table.&lt;/p&gt;
+
+&lt;p&gt;The rows are not placed in any particular order.&lt;/p&gt;
+
+&lt;h3 id=&quot;the_benefits_of_unordered_rows_include&quot;&gt;The benefits of unordered rows include:&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;No maintenance needed to preserve order.
+The order is independent of any query being submitted.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;the_benefits_of_hashed_distribution_include&quot;&gt;The benefits of hashed distribution include:&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;The distribution is the same regardless of data volume.
+The distribution is based on row content, not data demographics.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;primary_keypk_vs_primary_indexpi&quot;&gt;Primary Key(PK) vs. Primary Index(PI)&lt;/h2&gt;
+
+&lt;p&gt;The PK is a relational modeling convention which uniquely identifies each row.&lt;/p&gt;
+
+&lt;p&gt;The PI is a Teradata convention which determines row distribution and access.&lt;/p&gt;
+
+&lt;p&gt;A well designed database will have tables where the PI is the same as the PK as well as tables where the PI is defined on columns different from the PK.&lt;/p&gt;
+
+&lt;p&gt;Join performance and known access paths might dictate a PI that is different from the PK.&lt;/p&gt;
+
+&lt;h3 id=&quot;primary_key_pk&quot;&gt;Primary Key (PK)&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;• Logical concept of data modeling
+• Teradata does not need the PK defined
+• No limit on the number of columns
+• Documented in the logical data model
+• Value must be unique
+• Uniquely identifies each row
+• Value should not change
+• May not be NULL
+• Does not imply access path
+• Chosen for logical correctness&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;primary_index_pi&quot;&gt;Primary Index (PI)&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;• Mechanism for row distribution and access 
+• A table must have one Primary Index
+• May be from 1 to 64 columns
+• Defined in the CREATE TABLE statement
+• Value may be unique or non-unique
+• Used to place a row on an AMP
+• Value may be changed (Updated)
+• May be NULL
+• Defines the most efficient access path
+• Chosen for physical performance&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The physical mechanism used to assign a row to an AMP&lt;/p&gt;
+
+&lt;p&gt;A table must have a Primary Index&lt;/p&gt;
+
+&lt;p&gt;The Primary Index of the table cannot be changed&lt;/p&gt;
+
+&lt;h3 id=&quot;upi&quot;&gt;UPI&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;• If the index choice of column(s) is unique, we call this a UPI (Unique Primary Index).
+• A UPI choice will result in even distribution of the rows of the table across all AMPs.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Reasons to Choose a UPI: UPI’s guarantee even data distribution, eliminate duplicate row checking, and are always a one-AMP operation.&lt;/p&gt;
+
+&lt;h3 id=&quot;nupi&quot;&gt;NUPI&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;• If the index choice of column(s) isn’t unique, we call this a NUPI (Non-Unique Primary Index).
+• A NUPI choice will result in even distribution of the rows of the table proportional to the degree of uniqueness of the index.
+• NUPIs can cause skewed data.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;why_would_you_choose_an_index_that_is_different_from_the_primary_key&quot;&gt;Why would you choose an Index that is different from the Primary Key?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;• Join performance
+• Known access paths&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;defining_the_primary_index&quot;&gt;Defining the Primary Index&lt;/h2&gt;
+
+&lt;p&gt;The Primary Index (PI) is defined at table creation.&lt;/p&gt;
+
+&lt;p&gt;Every table must have one Primary Index.&lt;/p&gt;
+
+&lt;p&gt;The Primary Index may consist of 1 to 64 columns.&lt;/p&gt;
+
+&lt;p&gt;The Primary Index of a table may not be changed.&lt;/p&gt;
+
+&lt;p&gt;The Primary Index is the mechanism used to assign a row to an AMP.&lt;/p&gt;
+
+&lt;p&gt;The Primary Index may be Unique (UPI) or Non-Unique (NUPI).&lt;/p&gt;
+
+&lt;p&gt;Unique Primary Indexes result in even row distribution and eliminate duplicate row checking.&lt;/p&gt;
+
+&lt;p&gt;Non-Unique Primary Indexes result in even row distribution proportional to the number of duplicate values. This may cause skewed distribution.&lt;/p&gt;
+
+&lt;h3 id=&quot;upi_2&quot;&gt;UPI&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;CREATE TABLE Table1
+ ( Col1  INTEGER
+  ,Col2  INTEGER
+  ,Col3  INTEGER )
+UNIQUE PRIMARY INDEX (Col1);&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;nupi_2&quot;&gt;NUPI&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;CREATE TABLE Table2
+ ( Col1  INTEGER
+  ,Col2  INTEGER
+  ,Col3  INTEGER )
+PRIMARY INDEX (Col2);&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;row_distribution_via_hashing&quot;&gt;Row Distribution via Hashing&lt;/h2&gt;
+
+&lt;h3 id=&quot;index_value&quot;&gt;Index Value&lt;/h3&gt;
+
+&lt;h3 id=&quot;hashing_algorithm&quot;&gt;Hashing Algorithm&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;A Row's Primary Index value is passed into the Hashing Algorithm.
+The Hashing Algorithm is designed to ensure even distribution of unique values across all AMPs.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;row_hash&quot;&gt;Row Hash&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;The Hashing Algorithm outputs a 32-bit Row-Hash value.
+The first 16-bits (the Hash Bucket Number) are used as a pointer into the Hash Map.
+Hash values are calculated using the hashing algorithm.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;hash_map&quot;&gt;Hash Map&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;The Hash Map is uniquely configured for each system.
+The Hash Map is an array which associates the DSW with a specific AMP.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;amp&quot;&gt;AMP&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Two systems with the same number of AMPs will have the same Hash Map.
+Changing the number of AMPs in a system requires a change to the Hash Map.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;what_is_a_nopi_table&quot;&gt;What is a NoPI Table?&lt;/h2&gt;
+
+&lt;h3 id=&quot;what_is_a_no_primary_index_nopi_table&quot;&gt;What is a No Primary Index (NoPI) Table?&lt;/h3&gt;
+
+&lt;p&gt;It is simply a table without a primary index.&lt;/p&gt;
+
+&lt;p&gt;As rows are inserted into a NoPI table, they are appended at the end of the table and never inserted in the middle of a hash sequence.&lt;/p&gt;
+
+&lt;p&gt;Organizing/sorting rows based on row hash is therefore avoided.&lt;/p&gt;
+
+&lt;h3 id=&quot;basic_concepts&quot;&gt;Basic Concepts&lt;/h3&gt;
+
+&lt;p&gt;Rows will still be distributed between AMPs. New code (Random Generator) will determine which AMP will receive rows or blocks of rows. Within an AMP, rows are simply appended to the end of the table. Rows will have a unique RowID – the Uniqueness Value is incremented.&lt;/p&gt;
+
+&lt;h3 id=&quot;benefits&quot;&gt;Benefits&lt;/h3&gt;
+
+&lt;p&gt;A NoPI table will reduce skew in intermediate ETL tables which have no natural Primary Index.&lt;/p&gt;
+
+&lt;p&gt;Loads (FastLoad and TPump Array Insert) into a NoPI staging table are faster.&lt;/p&gt;
+
+&lt;h2 id=&quot;teradata_columnar&quot;&gt;Teradata Columnar&lt;/h2&gt;
+
+&lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt;
+
+&lt;p&gt;Columnar (or Column Partitioning) is a new physical database design implementation option that allows sets of columns (including just a single column) of a table or join index to be stored in separate partitions.&lt;/p&gt;
+
+&lt;p&gt;This is effectively an I/O reduction feature to improve performance for suitable classes of workloads.&lt;/p&gt;
+
+&lt;p&gt;This allows the capability for a table or join index to be column (vertically) partitioned, row (horizontally) partitioned or both by using the already existing multilevel partitioning capability.&lt;/p&gt;
+
+&lt;h3 id=&quot;considerations&quot;&gt;Considerations&lt;/h3&gt;
+
+&lt;p&gt;Note that column partitioning is a physical database design choice and may not be suitable for all workloads using that table/join index.&lt;/p&gt;
+
+&lt;p&gt;It is especially suitable if both a small number of rows are selected and a few columns are projected.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;When individual rows are deleted, they are not physically deleted, but are marked as deleted.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;teradata_columnar_benefits&quot;&gt;Teradata Columnar Benefits&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Benefits of using the Teradata Columnar feature include:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;improved_query_performance&quot;&gt;Improved query performance&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Column partitioning can be used to improve query performance via column partition elimination.  Column partition elimination reduces the need to access all the data in a row while row partition elimination reduces the need to access all the rows. &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;reduced_disk_space&quot;&gt;Reduced disk space&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;The feature also allows for the possibility of using a new auto-compression capability which allows data to be automatically (as applicable) compressed as physical rows are inserted into a column-partitioned table or join index.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;increased_flexibility&quot;&gt;Increased flexibility&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Provides a new physical database design option to improve performance for suitable classes of workloads.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;reduced_io&quot;&gt;Reduced I/O&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Allows fast and efficient access to selected data from column partitions, thus reducing query I/O.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;ease_of_use&quot;&gt;Ease of use&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Provides simple default syntax for the CREATE TABLE and CREATE JOIN INDEX statements.  No change is needed to queries.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;unique_primary_index_upi_access&quot;&gt;Unique Primary Index (UPI) Access&lt;/h2&gt;
+
+&lt;p&gt;Accessing a table using a Primary Index is the most efficient way to access the data and is always a one-AMP operation. In the case of a UPI, the one-AMP access can return, at most, one row. In the example on the facing page, we are looking for the row whose primary index value is 45.&lt;/p&gt;
+
+&lt;p&gt;By specifying the PI value as part of our selection criteria, we are guaranteed that only the AMP containing the specified row will be searched.&lt;/p&gt;
+
+&lt;p&gt;The correct AMP is located by taking the PI value and passing it through the hashing algorithm. Hashing takes place in the Parsing Engine. The output of the hashing algorithm contains information that will point to a specific AMP. Once it has isolated the appropriate AMP, finding the row is quick and efficient.&lt;/p&gt;
+
+&lt;h2 id=&quot;nonunique_primary_index_nupi_access&quot;&gt;Non-Unique Primary Index (NUPI) Access&lt;/h2&gt;
+
+&lt;p&gt;Accessing a table using a Non-Unique Primary Index (NUPI) is also a one-AMP operation. In the case of a NUPI, the one-AMP access can return zero to many rows. In the example on the facing page, we are looking for the rows whose primary index value is 555-7777.&lt;/p&gt;
+
+&lt;p&gt;By specifying the PI value as part of our selection criteria, we are once again guaranteeing that only the AMP containing the required rows will need to be searched.&lt;/p&gt;
+
+&lt;p&gt;The correct AMP is located by taking the PI value and passing it through the hashing algorithm executed in the Parsing Engine. The output of the hashing algorithm will once again point to a specific AMP. Once it has isolated the appropriate AMP, it must find all rows that have the specified value. In the example, the AMP returns two rows.&lt;/p&gt;
+
+&lt;h2 id=&quot;upi_row_distribution&quot;&gt;UPI Row Distribution&lt;/h2&gt;
+
+&lt;p&gt;&lt;img alt=&quot;UPI&quot; src=&quot;/images/UPI.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;nupi_row_distribution&quot;&gt;NUPI Row Distribution&lt;/h2&gt;
+
+&lt;p&gt;&lt;img alt=&quot;NUPI&quot; src=&quot;/images/NUPI.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;highly_nonunique_nupi_row_distribution&quot;&gt;Highly Non-Unique NUPI Row Distribution&lt;/h2&gt;
+
+&lt;p&gt;&lt;img alt=&quot;HNUPI&quot; src=&quot;/images/HNUPI.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;partitioned_primary_index_ppi&quot;&gt;Partitioned Primary Index (PPI)&lt;/h2&gt;
+
+&lt;h2 id=&quot;multilevel_partitioned_primary_index_mlppi&quot;&gt;Multi-Level Partitioned Primary Index (MLPPI)&lt;/h2&gt;</content>
+ </entry>
+ 
+ <entry>
    <title>Teradata Study Notes-Introduction to the Teradata Database(3)</title>
    <link href="http://lionelcao.github.io/database/2014/01/26/tdnotes3"/>
    <updated>2014-01-26T00:00:00+08:00</updated>
    <id>http://lionelcao.github.io/database/2014/01/26/tdnotes3</id>
    <content type="html">&lt;p&gt;注：本文仅作个人学习笔记用，版权为Teradata公司所有，严禁转载。&lt;/p&gt;
+
+&lt;h2 id=&quot;module4_components_and_architecture&quot;&gt;Module4 Components and Architecture&lt;/h2&gt;
 
 &lt;h2 id=&quot;what_is_a_node&quot;&gt;What is a node?&lt;/h2&gt;
 
@@ -340,7 +671,7 @@
 
 &lt;h2 id=&quot;module2__relational_database_concepts&quot;&gt;Module2 - Relational Database Concepts&lt;/h2&gt;
 &lt;!-- more --&gt;
-&lt;h3 id=&quot;what_is_a_database&quot;&gt;What is a Database?&lt;/h3&gt;
+&lt;h2 id=&quot;what_is_a_database&quot;&gt;What is a Database?&lt;/h2&gt;
 
 &lt;p&gt;A database is a collection of permanently stored data that is:&lt;/p&gt;
 
@@ -349,7 +680,7 @@ Shared - many users may access the data.
 Protected - access to data is controlled.
 Managed - the data has integrity and value.&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&quot;logicalrelational_modeling&quot;&gt;Logical/Relational Modeling&lt;/h3&gt;
+&lt;h2 id=&quot;logicalrelational_modeling&quot;&gt;Logical/Relational Modeling&lt;/h2&gt;
 
 &lt;p&gt;The Logical Model&lt;/p&gt;
 
@@ -366,7 +697,7 @@ Is generic - the logical model is the template for physical implementation on an
 &lt;pre&gt;&lt;code&gt;Process of reducing a complex data structure into a simple, stable one
 Involves removing redundant attributes, keys, and relationships from the conceptual data model&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&quot;relational_databases&quot;&gt;Relational Databases&lt;/h3&gt;
+&lt;h2 id=&quot;relational_databases&quot;&gt;Relational Databases&lt;/h2&gt;
 
 &lt;p&gt;Relational databases are solidly founded on Set Theory and are based on the Relational Model.&lt;/p&gt;
 
@@ -376,7 +707,7 @@ Involves removing redundant attributes, keys, and relationships from the concept
 
 &lt;p&gt;A row is one instance of all the columns of a table.&lt;/p&gt;
 
-&lt;h3 id=&quot;3nf_vs_star_schema_model&quot;&gt;3NF vs. Star Schema Model&lt;/h3&gt;
+&lt;h2 id=&quot;3nf_vs_star_schema_model&quot;&gt;3NF vs. Star Schema Model&lt;/h2&gt;
 
 &lt;p&gt;A normalized model includes:&lt;/p&gt;
 
@@ -399,7 +730,7 @@ Involves removing redundant attributes, keys, and relationships from the concept
 &lt;pre&gt;&lt;code&gt;• They tend to have fewer entities
 • They advocate a greater level of denormalization&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&quot;primary_key&quot;&gt;Primary Key&lt;/h3&gt;
+&lt;h2 id=&quot;primary_key&quot;&gt;Primary Key&lt;/h2&gt;
 
 &lt;p&gt;Primary Key (PK) values uniquely identify each row in a table.&lt;/p&gt;
 
@@ -424,7 +755,7 @@ Involves removing redundant attributes, keys, and relationships from the concept
 • FK values may be changed.
 • FK values must exist elsewhere as a PK (i.e. have referential integrity).&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&quot;relational_advantages&quot;&gt;Relational Advantages&lt;/h3&gt;
+&lt;h2 id=&quot;relational_advantages&quot;&gt;Relational Advantages&lt;/h2&gt;
 
 &lt;p&gt;Advantages of a Relational Database compared to other database methodologies include:&lt;/p&gt;
 
@@ -441,14 +772,14 @@ Involves removing redundant attributes, keys, and relationships from the concept
 
 &lt;h2 id=&quot;module3__teradata_and_the_data_warehouse&quot;&gt;Module3 - Teradata and the Data Warehouse&lt;/h2&gt;
 
-&lt;h3 id=&quot;evolution_of_data_processing&quot;&gt;Evolution of Data Processing&lt;/h3&gt;
+&lt;h2 id=&quot;evolution_of_data_processing&quot;&gt;Evolution of Data Processing&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;On-line Transaction Processing (OLTP)
 Decision Support Systems (DSS)
 On-line Analytical Processing (OLAP)
 Data Mining (DM)&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&quot;row_versus_set_processing&quot;&gt;Row versus Set Processing&lt;/h3&gt;
+&lt;h2 id=&quot;row_versus_set_processing&quot;&gt;Row versus Set Processing&lt;/h2&gt;
 
 &lt;p&gt;What is Row-by-Row Processing?&lt;/p&gt;
 
@@ -468,7 +799,7 @@ Data Mining (DM)&lt;/code&gt;&lt;/pre&gt;
 • Single session processing which takes advantage of parallel processing
 • Efficient updates of large amounts of data.&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&quot;response_time_versus_throughput&quot;&gt;Response Time versus Throughput&lt;/h3&gt;
+&lt;h2 id=&quot;response_time_versus_throughput&quot;&gt;Response Time versus Throughput&lt;/h2&gt;
 
 &lt;p&gt;When determining how fast something is, there are two kinds of measures. You can measure how long it takes to do something or you can measure how much gets done per unit time. The former is referred to as response time, access time, transmission time, or execution time depending on the context. The latter is referred to as throughput.&lt;/p&gt;
 
@@ -480,7 +811,7 @@ Data Mining (DM)&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;A throughput measure is an amount of something per unit time. For operating systems, throughput is often measured as tasks or transactions per unit time. For storage systems or networks throughput is measured as bytes or bits per unit time. For processors, the number of instructions executed per unit time is an important component of performance.&lt;/p&gt;
 
-&lt;h3 id=&quot;what_does_this_mean_to_teradata&quot;&gt;What Does this Mean to Teradata?&lt;/h3&gt;
+&lt;h2 id=&quot;what_does_this_mean_to_teradata&quot;&gt;What Does this Mean to Teradata?&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;Response time measures the average duration of queries and throughput measures quantity of queries completed during a time interval.
 Throughput is a measure of the amount of work processed while response time is a measure of process completion.
@@ -489,7 +820,7 @@ Throughput is the number of queries executed in an hour and response time is the
 
 &lt;p&gt;In order to improve both response time and throughput on a Teradata system, you could increase CPU power (i.e., add nodes), implement workload management to control resources, and decrease the number of concurrent users.&lt;/p&gt;
 
-&lt;h3 id=&quot;the_advantage_of_using_detail_data&quot;&gt;The Advantage of Using Detail Data&lt;/h3&gt;
+&lt;h2 id=&quot;the_advantage_of_using_detail_data&quot;&gt;The Advantage of Using Detail Data&lt;/h2&gt;
 
 &lt;p&gt;Until recently, most business decisions were based on summary data.&lt;/p&gt;
 
@@ -510,7 +841,7 @@ Enough computer power to access and produce reports on the data&lt;/code&gt;&lt;
 
 &lt;p&gt;Consider your own business and how it uses data. Is that data detailed or summarized? If it’s summarized, are there questions it cannot answer?&lt;/p&gt;
 
-&lt;h3 id=&quot;data_warehouse_usage_evolution&quot;&gt;Data Warehouse Usage Evolution&lt;/h3&gt;
+&lt;h2 id=&quot;data_warehouse_usage_evolution&quot;&gt;Data Warehouse Usage Evolution&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;Stage 1 - Reporting: What happened?
           Primarily Batch Pre-Defined Reports
@@ -523,7 +854,7 @@ Stage 4 - Operationalizing: What is happening?
 Stage 5 - Active Warehousing: Make it happen!
           Event Based Triggering Takes Hold&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&quot;active_enterprise_intelligence&quot;&gt;Active Enterprise Intelligence&lt;/h3&gt;
+&lt;h2 id=&quot;active_enterprise_intelligence&quot;&gt;Active Enterprise Intelligence&lt;/h2&gt;
 
 &lt;p&gt;Active Enterprise Intelligence is the seamless integration of the ADW into the customer’s existing business and technical architectures.&lt;/p&gt;
 
@@ -535,7 +866,7 @@ Stage 5 - Active Warehousing: Make it happen!
 Provides a single view of the business, across appropriate business functions, and enables new operational users, processes, and applications. (Enterprise)
 Supports traditional strategic users and new operational users of the Enterprise Data Warehouse. Most importantly, it enables the linkage and alignment of operational systems, business processes and people with corporate goals so companies may execute on their strategies. (Intelligence)&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&quot;active_data_warehousing&quot;&gt;Active Data Warehousing&lt;/h3&gt;
+&lt;h2 id=&quot;active_data_warehousing&quot;&gt;Active Data Warehousing&lt;/h2&gt;
 
 &lt;p&gt;ADW is traditional Data Warehousing (EDW) with some active elements:&lt;/p&gt;
 
@@ -561,7 +892,7 @@ Supports traditional strategic users and new operational users of the Enterprise
 • Availability and Reliability - 7 x 24
 • Data Freshness - accurate, up-to-the-minute data, including access to ODS data&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&quot;the_data_warehouse&quot;&gt;The Data Warehouse&lt;/h3&gt;
+&lt;h2 id=&quot;the_data_warehouse&quot;&gt;The Data Warehouse&lt;/h2&gt;
 
 &lt;p&gt;A data warehouse is a central, enterprise-wide database that contains information extracted from the operational systems (this is where the saying, “Load once, use many” comes from).&lt;/p&gt;
 
@@ -572,7 +903,7 @@ Responds to users &amp;quot;what if&amp;quot; queries
 Minimizes data movement/synchronization
 Provides a single view of the business&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&quot;data_marts&quot;&gt;Data Marts&lt;/h3&gt;
+&lt;h2 id=&quot;data_marts&quot;&gt;Data Marts&lt;/h2&gt;
 
 &lt;p&gt;A data mart is a special purpose subset of data used by a particular department, function or application.&lt;/p&gt;
 
@@ -592,7 +923,7 @@ Provides a single view of the business&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&quot;module_1__teradata_database_overview&quot;&gt;Module 1 - Teradata Database Overview&lt;/h2&gt;
 &lt;!-- more --&gt;
-&lt;h3 id=&quot;what_is_the_teradata_database&quot;&gt;What is the Teradata Database?&lt;/h3&gt;
+&lt;h2 id=&quot;what_is_the_teradata_database&quot;&gt;What is the Teradata Database?&lt;/h2&gt;
 
 &lt;p&gt;Relational Database Management System关系型数据库&lt;/p&gt;
 
@@ -605,7 +936,7 @@ SuSE Linux(SLES 10 and 11)&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;O/S is open architecture&lt;/p&gt;
 
-&lt;h3 id=&quot;teradata_parallel_architecture&quot;&gt;Teradata Parallel Architecture&lt;/h3&gt;
+&lt;h2 id=&quot;teradata_parallel_architecture&quot;&gt;Teradata Parallel Architecture&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;• Linear Scalability (10GB to 50+PB)线性可扩展
 • Hashing provides automatic data distribution哈希提供自动数据分布
@@ -613,7 +944,7 @@ SuSE Linux(SLES 10 and 11)&lt;/code&gt;&lt;/pre&gt;
 • Parallel-Aware Optimizer并行感知优化器
 • Single Administrative View单独管理界面&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&quot;teradata_database_advantages&quot;&gt;Teradata Database Advantages&lt;/h3&gt;
+&lt;h2 id=&quot;teradata_database_advantages&quot;&gt;Teradata Database Advantages&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;• Proven Linear Scalability - increased workload without decreased throughput
 经过验证的线性可扩展性 - 增加负载量而并不减少吞吐量
@@ -632,7 +963,7 @@ SuSE Linux(SLES 10 and 11)&lt;/code&gt;&lt;/pre&gt;
 • Single View of the Business - single database server for multiple clients
 业务视角唯一 - 多个客户端访问同一个数据库服务器&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&quot;teradata_database_manageability&quot;&gt;Teradata Database Manageability&lt;/h3&gt;
+&lt;h2 id=&quot;teradata_database_manageability&quot;&gt;Teradata Database Manageability&lt;/h2&gt;
 
 &lt;p&gt;Things Teradata Database Administrators never have to do!&lt;/p&gt;
 
@@ -649,7 +980,7 @@ SuSE Linux(SLES 10 and 11)&lt;/code&gt;&lt;/pre&gt;
 • Unload/reload data spaces due to expansion
 因扩容卸载/重装数据空间&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&quot;teradata_database_features&quot;&gt;Teradata Database Features&lt;/h3&gt;
+&lt;h2 id=&quot;teradata_database_features&quot;&gt;Teradata Database Features&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;• Designed to process large quantities of detail data
 专为处理大量的明细数据而设计
@@ -852,7 +1183,7 @@ ab*(c|ε)指示开始于一个a接着零或多个b和最终可选的一个c的�
 &lt;h2 id=&quot;_8&quot;&gt;表达式全集&lt;/h2&gt;
 
 &lt;p&gt;正则表达式有多種不同的风格。下表是在PCRE中元字符及其在正则表达式上下文中的行为的一个完整列表，适用于Perl或者Python编程语言（grep或者egrep的正则表达式文法是PCRE的子集）：&lt;/p&gt;
-&lt;table bordercolor='#CCCCCC' border='2' cellspacing='0'&gt;
+&lt;table cellspacing='0' border='2' bordercolor='#CCCCCC'&gt;
 &lt;tr&gt;
 &lt;th&gt;字符&lt;/th&gt;
 &lt;th&gt;描述&lt;/th&gt;
@@ -1154,7 +1485,7 @@ ab*(c|ε)指示开始于一个a接着零或多个b和最终可选的一个c的�
 &lt;p&gt;define how SAS processes DBMS objects. Some LIBNAME options can enhance performance, and others determine locking or naming behavior. The following table describes the LIBNAME options for SAS/ACCESS Interface to Teradata, with the applicable default values. For more detail about these options, see LIBNAME Options for Relational Databases.&lt;/p&gt;
 
 &lt;p&gt;SAS/ACCESS LIBNAME Options for Teradata&lt;/p&gt;
-&lt;TABLE bordercolor='#333333' border='1' cellspacing='0'&gt;
+&lt;TABLE cellspacing='0' border='1' bordercolor='#333333'&gt;
  &lt;TR&gt;
     &lt;TH&gt;
        &lt;DIV&gt;&lt;A /&gt;Option
@@ -1166,10 +1497,10 @@ ab*(c|ε)指示开始于一个a接着零或多个b和最终可选的一个c的�
     &lt;/TH&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' valign='top' class='firstRow'&gt;
+    &lt;TD class='firstRow' style='text-align: left' valign='top'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n05764k5zha7vmn1o5jdawotulb2' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;ACCESS=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' valign='top' class='firstRow'&gt;
+    &lt;TD class='firstRow' style='text-align: left' valign='top'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n159pibn1z2n3cn1idoq4m6lnosl' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
@@ -2306,7 +2637,17 @@ end tell
 &lt;p&gt;代码区块中，一般的 Markdown 语法不会被转换，像是星号便只是星号，这表示你可以很容易地以 Markdown 语法撰写 Markdown 语法相关的文件。&lt;/p&gt;
 &lt;h3 id='hr'&gt;分隔线&lt;/h3&gt;
 &lt;p&gt;你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：&lt;/p&gt;
-&lt;hr /&gt;&lt;hr /&gt;&lt;hr /&gt;&lt;hr /&gt;&lt;hr /&gt;&lt;hr /&gt;&lt;h2 id='span'&gt;区段元素&lt;/h2&gt;&lt;h3 id='link'&gt;链接&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;`* * *`
+
+`***`
+
+`*****`
+
+`- - -`
+
+`---------------------------------------`&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;&lt;h2 id='span'&gt;区段元素&lt;/h2&gt;&lt;h3 id='link'&gt;链接&lt;/h3&gt;
 &lt;p&gt;Markdown 支持两种形式的链接语法： &lt;em&gt;行内式&lt;/em&gt;和&lt;em&gt;参考式&lt;/em&gt;两种形式。&lt;/p&gt;
 
 &lt;p&gt;不管是哪一种，链接文字都是用 [方括号] 来标记。&lt;/p&gt;

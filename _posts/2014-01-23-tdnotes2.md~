@@ -14,10 +14,10 @@ tags: [teradata, introduction, database]
 ###What is a Database?
 A database is a collection of permanently stored data that is:
 
-   Logically related - the data relates to other data (tables to tables).
-   Shared - many users may access the data.
-   Protected - access to data is controlled.
-   Managed - the data has integrity and value.
+    Logically related - the data relates to other data (tables to tables).
+    Shared - many users may access the data.
+    Protected - access to data is controlled.
+    Managed - the data has integrity and value.
 
 ###Logical/Relational Modeling
 The Logical Model
