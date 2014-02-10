@@ -5,8 +5,8 @@
         <description>Lionel Cao - 北落师门</description>
         <link>http://lionelcao.github.io</link>
         <link>http://lionelcao.github.io</link>
-        <lastBuildDate>2014-02-10T23:46:56+08:00</lastBuildDate>
-        <pubDate>2014-02-10T23:46:56+08:00</pubDate>
+        <lastBuildDate>2014-02-11T00:04:07+08:00</lastBuildDate>
+        <pubDate>2014-02-11T00:04:07+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -1178,7 +1178,7 @@ ab*(c|ε)指示开始于一个a接着零或多个b和最终可选的一个c的�
 &lt;h2 id=&quot;_8&quot;&gt;表达式全集&lt;/h2&gt;
 
 &lt;p&gt;正则表达式有多種不同的风格。下表是在PCRE中元字符及其在正则表达式上下文中的行为的一个完整列表，适用于Perl或者Python编程语言（grep或者egrep的正则表达式文法是PCRE的子集）：&lt;/p&gt;
-&lt;table bordercolor='#CCCCCC' cellspacing='0' border='2'&gt;
+&lt;table cellspacing='0' border='2' bordercolor='#CCCCCC'&gt;
 &lt;tr&gt;
 &lt;th&gt;字符&lt;/th&gt;
 &lt;th&gt;描述&lt;/th&gt;
@@ -1480,7 +1480,7 @@ ab*(c|ε)指示开始于一个a接着零或多个b和最终可选的一个c的�
 &lt;p&gt;define how SAS processes DBMS objects. Some LIBNAME options can enhance performance, and others determine locking or naming behavior. The following table describes the LIBNAME options for SAS/ACCESS Interface to Teradata, with the applicable default values. For more detail about these options, see LIBNAME Options for Relational Databases.&lt;/p&gt;
 
 &lt;p&gt;SAS/ACCESS LIBNAME Options for Teradata&lt;/p&gt;
-&lt;TABLE bordercolor='#333333' cellspacing='0' border='1'&gt;
+&lt;TABLE cellspacing='0' border='1' bordercolor='#333333'&gt;
  &lt;TR&gt;
     &lt;TH&gt;
        &lt;DIV&gt;&lt;A /&gt;Option
@@ -1492,10 +1492,10 @@ ab*(c|ε)指示开始于一个a接着零或多个b和最终可选的一个c的�
     &lt;/TH&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD style='text-align: left' class='firstRow' valign='top'&gt;
+    &lt;TD class='firstRow' style='text-align: left' valign='top'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n05764k5zha7vmn1o5jdawotulb2' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;ACCESS=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD style='text-align: left' class='firstRow' valign='top'&gt;
+    &lt;TD class='firstRow' style='text-align: left' valign='top'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n159pibn1z2n3cn1idoq4m6lnosl' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
