@@ -18,13 +18,13 @@
     <![endif]-->
 
 
-    <link href="/assets/themes/hooligan/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="/assets/themes/hooligan/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">    
-    <link rel="stylesheet" type="text/css" href="/assets/themes/hooligan/css-social-buttons/css/zocial.stripped.css">
-    <link href="/assets/themes/hooligan/css/pygments.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/themes/hooligan/css/darkstrap.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/themes/hooligan/css/image.css" rel="stylesheet" type="text/css" media="all">      
-    <link href="/assets/themes/hooligan/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/lionel/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/themes/lionel/css/bootstrap-responsive.min.css" rel="stylesheet">    
+    <link rel="stylesheet" type="text/css" href="/assets/themes/lionel/css-social-buttons/css/zocial.stripped.css">
+    <link href="/assets/themes/lionel/css/pygments.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/lionel/css/darkstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/lionel/css/image.css" rel="stylesheet" type="text/css" media="all">      
+    <link href="/assets/themes/lionel/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
 
     
     <!-- fav and touch icons -->
@@ -264,72 +264,11 @@
     </div> <!-- /container -->
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/assets/themes/hooligan/js/jquery.min.js"><\/script>')</script>
-    <script src="/assets/themes/hooligan/bootstrap/js/bootstrap.min.js"></script>
-        <!--多说js加载开始，一个页面只需要加载一次 -->
-    <script type="text/javascript">
-      var duoshuoQuery = {short_name: "lionelcao"};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = 'http://static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-    </script>
-    <!--多说js加载结束，一个页面只需要加载一次 -->
+    <script>window.jQuery || document.write('<script src="/assets/themes/lionel/js/jquery.min.js"><\/script>')</script>
+    <script src="/assets/themes/lionel/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/themes/lionel/js/duoshuo.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-						   		   
-	//When you click on a link with class of poplight and the href starts with a # 
-	$('a.poplight[href^=#]').click(function() {
-		var popID = $(this).attr('rel'); //Get Popup Name
-		var popURL = $(this).attr('href'); //Get Popup href to define size
-		console.log(popID);
-                console.log(popURL);		
-		//Pull Query & Variables from href URL
-		var query= popURL.split('?');
-console.log(query);
-		var dim= query[1].split('&');
-console.log(dim);
-		var popWidth = dim[0].split('=')[1]; //Gets the first query string value
-console.log(popWidth); 
-		//Fade in the Popup and add close button
-		$('#' + popID).fadeIn().css({}).prepend('<a href="#" class="close1"><img src="images/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>');
-		
-		//Define margin for center alignment (vertical + horizontal) - we add 80 to the height/width to accomodate for the padding + border width defined in the css
-		var popMargTop = ($('#' + popID).height() + 80) / 2;
-		var popMargLeft = ($('#' + popID).width() + 80) / 2;
-console.log(popMargTop);
-console.log(popMargLeft);
-console.log('1');
-		//Apply Margin to Popup
-		$('#' + popID).css({ 
-			'margin-top' : -popMargTop,
-			'margin-left' : -popMargLeft
-		});
-		
-		//Fade in Background
-		$('body').append('<div id="fade"></div>'); //Add the fade layer to bottom of the body tag.
-		$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer 
-		
-		return false;
-	});
-	
-	
-	//Close Popups and Fade Layer
-	$('a.close1, #fade').live('click', function() { //When clicking on the close or fade layer...
-	  	$('#fade , .popup_block').fadeOut(function() {
-			$('#fade, a.close1').remove();  
-	}); //fade them both out
-	console.log('2');	
-		return false;
-	});
-
-	
-});
-</script>
+    <script src="/assets/themes/lionel/js/imagebox.js"></script>
     
   </body>
 </html>

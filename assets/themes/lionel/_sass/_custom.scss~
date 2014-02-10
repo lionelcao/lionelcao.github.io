@@ -1,0 +1,7 @@
+/* This is for your Custom Content. */
+@mixin border($a) {
+  border: 1px solid rgba(0, 0, 0, $a);
+}
+@mixin background-color($a: 0.5) {
+  background-color: rgba(249, 249, 249, $a);
+}  

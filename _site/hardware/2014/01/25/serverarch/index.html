@@ -18,13 +18,13 @@
     <![endif]-->
 
 
-    <link href="/assets/themes/hooligan/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="/assets/themes/hooligan/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">    
-    <link rel="stylesheet" type="text/css" href="/assets/themes/hooligan/css-social-buttons/css/zocial.stripped.css">
-    <link href="/assets/themes/hooligan/css/pygments.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/themes/hooligan/css/darkstrap.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/themes/hooligan/css/image.css" rel="stylesheet" type="text/css" media="all">      
-    <link href="/assets/themes/hooligan/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/lionel/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/themes/lionel/css/bootstrap-responsive.min.css" rel="stylesheet">    
+    <link rel="stylesheet" type="text/css" href="/assets/themes/lionel/css-social-buttons/css/zocial.stripped.css">
+    <link href="/assets/themes/lionel/css/pygments.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/lionel/css/darkstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/lionel/css/image.css" rel="stylesheet" type="text/css" media="all">      
+    <link href="/assets/themes/lionel/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
 
     
     <!-- fav and touch icons -->
@@ -131,7 +131,7 @@
 
 <p>　　SMP服务器的主要特征是共享，系统中所有资源（CPU、内存、I/O等）都是共享的。也正是由于这种特征，导致了SMP服务器的主要问题，那就是它的扩展能力非常有限。对于SMP服务器而言，每一个共享的环节都可能造成SMP服务器扩展时的瓶颈，而最受限制的则是内存。由于每个CPU必须通过相同的内存总线访问相同的内存资源，因此随着CPU数量的增加，内存访问冲突将迅速增加，最终会造成CPU资源的浪费，使 CPU性能的有效性大大降低。实验证明，SMP服务器CPU利用率最好的情况是2至4个CPU。</p>
 
-<p><img alt="smp" src="/images/smp.jpg" /></p>
+<p><img src="/images/smp.jpg" alt="smp" /></p>
 
 <p>　　图1.SMP服务器CPU利用率状态</p>
 
@@ -139,7 +139,7 @@
 
 <p>　　由于SMP在扩展能力上的限制，人们开始探究如何进行有效地扩展从而构建大型系统的技术，NUMA就是这种努力下的结果之一。利用NUMA技术，可以把几十个CPU（甚至上百个CPU）组合在一个服务器内。其CPU模块结构如图2所示：</p>
 
-<p><img alt="muma" src="/images/numa.jpg" /></p>
+<p><img src="/images/numa.jpg" alt="muma" /></p>
 
 <p>　　图2.NUMA服务器CPU模块结构</p>
 
@@ -147,7 +147,7 @@
 
 <p>　　但NUMA技术同样有一定缺陷，由于访问远地内存的延时远远超过本地内存，因此当CPU数量增加时，系统性能无法线性增加。如HP公司发布Superdome服务器时，曾公布了它与HP其它UNIX服务器的相对性能值，结果发现，64路CPU的Superdome （NUMA结构）的相对性能值是20，而8路N4000（共享的SMP结构）的相对性能值是6.3。从这个结果可以看到，8倍数量的CPU换来的只是3倍性能的提升。</p>
 
-<p><img alt="mpp" src="/images/mpp.jpg" /></p>
+<p><img src="/images/mpp.jpg" alt="mpp" /></p>
 
 <p>　　图3.MPP服务器架构图</p>
 
@@ -261,72 +261,11 @@
     </div> <!-- /container -->
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/assets/themes/hooligan/js/jquery.min.js"><\/script>')</script>
-    <script src="/assets/themes/hooligan/bootstrap/js/bootstrap.min.js"></script>
-        <!--多说js加载开始，一个页面只需要加载一次 -->
-    <script type="text/javascript">
-      var duoshuoQuery = {short_name: "lionelcao"};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = 'http://static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-    </script>
-    <!--多说js加载结束，一个页面只需要加载一次 -->
+    <script>window.jQuery || document.write('<script src="/assets/themes/lionel/js/jquery.min.js"><\/script>')</script>
+    <script src="/assets/themes/lionel/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/themes/lionel/js/duoshuo.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-						   		   
-	//When you click on a link with class of poplight and the href starts with a # 
-	$('a.poplight[href^=#]').click(function() {
-		var popID = $(this).attr('rel'); //Get Popup Name
-		var popURL = $(this).attr('href'); //Get Popup href to define size
-		console.log(popID);
-                console.log(popURL);		
-		//Pull Query & Variables from href URL
-		var query= popURL.split('?');
-console.log(query);
-		var dim= query[1].split('&');
-console.log(dim);
-		var popWidth = dim[0].split('=')[1]; //Gets the first query string value
-console.log(popWidth); 
-		//Fade in the Popup and add close button
-		$('#' + popID).fadeIn().css({}).prepend('<a href="#" class="close1"><img src="images/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>');
-		
-		//Define margin for center alignment (vertical + horizontal) - we add 80 to the height/width to accomodate for the padding + border width defined in the css
-		var popMargTop = ($('#' + popID).height() + 80) / 2;
-		var popMargLeft = ($('#' + popID).width() + 80) / 2;
-console.log(popMargTop);
-console.log(popMargLeft);
-console.log('1');
-		//Apply Margin to Popup
-		$('#' + popID).css({ 
-			'margin-top' : -popMargTop,
-			'margin-left' : -popMargLeft
-		});
-		
-		//Fade in Background
-		$('body').append('<div id="fade"></div>'); //Add the fade layer to bottom of the body tag.
-		$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer 
-		
-		return false;
-	});
-	
-	
-	//Close Popups and Fade Layer
-	$('a.close1, #fade').live('click', function() { //When clicking on the close or fade layer...
-	  	$('#fade , .popup_block').fadeOut(function() {
-			$('#fade, a.close1').remove();  
-	}); //fade them both out
-	console.log('2');	
-		return false;
-	});
-
-	
-});
-</script>
+    <script src="/assets/themes/lionel/js/imagebox.js"></script>
     
   </body>
 </html>

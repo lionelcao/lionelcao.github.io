@@ -4,7 +4,7 @@
  <title>Lionel Cao</title>
  <link href="http://lionelcao.github.io/" rel="self"/>
  <link href="http://lionelcao.github.io"/>
- <updated>2014-01-28T16:19:26+08:00</updated>
+ <updated>2014-02-10T23:46:56+08:00</updated>
  <id>http://lionelcao.github.io</id>
  <author>
    <name>北落师门</name>
@@ -326,15 +326,15 @@ Changing the number of AMPs in a system requires a change to the Hash Map.&lt;/c
 
 &lt;h2 id=&quot;upi_row_distribution&quot;&gt;UPI Row Distribution&lt;/h2&gt;
 
-&lt;p&gt;&lt;img alt=&quot;UPI&quot; src=&quot;/images/UPI.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/UPI.png&quot; alt=&quot;UPI&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;nupi_row_distribution&quot;&gt;NUPI Row Distribution&lt;/h2&gt;
 
-&lt;p&gt;&lt;img alt=&quot;NUPI&quot; src=&quot;/images/NUPI.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/NUPI.png&quot; alt=&quot;NUPI&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;highly_nonunique_nupi_row_distribution&quot;&gt;Highly Non-Unique NUPI Row Distribution&lt;/h2&gt;
 
-&lt;p&gt;&lt;img alt=&quot;HNUPI&quot; src=&quot;/images/HNUPI.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/HNUPI.png&quot; alt=&quot;HNUPI&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;partitioned_primary_index_ppi&quot;&gt;Partitioned Primary Index (PPI)&lt;/h2&gt;
 
@@ -615,7 +615,7 @@ Changing the number of AMPs in a system requires a change to the Hash Map.&lt;/c
 
 &lt;p&gt;　　SMP服务器的主要特征是共享，系统中所有资源（CPU、内存、I/O等）都是共享的。也正是由于这种特征，导致了SMP服务器的主要问题，那就是它的扩展能力非常有限。对于SMP服务器而言，每一个共享的环节都可能造成SMP服务器扩展时的瓶颈，而最受限制的则是内存。由于每个CPU必须通过相同的内存总线访问相同的内存资源，因此随着CPU数量的增加，内存访问冲突将迅速增加，最终会造成CPU资源的浪费，使 CPU性能的有效性大大降低。实验证明，SMP服务器CPU利用率最好的情况是2至4个CPU。&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&quot;smp&quot; src=&quot;/images/smp.jpg&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/smp.jpg&quot; alt=&quot;smp&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;　　图1.SMP服务器CPU利用率状态&lt;/p&gt;
 
@@ -623,7 +623,7 @@ Changing the number of AMPs in a system requires a change to the Hash Map.&lt;/c
 
 &lt;p&gt;　　由于SMP在扩展能力上的限制，人们开始探究如何进行有效地扩展从而构建大型系统的技术，NUMA就是这种努力下的结果之一。利用NUMA技术，可以把几十个CPU（甚至上百个CPU）组合在一个服务器内。其CPU模块结构如图2所示：&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&quot;muma&quot; src=&quot;/images/numa.jpg&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/numa.jpg&quot; alt=&quot;muma&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;　　图2.NUMA服务器CPU模块结构&lt;/p&gt;
 
@@ -631,7 +631,7 @@ Changing the number of AMPs in a system requires a change to the Hash Map.&lt;/c
 
 &lt;p&gt;　　但NUMA技术同样有一定缺陷，由于访问远地内存的延时远远超过本地内存，因此当CPU数量增加时，系统性能无法线性增加。如HP公司发布Superdome服务器时，曾公布了它与HP其它UNIX服务器的相对性能值，结果发现，64路CPU的Superdome （NUMA结构）的相对性能值是20，而8路N4000（共享的SMP结构）的相对性能值是6.3。从这个结果可以看到，8倍数量的CPU换来的只是3倍性能的提升。&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&quot;mpp&quot; src=&quot;/images/mpp.jpg&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/mpp.jpg&quot; alt=&quot;mpp&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;　　图3.MPP服务器架构图&lt;/p&gt;
 
@@ -1183,7 +1183,7 @@ ab*(c|ε)指示开始于一个a接着零或多个b和最终可选的一个c的�
 &lt;h2 id=&quot;_8&quot;&gt;表达式全集&lt;/h2&gt;
 
 &lt;p&gt;正则表达式有多種不同的风格。下表是在PCRE中元字符及其在正则表达式上下文中的行为的一个完整列表，适用于Perl或者Python编程语言（grep或者egrep的正则表达式文法是PCRE的子集）：&lt;/p&gt;
-&lt;table cellspacing='0' border='2' bordercolor='#CCCCCC'&gt;
+&lt;table bordercolor='#CCCCCC' cellspacing='0' border='2'&gt;
 &lt;tr&gt;
 &lt;th&gt;字符&lt;/th&gt;
 &lt;th&gt;描述&lt;/th&gt;
@@ -1485,7 +1485,7 @@ ab*(c|ε)指示开始于一个a接着零或多个b和最终可选的一个c的�
 &lt;p&gt;define how SAS processes DBMS objects. Some LIBNAME options can enhance performance, and others determine locking or naming behavior. The following table describes the LIBNAME options for SAS/ACCESS Interface to Teradata, with the applicable default values. For more detail about these options, see LIBNAME Options for Relational Databases.&lt;/p&gt;
 
 &lt;p&gt;SAS/ACCESS LIBNAME Options for Teradata&lt;/p&gt;
-&lt;TABLE cellspacing='0' border='1' bordercolor='#333333'&gt;
+&lt;TABLE bordercolor='#333333' cellspacing='0' border='1'&gt;
  &lt;TR&gt;
     &lt;TH&gt;
        &lt;DIV&gt;&lt;A /&gt;Option
@@ -1497,10 +1497,10 @@ ab*(c|ε)指示开始于一个a接着零或多个b和最终可选的一个c的�
     &lt;/TH&gt;
  &lt;/TR&gt;
  &lt;TR&gt;
-    &lt;TD class='firstRow' style='text-align: left' valign='top'&gt;
+    &lt;TD style='text-align: left' class='firstRow' valign='top'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n05764k5zha7vmn1o5jdawotulb2' /&gt;&lt;SPAN class='xrefSee'&gt;&lt;A&gt;ACCESS=&lt;/A&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
     &lt;/TD&gt;
-    &lt;TD class='firstRow' style='text-align: left' valign='top'&gt;
+    &lt;TD style='text-align: left' class='firstRow' valign='top'&gt;
        &lt;DIV class='paraTableFirst'&gt;&lt;A name='n159pibn1z2n3cn1idoq4m6lnosl' /&gt;none
        &lt;/DIV&gt;
     &lt;/TD&gt;
