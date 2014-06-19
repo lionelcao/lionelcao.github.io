@@ -13,9 +13,9 @@ group: navigation
 我叫曹鲁，来自江苏省南通市的一个小镇，现居住于中国上海。
 
 ###我的学习经历
-2006年6月毕业于江苏省通州高级中学
+2006.6 毕业于`江苏省通州高级中学`
 
-2010年6月毕业于武汉大学计算机学院计算机科学与技术专业本科
+2010.6 毕业于`武汉大学`|`计算机学院`|计算机科学与技术专业本科
 
 ###我的工作经历
 2010.7~2013.4 北京 合众人寿总公司信息管理中心，负责Mis系统、精算准备金系统以及高管经营分析系统的开发和运维。
@@ -24,7 +24,7 @@ group: navigation
 
 我的工作目前涉及以下领域：
 
-`Data Warehouse`，`Business Intelligence`，`Oracle`，`MySQL`，`Teradata`，`Data Analysis`，`Capacity Management`，`Data Mining`，`Hadoop`等。
+`Data Warehouse`，`Business Intelligence`，`Oracle`，`MySQL`，`Teradata`，`Data Analysis`，`SQL Tuning`，`Capacity Management`，`Data Mining`等。
 
 ###我的联系方式
 你可以通过以下方式与我取得联系：
