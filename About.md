@@ -48,6 +48,7 @@ Skype: lionel061201
 </div>
 --------------------------
 ##关于本站
+
 本站是曹鲁（[北落师门](http://www.lucao.com.cn)）的个人博客。
 
 它的建立得到了来自[Jekyll Bootstrap](http://jekyllbootstrap.com) 以及Jekyll主题[The Hooligan Theme](http://github.com/dhulihan/hooligan)的帮助，同时也要感谢[Github](https://github.com)提供的主机服务。
