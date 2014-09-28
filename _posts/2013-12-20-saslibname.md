@@ -9,6 +9,7 @@ tags: [sas, libname, syntax, teradata ]
 Via [http://support.sas.com](http://support.sas.com)
 
 ****************************
+
 ##Overview
 
 This section describes the LIBNAME statement that SAS/ACCESS Interface to Teradata supports and includes examples. For a complete description of this feature, see LIBNAME statement.
@@ -19,6 +20,7 @@ Here is the LIBNAME statement syntax for accessing Teradata.
     LIBNAME libref teradata <connection-options> <LIBNAME-options>;
 
 ****************************
+
 ##Arguments
 **libref**
 
