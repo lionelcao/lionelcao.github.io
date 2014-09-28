@@ -44,6 +44,9 @@ resources:
      - title: Hadoop 2.2.0 Documentation
        desc: Hadoop文档
        url: http://hadoop.apache.org/docs/r2.2.0/
+     - title: MySQL Documentation
+       desc: MySQL文档
+       url: http://dev.mysql.com/doc/index.html
 sports:
      - title: 新浪竞技风暴
        desc: 新浪体育
