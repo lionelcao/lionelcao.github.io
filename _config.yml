@@ -47,6 +47,9 @@ resources:
      - title: MySQL Documentation
        desc: MySQL文档
        url: http://dev.mysql.com/doc/index.html
+     - title: Git Reference
+       desc: Git 参考手册
+       url: http://gitref.org/
 sports:
      - title: 新浪竞技风暴
        desc: 新浪体育
