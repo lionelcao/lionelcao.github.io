@@ -5,7 +5,7 @@ description: ""
 group: navigation
 ---
 {% include JB/setup %}
-
+<div>
 {% for post in paginator.posts %}
 <div class="wrappe">
   <h2 class="h2 entry-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
@@ -37,6 +37,7 @@ group: navigation
     {% include JB/pages_list %}
   </ul>
 {% endfor %}
+</div>
 </div>
 <!-- Pagination links -->
 <div class="pull-right">
