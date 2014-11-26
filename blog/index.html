@@ -5,8 +5,8 @@ description: ""
 group: navigation
 ---
 {% include JB/setup %}
-<div>
-  <div style="float:left;">
+<div id="c" style="float:left;">
+  <div id="a" style="float:left;">
 {% for post in paginator.posts %}
 <div class="wrappe">
   <h2 class="h2 entry-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
@@ -30,7 +30,7 @@ group: navigation
 </div>
 {% endfor %}
 </div>
-<div style="float:left;">
+<div id="b" style="float:left;">
 {% for category in site.categories %} 
   <h4 id="{{ category[0] }}-ref">{{ category[0] | join: "/" }}</h4>
   <ul>
@@ -39,6 +39,7 @@ group: navigation
   </ul>
 {% endfor %}
 </div>
+<div style="clear:both"></div>
 </div>
 <!-- Pagination links -->
 <div class="pull-right">
