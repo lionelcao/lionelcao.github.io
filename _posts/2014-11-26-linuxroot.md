@@ -3,7 +3,7 @@ layout: post
 title: "在Linux中修改MySQL root用户的密码"
 description: ""
 category: "Linux"
-tags: [linux, MySQL]
+tags: [linux, mysql]
 ---
 {% include JB/setup %}
 ##一、有MySQL的root密码
