@@ -6,18 +6,18 @@ category: "Linux"
 tags: [linux, mysql]
 ---
 {% include JB/setup %}
-##一、有MySQL的root密码
+###一、有MySQL的root密码
 
 <!-- more -->
 
-###方法一：
+####方法一：
 
 在mysql系统外，使用mysqladmin
 
     mysqladmin -u root -p password "test123"
     Enter password: 【输入原来的密码】
 
-###方法二：
+####方法二：
 
 通过登录mysql系统，
 
@@ -28,7 +28,7 @@ tags: [linux, mysql]
     mysql> flush privileges;
     mysql> exit;      
 
-##二、没有MySQL的root密码；
+###二、没有MySQL的root密码；
 
 需有操作系统的root权限，安全模式登录系统
 
