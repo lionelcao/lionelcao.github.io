@@ -6,15 +6,11 @@ group: navigation
 ---
 {% include JB/setup %}
 
-##《来自作者的信》
+你好，旅行者！
 
-你好，旅行者！欢迎访问我的个人主页。
-
-我叫曹鲁，来自江苏省南通市的一个小镇，现居住于中国上海。
+欢迎访问Lionel Cao的个人主页。
 
 ###我的学习经历
-
-2006.6 毕业于`江苏省通州高级中学`
 
 2010.6 毕业于`武汉大学`|`计算机学院`|计算机科学与技术专业本科
 
@@ -26,7 +22,7 @@ group: navigation
 
 ###我的工作目前涉及以下领域：
 
-`Data Warehouse`，`Business Intelligence`，`Oracle`，`MySQL`，`Teradata`，`Data Analysis`，`SQL Tuning`，`Capacity Management`，`Data Mining`等。
+`Data Warehouse`，`Business Intelligence`，`Oracle`，`MySQL`，`Teradata`，`Data Analysis`，`ETL`，`SQL Tuning`，`Capacity Management`，`Data Mining`等。
 
 ###我的联系方式
 
