@@ -87,9 +87,9 @@ sed命令行格式为：
 
 ####替换一行中的某部分
 
-　　格式：sed 's/要替换的字符串/新的字符串/g'   （要替换的字符串可以用正则表达式）
+格式：sed 's/要替换的字符串/新的字符串/g'   （要替换的字符串可以用正则表达式）
      [root@localhost ruby] # sed -n '/ruby/p' ab | sed 's/ruby/bird/g'    #替换ruby为bird
- 　   [root@localhost ruby] # sed -n '/ruby/p' ab | sed 's/ruby//g'        #删除ruby
+     [root@localhost ruby] # sed -n '/ruby/p' ab | sed 's/ruby//g'        #删除ruby
 
 ####插入
 
@@ -99,3 +99,5 @@ sed命令行格式为：
      ruby is me,welcome to my blog.
      end
      bye
+
+本文内容转自[互联网](http://www.cnblogs.com/dong008259/archive/2011/12/07/2279897.html)
