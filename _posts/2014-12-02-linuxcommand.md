@@ -87,7 +87,7 @@ sed命令行格式为：
 
 ####替换一行中的某部分
 
-格式：sed 's/要替换的字符串/新的字符串/g'   （要替换的字符串可以用正则表达式）
+格式：sed 's/查找字段/替换字段/g'   （要替换的字符串可以用正则表达式）
 
      [root@localhost ruby] # sed -n '/ruby/p' ab | sed 's/ruby/bird/g'    #替换ruby为bird
      [root@localhost ruby] # sed -n '/ruby/p' ab | sed 's/ruby//g'        #删除ruby
@@ -101,4 +101,15 @@ sed命令行格式为：
      end
      bye
 
-本文内容转自[互联网](http://www.cnblogs.com/dong008259/archive/2011/12/07/2279897.html)
+格式: sed -i "s/查找字段/替换字段/g" ```grep 查找字段 -rl file_dir```(注意```是反引号而不是单引号)
+
+####批量替换多个文件中的字符串
+
+    sed -i "s/oldstring/newstring/g" `grep oldstring -rl yourdir`
+
+例如：替换/home下所有文件中的www.admin99.net为admin99.net
+
+    sed -i "s/www.admin99.net/admin99.net/g" `grep www.admin99.net -rl /home`
+    exp:sed -i "s/shabi/$/g" `grep shabi -rl ./`
+    
+本文内容转自[互联网](http://www.cnblogs.com/dong008259/archive/2011/12/07/2279897.html),略有修改。
