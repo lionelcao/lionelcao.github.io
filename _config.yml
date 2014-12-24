@@ -41,6 +41,9 @@ resources:
      - title: Teradata Documentation
        desc: TD官方文档
        url: http://www.info.teradata.com/
+     - title: Teradata Message
+       desc: Error Code Description
+       url: http://www.info.teradata.com/templates/eSrchResults.cfm?prodline=&txtpid=&txtrelno=&txtttlkywrd=MSGS,TNTMESSA&rdsort=Title&srtord=Asc&nm=Messages
      - title: Hadoop 2.2.0 Documentation
        desc: Hadoop文档
        url: http://hadoop.apache.org/docs/r2.2.0/
