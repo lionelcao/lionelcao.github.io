@@ -31,12 +31,12 @@ navigation:
 
 # Related Links displayed in links page-People
 links:
-     - title: HAO'S THOUGHT WORKS
-       desc: 学术范的开发者陈浩
-       url: http://www.haoch.me
-     - title: BigData is Something
-       desc: Eddy Cai的百度空间
-       url: http://hi.baidu.com/wzcyc
+#     - title: HAO'S THOUGHT WORKS
+#       desc: 学术范的开发者陈浩
+#       url: http://www.haoch.me
+#     - title: BigData is Something
+#       desc: Eddy Cai的百度空间
+#       url: http://hi.baidu.com/wzcyc
 resources:
      - title: Teradata Documentation
        desc: TD官方文档
