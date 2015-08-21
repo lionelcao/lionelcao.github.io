@@ -53,13 +53,13 @@ group: navigation
   {% endif %}
 </div>
 </div>
-<div id="b" class="wrappe" style="float:right;width:280px;height:520px">
+<div id="b" class="wrappe" style="float:right;width:280px;height:840px">
   <div style="float:left;width:280px;height:20px">
     <h3 style="float:left;width:200px" class="h2 entry-title">Categories</h3>
     <a style="float:right;width:60px" class="btn btn-default btn-sm pull-right" href="/categories.html"><span class="readmore">More &raquo; </span></a>
   </div>
   <hr>
-  <div style="float:left;width:280px;height:840px">
+  <div style="float:left;width:280px;height:800px">
 {% for category in site.categories %} 
   <h4 id="{{ category[0] }}-ref">{{ category[0] | join: "/" }}</h4>
   <h6>
