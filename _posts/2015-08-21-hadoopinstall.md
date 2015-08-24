@@ -23,6 +23,29 @@ tags: [linux, hadoop, jdk]
   
   [Native Lib 2.4.0下载地址](http://dl.bintray.com/sequenceiq/sequenceiq-bin/hadoop-native-64-2.4.0.tar)
   
+  `cd /opt/hadoop-2.4.1/lib/native`
+  `tar -xvf hadoop-native-64-2.4.0.tar`
+  
+  *补记：当时解压缩完貌似没在出现这个问题了，但第二天登陆后又报WARN，但文件确实已经替换成了64位文件。
+  
+  `export LD_LIBRARY_PATH=$HADOOP_HOME/lib/native/Linux-amd64-64` 也不管用
+  检查.bashrc中添加过这样两行：
+  `export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native/Linux-amd64-64/`
+  `export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/"`
+  
+  把第二行改为`export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"`，退出hadoop用户再重新登陆，问题解决！
+  
+    [hadoop@lionelhd-6353 ~]$ hadoop checknative -a
+    15/08/24 03:36:29 WARN bzip2.Bzip2Factory: Failed to load/initialize native-bzip2 library system-native, will use pure-Java version
+    15/08/24 03:36:29 INFO zlib.ZlibFactory: Successfully loaded & initialized native-zlib library
+    Native library checking:
+    hadoop: true /opt/hadoop-2.4.1/lib/native/libhadoop.so.1.0.0
+    zlib:   true /lib64/libz.so.1
+    snappy: false 
+    lz4:    true revision:99
+    bzip2:  false 
+    15/08/24 03:36:29 INFO util.ExitUtil: Exiting with status 1
+  
 ###三、JAVA_HOME is not set and could not be found
   这个问题有点诡异，因为我已经在`/etc/profile`里面设置了系统变量JAVA_HOME，而且`hadoop-env.sh`中也已经export JAVA_HOME，但是启动start-dfs.sh仍然报错找不到JAVA_HOME。
   
