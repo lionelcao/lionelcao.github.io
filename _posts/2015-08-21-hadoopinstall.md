@@ -24,13 +24,17 @@ tags: [linux, hadoop, jdk]
   [Native Lib 2.4.0下载地址](http://dl.bintray.com/sequenceiq/sequenceiq-bin/hadoop-native-64-2.4.0.tar)
   
   `cd /opt/hadoop-2.4.1/lib/native`
+  
   `tar -xvf hadoop-native-64-2.4.0.tar`
   
   *补记：当时解压缩完貌似没在出现这个问题了，但第二天登陆后又报WARN，但文件确实已经替换成了64位文件。
   
   `export LD_LIBRARY_PATH=$HADOOP_HOME/lib/native/Linux-amd64-64` 也不管用
+  
   检查.bashrc中添加过这样两行：
+  
   `export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native/Linux-amd64-64/`
+  
   `export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/"`
   
   把第二行改为`export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"`，退出hadoop用户再重新登陆，问题解决！
