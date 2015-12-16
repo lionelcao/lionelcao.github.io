@@ -21,8 +21,8 @@ author :
 
 # Internal pages/posts to include in top navigation
 navigation:
-  - title: About
-    url: /About.html
+#  - title: About
+#    url: /About.html
   - title: Blog
     url: /blog/
   - title: Links
