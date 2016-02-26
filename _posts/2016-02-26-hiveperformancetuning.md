@@ -36,6 +36,7 @@ tags: [hql, hadoop, hive, performance]
     --创建分区表
     create table table_a (userid string, birthday date, country string, gender string)
     partitioned by (country string, gender string);
+
 &#160; &#160; &#160; &#160; 然而对于分区表来说并不是分区越多就越好的。如前文所述Hive中的分区对应到HDFS的文件目录，过多的分区会导致在HDFS上存储大量的小文件，这在Hadoop上是应该尽量避免的。因为每一个目录和文件都会在NameNode上占据一定的存储空间，虽然单个文件所占的名称空间很小（约150字节/文件），但毕竟一个Hadoop集群的NameNode资源是有限的。同时一个MapReduce Job会对应多个task，每个task都是一个 JVM实例，都需要开启和销毁。对于大量的小文件，查询时而每个文件都会对应一个task，这可能导致大量的时间浪费在不断的启动和销毁JVM，而不是真正的数据计算上。
 
 #### 2. 使用分桶表(Bucketing Table)
@@ -50,9 +51,11 @@ tags: [hql, hadoop, hive, performance]
 &#160; &#160; &#160; &#160; 需要注意的是，如果你使用分桶表，那么在插入数据的时候必须加入下面的配置
     
     set hive.enforce.bucketing=true;
+
 如果你没有这么做，那么你必须手动设置和分桶数相同的reduce个数:
     
     set mapred.reduce.tasks=90;
+
 然后在insert select语句中增加cluster by子句。
 
 #### 3. 使用ORC(Optimized Row Columnar) File
@@ -104,11 +107,13 @@ Hive在0.14.0及之前的版本中这一参数默认值是false, 但在1.1.0之�
     --收集表和字段的统计信息
     analyze table table_a compute statistics;
     analyze table table_a compute statistics for columns userid, country;
+
 #### 3. 使用向量模式
 向量模式允许Hive一次处理一个包含1024行数据的数据块(block)而标准的SQL执行引擎每次只处理一行。开启向量模式将减少扫描、过滤、聚合以及连接等操作的CPU消耗。在数据块内部每一列被存储为一个向量（即一个由原始数据组成的数组），像简单的算术运算和比较会通过向量在紧密循环内快速的迭代完成，而在循环内部没有（或很少）使用函数调用或者条件分支。这些循环以一种精简的方式编译，使用相对较少的指令并且这些指令基本上会在更短的时钟周期内完成，因为它们更高效的利用了处理器流水线和高速缓存。
 
     --开启向量模式
     set hive.vectorized.execution.enabled = true; --默认false
+
 需要注意的是，向量模式仅支持以下数据类型，使用其他数据类型将导致Hive仍然使用标准的一次处理一行方式来执行：
 - tinyint
 - smallint
