@@ -29,6 +29,7 @@ tags: [hql, hadoop, hive, performance]
   - 合并同源表的查询
 
 ### 一、Hive表的模式设计与存储格式优化
+
 #### 1. 使用分区表(Partition Table)
 
 &#160; &#160; &#160; &#160; 在Hive中合理使用分区表对于提高查询性能有很大帮助。Hive的分区对应到HDFS上的文件目录，当查询中的where子句使用到分区列时Hive只需要扫描相应的目录而不需要全盘扫描，这将有助于减少磁盘I/O。
@@ -59,6 +60,7 @@ tags: [hql, hadoop, hive, performance]
 然后在insert select语句中增加cluster by子句。
 
 #### 3. 使用ORC(Optimized Row Columnar) File
+
 &#160; &#160; &#160; &#160; ORC File是Hive在0.11版本引入的一种新的存储格式。它由Hortonworks公司开源，是对于之前的RCFile的优化。ORC File提供了高效的方式来存储Hive数据，并且能够给Hive的读、写以及数据处理带来全面的性能提升。
 
 ORC File是一种行列混合存储格式。一个ORC File中包含若干个行级分组，称为stripes。同时在文件尾部有一个file footer包含若干辅助信息，例如stripes列表，每个stripes的行数，以及列的数据类型，同时包含一些列的预聚合信息如count, min, max, sum等。另外在文件尾部还有一个Postscript用于存储文件的压缩信息以及压缩后的footer大小。
@@ -86,7 +88,9 @@ ORC File是一种行列混合存储格式。一个ORC File中包含若干个行�
 ![](http://hortonworks.com/wp-content/uploads/2013/10/ORCFile.png)
 
 ### 二、预设参数配置优化
+
 #### 1. 执行引擎选择
+
 Hive目前除了默认支持的Map-Reduce计算框架，还扩展了对Tez和Spark的支持，使得用户可以充分利用这两种计算框架的优势来提升查询性能。默认hive.execution.engine=MR;
 
     --使用其他执行引擎
@@ -96,6 +100,7 @@ Hive目前除了默认支持的Map-Reduce计算框架，还扩展了对Tez和Spa
 相比于MR模型，这两种计算框架都可以使数据在计算过程中不需要把中间结果写到HDFS而是利用内存进行计算，这大大减少了数据读取和写入磁盘的时间。就目前来说Hive on Tez和Hive on Spark的性能差距并不明显，但由于Hortonworks已经宣布将全力支持Spark，未来二者是否会发生差别我们还需要进一步观察。对于这两种计算框架本文不做过多阐述，请自行查阅相关文档。
 
 #### 2. 基于成本的执行计划优化(Cost Based Optimization)
+
 Hive在0.14.0及之前的版本中这一参数默认值是false, 但在1.1.0之后的版本已经改为true
 开启方式：
 
@@ -109,6 +114,7 @@ Hive在0.14.0及之前的版本中这一参数默认值是false, 但在1.1.0之�
     analyze table table_a compute statistics for columns userid, country;
 
 #### 3. 使用向量模式
+
 向量模式允许Hive一次处理一个包含1024行数据的数据块(block)而标准的SQL执行引擎每次只处理一行。开启向量模式将减少扫描、过滤、聚合以及连接等操作的CPU消耗。在数据块内部每一列被存储为一个向量（即一个由原始数据组成的数组），像简单的算术运算和比较会通过向量在紧密循环内快速的迭代完成，而在循环内部没有（或很少）使用函数调用或者条件分支。这些循环以一种精简的方式编译，使用相对较少的指令并且这些指令基本上会在更短的时钟周期内完成，因为它们更高效的利用了处理器流水线和高速缓存。
 
     --开启向量模式
@@ -128,7 +134,9 @@ Hive在0.14.0及之前的版本中这一参数默认值是false, 但在1.1.0之�
 - string
 
 注意：对于timestamp类型有一个限制即仅支持1677-09-20~2262-04-11之间的时间。这是由于向量化的timestamp类型数据实际是存储为long类型值，这意味着可以表示的时间区间为Unix系统起始时间1970-01-01 00:00:00 UTC ± (2^32-1)纳秒。
+
 #### 4. 使用并行执行模式
+
 使用并行执行可以让Hive同时处理多个job/task（无依赖关系的情况下），例如应用到多个MR Job 上，join多个表之前分别处理每个表的数据，或者在multi-insert的时候移动数据文件插入target table。 当然这在你的计算资源足够的情况下肯定会减少查询的执行时间。
 
     --开启并行执行
@@ -136,7 +144,9 @@ Hive在0.14.0及之前的版本中这一参数默认值是false, 但在1.1.0之�
     
 ### 三、HQL优化
 HQL即Hive自己的SQL，和所有的SQL方言一样，它并不完全符合SQL-92标准。HQL看起来更像是SQL-92，MySQL和Oracle SQL的混合。当然它也在不断的改进以更好的支持SQL-92。HQL支持窗口函数（分析函数），当然它也有一些特有的语法，如Multi-insert。关于HQL语法这里不作过多阐述，这里简要提几点HQL中应该注意的书写规则，写出好的SQL对于查询性能会有所帮助：
+
 #### 1. 将join中的大表后置
+
 Hive默认假设join中的最后一张表是最大的，它会试图把其他表存入缓存，然后流过最后一张表。
 假设我们有一张大表table_a和一张小表table_b, 当你join它们时应该这样写：
 
@@ -153,6 +163,7 @@ Hive默认假设join中的最后一张表是最大的，它会试图把其他表
         on l.user_id=s.user_id
 
 #### 2. 使用Map-Side Join
+
 如果参与Join的表中只有一张表是小表，那么使用Map-side join将对于提高你的查询性能非常有帮助。Hive会将小表直接读入内存，然后在Map的时候就可以完成连接，从而省去了reduce的步骤。即使你的数据集不是很大，当你使用Map-Side join的时候你也会感到明显比普通的join快很多。这样做不仅仅可以省去Reduce，有时候也可以减少Map步骤的数量。
 
     --使用Map-Side Join
@@ -164,7 +175,9 @@ Hive默认假设join中的最后一张表是最大的，它会试图把其他表
     Set hive.mapjoin.smalltable.filesize=25000000;
     
 注意：这个优化不能用在右外连接和全外连接的查询中。
+
 #### 3. 合并同源表的查询
+
 前面我们提到Hive有一种独有的语法即Multi-insert, 可以从一张表查询数据然后同时插入到多张表，这在其他的SQL语法中是没有的。
     
     --同一源表插入多个target table
