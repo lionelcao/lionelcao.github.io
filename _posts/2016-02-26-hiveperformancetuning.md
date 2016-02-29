@@ -11,7 +11,7 @@ tags: [hql, hadoop, hive, performance]
 
   <!-- more -->
 
-&#160; &#160; &#160; &#160; 然而由于Hadoop和HDFS本身以及MapReduce计算模型的限制，Hive查询普遍有着较大的延迟。在实践中我们应当了解Hive性能优化的一些方法，以最大化的利用好计算资源。当然Hive本身也还在不断的发展改进，如支持Tez、Spark等内存计算模型。本文所涉及的Hive性能优化是基于Hive v0.13.0来讨论的。
+&#160; &#160; &#160; &#160; 然而由于Hadoop和HDFS本身以及MapReduce计算模型的限制，Hive查询普遍有着较大的延迟。在实践中我们应当了解Hive性能优化的一些方法，以最大化的利用好计算资源。当然Hive本身也还在不断的发展改进，如支持Tez、Spark等内存计算模型。
 
 &#160; &#160; &#160; &#160; 本文将从以下方面简要介绍Hive性能调优的一些常用方法：
 - Hive表的模式设计与存储格式优化
@@ -26,13 +26,15 @@ tags: [hql, hadoop, hive, performance]
 - HQL优化
   - Join中将大表后置
   - 使用Map-side Join
-  - 合并同源表的查询
+  - 使用Multi-insert
+  - 避免select count(distinct field_a)
+  - 在where子句中使用分区字段
 
 ### 一、Hive表的模式设计与存储格式优化
 
 #### 1. 使用分区表(Partition Table)
 
-&#160; &#160; &#160; &#160; 在Hive中合理使用分区表对于提高查询性能有很大帮助。Hive的分区对应到HDFS上的文件目录，当查询中的where子句使用到分区列时Hive只需要扫描相应的目录而不需要全盘扫描，这将有助于减少磁盘I/O。
+&#160; &#160; &#160; &#160; 在Hive中合理使用分区表对于提高查询性能有很大帮助。Hive的分区对应到HDFS上的文件目录，当查询中的where子句使用到分区列时Hive只需要扫描相应的目录而不需要全盘扫描，这将大大减少磁盘I/O。
     
     --创建分区表
     create table table_a (userid string, birthday date, country string, gender string)
@@ -51,13 +53,15 @@ tags: [hql, hadoop, hive, performance]
 
 &#160; &#160; &#160; &#160; 需要注意的是，如果你使用分桶表，那么在插入数据的时候必须加入下面的配置
     
-    set hive.enforce.bucketing=true;
-
+    set hive.enforce.bucketing=true; 
+    
 如果你没有这么做，那么你必须手动设置和分桶数相同的reduce个数:
     
     set mapred.reduce.tasks=90;
 
 然后在insert select语句中增加cluster by子句。
+
+注意：在ebay，这一配置已被加入hive-site.xml作为默认配置，那么你最好在建表时指定合适的分桶字段，否则很可能出现data skew。另外在Hive 2.x版本中该配置项已被移除并默认为true。
 
 #### 3. 使用ORC(Optimized Row Columnar) File
 
@@ -107,7 +111,7 @@ Hive在0.14.0及之前的版本中这一参数默认值是false, 但在1.1.0之�
     set hive.cbo.enable=true;
 
 我们知道在数据库中通过Join可以把两张表的相关行通过某一个（或多个）字段连接起来，而在多个表join的情况下，join的顺序将对使用到的数据集的大小产生重大影响。当然随着参与join的表数量的增加，可能的join顺序的也会急剧增加。
-使用CBO可以让Hive的查询优化器基于表的统计信息选择更为合理的Join顺序，从而减少查询执行时间。因此，及时的更新统计信息对于使用CBO来优化查询至关重要。在Hive 0.14中，收集统计信息的语句性能已经经过优化：
+使用CBO可以让Hive的查询优化器基于表的统计信息选择更为合理的Join顺序，从而大大减少查询执行时间。因此，及时的更新统计信息对于使用CBO来优化查询至关重要。在Hive 0.14中，收集统计信息的语句性能已经经过优化：
 
     --收集表和字段的统计信息
     analyze table table_a compute statistics;
@@ -115,7 +119,7 @@ Hive在0.14.0及之前的版本中这一参数默认值是false, 但在1.1.0之�
 
 #### 3. 使用向量模式
 
-向量模式允许Hive一次处理一个包含1024行数据的数据块(block)而标准的SQL执行引擎每次只处理一行。开启向量模式将减少扫描、过滤、聚合以及连接等操作的CPU消耗。在数据块内部每一列被存储为一个向量（即一个由原始数据组成的数组），像简单的算术运算和比较会通过向量在紧密循环内快速的迭代完成，而在循环内部没有（或很少）使用函数调用或者条件分支。这些循环以一种精简的方式编译，使用相对较少的指令并且这些指令基本上会在更短的时钟周期内完成，因为它们更高效的利用了处理器流水线和高速缓存。
+向量模式允许Hive一次处理一个包含1024行数据的数据块(block)而标准的SQL执行引擎每次只处理一行。开启向量模式将大大减少扫描、过滤、聚合以及连接等操作的CPU消耗。在数据块内部每一列被存储为一个向量（即一个由原始数据组成的数组），像简单的算术运算和比较会通过向量在紧密循环内快速的迭代完成，而在循环内部没有（或很少）使用函数调用或者条件分支。这些循环以一种精简的方式编译，使用相对较少的指令并且这些指令基本上会在更短的时钟周期内完成，因为它们更高效的利用了处理器流水线和高速缓存。
 
     --开启向量模式
     set hive.vectorized.execution.enabled = true; --默认false
@@ -143,9 +147,10 @@ Hive在0.14.0及之前的版本中这一参数默认值是false, 但在1.1.0之�
     Set hive.exec.parallel=true;
     
 ### 三、HQL优化
+
 HQL即Hive自己的SQL，和所有的SQL方言一样，它并不完全符合SQL-92标准。HQL看起来更像是SQL-92，MySQL和Oracle SQL的混合。当然它也在不断的改进以更好的支持SQL-92。HQL支持窗口函数（分析函数），当然它也有一些特有的语法，如Multi-insert。关于HQL语法这里不作过多阐述，这里简要提几点HQL中应该注意的书写规则，写出好的SQL对于查询性能会有所帮助：
 
-#### 1. 将join中的大表后置
+#### 1. join中将大表后置
 
 Hive默认假设join中的最后一张表是最大的，它会试图把其他表存入缓存，然后流过最后一张表。
 假设我们有一张大表table_a和一张小表table_b, 当你join它们时应该这样写：
@@ -176,7 +181,7 @@ Hive默认假设join中的最后一张表是最大的，它会试图把其他表
     
 注意：这个优化不能用在右外连接和全外连接的查询中。
 
-#### 3. 合并同源表的查询
+#### 3. 使用Multi-insert
 
 前面我们提到Hive有一种独有的语法即Multi-insert, 可以从一张表查询数据然后同时插入到多张表，这在其他的SQL语法中是没有的。
     
@@ -194,11 +199,28 @@ Hive默认假设join中的最后一张表是最大的，它会试图把其他表
 
 因此我们在改写其他平台的SQL往Hive上做迁移的时候，也许可以利用这一特性减少对同一源表的重复读取，从而减少执行时间。
 
+#### 4. 避免select count(distinct field_a)
+
+这种写法在很多SQL中都非常常见，然而请不要在HiveQL中这样书写，因为这样将只能启动一个reducer来处理数据，你可以通过子查询来改写：
+
+    select count(1) 
+    from (
+    select distinct field_a from table_a
+    ) t;
+
+这样会启动2个MR job，第一个MR job中会有多个reducer来处理数据。当你的数据量不是很大的时候，这样做的好处并不明显，有时候可能还会适得其反，因为启动和销毁JVM也需要耗费时间，但是当你的数据量非常大的时候，你会明显的感受到这个优化带来的好处。
+
+注意：在count这样的全局聚合操作中，即使你手动修改reducer个数，Hive也还是会强制把reducer设为1，因此只有通过改写子查询才能使用多个reducer。
+
+#### 5. 在where子句中使用分区字段
+
+最后，如果你建了分区表，别忘了在你的查询中使用分区字段来提高查询效率！
+
 ### 编后语
-虽然Hadoop生态圈中SQL on Hadoop的产品层出不穷，但相比其他各种新产品，Hive显然已经更为成熟和稳定。Hive性能优化需要从多方面入手，从实践中总结经验。本文仅仅是针对较为常用的一些方法做了一些总结，如有不正确的地方欢迎批评指正。另外不同的硬件性能，集群规模和可使用资源（CPU、内存）等也会对查询最终的执行和等待时间造成较大影响，如需做性能测试需要保证外部条件一致的情况下做对比才有意义。最后希望本文的总结能给各位刚接触Hive的朋友带来帮助，感谢阅读。
+虽然Hadoop生态圈中SQL on Hadoop的产品层出不穷，但目前Hive已经相对成熟和稳定。Hive性能优化需要从多方面入手，从实践中总结经验。本文仅仅是针对较为常用的一些方法做了一些总结，如有不正确的地方欢迎批评指正。另外不同的硬件性能，集群规模和可使用资源（CPU、内存）等也会对查询最终的执行和等待时间造成较大影响，如需做性能测试需要保证外部条件一致的情况下做对比才有意义。最后希望本文的总结能给各位刚接触Hive的朋友带来帮助，感谢阅读。
 
 ### 参考资料
 1. 《Programming Hive》by Edward Capriolo, Dean Wampler, and Jason Rutherglen, First Edition.
-2. 《Hive User Documentation》https://cwiki.apache.org/confluence/display/Hive/Home#Home-UserDocumentation
-3. 《5 Ways to Make Your Hive Queries Run Faster》http://zh.hortonworks.com/blog/5-ways-make-hive-queries-run-faster/
-4. 《10 Best Practices for Apache Hive》https://www.qubole.com/blog/big-data/hive-best-practices/
+2. [《Hive User Documentation》](https://cwiki.apache.org/confluence/display/Hive/Home#Home-UserDocumentation)
+3. [《5 Ways to Make Your Hive Queries Run Faster》](http://zh.hortonworks.com/blog/5-ways-make-hive-queries-run-faster/)
+4. [《10 Best Practices for Apache Hive》](https://www.qubole.com/blog/big-data/hive-best-practices/)
