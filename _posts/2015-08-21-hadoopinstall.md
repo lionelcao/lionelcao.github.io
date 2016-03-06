@@ -7,17 +7,17 @@ tags: [linux, hadoop, jdk]
 ---
 {% include JB/setup %}
 
-###一、ssh 无密码登录问题
+### 一、ssh 无密码登录问题
 
   需注意的是authorized_keys这个文件生成以后需要chmod 600，否则ssh localhost仍然需要密码
   
   <!-- more -->  
   
-###二、WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+### 二、WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 
   这个问题出现在启动start-dfs.sh的时候，后面namenode也解析为一长串乱七八糟的字符串而不是预期中的的localhost
   
-####HADOOP的本地库（NATIVE LIBRARIES）介绍
+#### HADOOP的本地库（NATIVE LIBRARIES）介绍
   
   Hadoop是使用Java语言开发的，但是有一些需求和操作并不适合使用java，所以就引入了本地库（Native Libraries）的概念，通过本地库，Hadoop可以更加高效地执行某一些操作。
 
@@ -52,7 +52,7 @@ tags: [linux, hadoop, jdk]
     bzip2:  false 
     15/08/24 03:36:29 INFO util.ExitUtil: Exiting with status 1
   
-###三、JAVA_HOME is not set and could not be found
+### 三、JAVA_HOME is not set and could not be found
 
   这个问题有点诡异，因为我已经在`/etc/profile`里面设置了系统变量JAVA_HOME，而且`hadoop-env.sh`中也已经export JAVA_HOME，但是启动start-dfs.sh仍然报错找不到JAVA_HOME。
   
@@ -61,7 +61,7 @@ tags: [linux, hadoop, jdk]
   个人选择后面一种方法，即在`hadoop-env.sh`中`export JAVA_HOME=/opt/jdk1.7.0_60/`
 
 
-###Reference
+### Reference
 
 [Setting up a Single Node Cluster](http://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/SingleCluster.html)
   
