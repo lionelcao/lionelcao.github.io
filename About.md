@@ -10,22 +10,27 @@ group: navigation
 
 欢迎访问Lionel Cao的个人主页！
 
-我将在这里记录一些工作笔记，技术摘要亦或是一些生活随笔。
+我在这里主要记录工作笔记，技术摘要或一些生活随笔。
 
 
-###我的工作目前涉及以下领域：
+### 我的工作所涉及的领域有：
 
-`Data Warehouse`，`Business Intelligence`，`Oracle`，`MySQL`，`Teradata`，`Data Analysis`，`ETL`，`SQL Tuning`，`Capacity Management`，`Data Mining`等。
+`Oracle`, `MySQL`, `Teradata`, `SQL Tuning`, `Capacity Management`
 
-###我的联系方式
+`Streaming`, `Kafka`, `Spark`, `Hadoop`, `Hive`, `YARN`
+
+`Java`, `Python`, `Scala`, `Shell`
+
+`Data Warehouse`, `BI`, `ETL`, `Data Analysis`
+
+`Javascript`, `JQuery`, `Html`, `CSS`, `Play! Framework`, `Bootstrap`
+
+
+### 我的联系方式
 
 你可以通过以下方式与我取得联系：
 
 Email: <whucaolu@gmail.com>
-
-Weibo: [靈狐不要冲](http://weibo.com/whucaolu)
-
-Skype: lionel061201
 
 愿大地母亲忽悠着你！
 
@@ -40,10 +45,12 @@ Skype: lionel061201
 </div>
 --------------------------
 
-##关于本站
+### 关于本站
 
 本站是曹鲁（[北落师门](http://www.lucao.com.cn)）的个人博客。
 
-它的建立得到了来自[Jekyll Bootstrap](http://jekyllbootstrap.com) 以及Jekyll主题[The Hooligan Theme](http://github.com/dhulihan/hooligan)的帮助，同时也要感谢[Github](https://github.com)提供的主机服务。
+感谢[Jekyll Bootstrap](http://jekyllbootstrap.com) & [The Hooligan Theme](http://github.com/dhulihan/hooligan)
+
+感谢[Github](https://github.com)
 
 
