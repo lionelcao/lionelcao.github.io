@@ -10,10 +10,10 @@ paginate_path: "blog/page:num"
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Lionel Cao
+title : 北落师门
 tagline: Site Tagline
 author :
-  name : 北落师门 
+  name : Lionel Cao 
   email : whucaolu@gmail.com
   github : lionelcao
   weibo : whucaolu
