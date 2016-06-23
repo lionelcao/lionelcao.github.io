@@ -28,8 +28,6 @@ group: navigation
 
 ### 我的联系方式
 
-你可以通过以下方式与我取得联系：
-
 Email: <whucaolu@gmail.com>
 
 愿大地母亲忽悠着你！
