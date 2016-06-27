@@ -43,5 +43,5 @@ tags: [spark, yarn]
     spark-submit --class org.apache.spark.examples.SparkPi \
                  --master yarn  \
                  --deploy-mode cluster \
-                 /opt/spark-2.0.0-preview-bin-hadoop2.7/examples/jars/spark-examples_2.11-2.0.0-preview.jar \
+                /opt/spark-2.0.0-preview-bin-hadoop2.7/examples/jars/spark-examples_2.11-2.0.0-preview.jar \
                  1000
