@@ -2,7 +2,7 @@
 layout: post
 title: "Ubuntu下安装JDK"
 description: ""
-category: "java"
+category: "Linux"
 tags: [ubuntu, jdk, java, install, hadoop]
 ---
 {% include JB/setup %}
