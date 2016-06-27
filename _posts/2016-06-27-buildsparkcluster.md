@@ -10,6 +10,8 @@ tags: [spark, yarn]
 
 1. Install JDK, set $JAVA_HOME and add to $PATH
 
+<!-- more -->
+
 2. Put spark-2.0.0-preview-bin-hadoop2.7 under /opt/, set $SPARK_HOME and add to $PATH
 
 3. $SPARK_HOME/conf/spark-env.sh
