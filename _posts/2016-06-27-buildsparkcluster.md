@@ -16,27 +16,27 @@ tags: [spark, yarn]
 
 * $SPARK_HOME/conf/spark-env.sh
 
-    HADOOP_CONF_DIR=$HADOOP_HOME/conf
-    SPARK_MASTER_IP=<HOSTNAME OF YOUR MASTER NODE>
+    `HADOOP_CONF_DIR=$HADOOP_HOME/conf`
+    `SPARK_MASTER_IP=<HOSTNAME OF YOUR MASTER NODE>`
 
 * $SPARK_HOME/conf/spark-defaults.conf
 
-    spark.master            spark://<HOSTNAME OF YOUR MASTER NODE>:7077
-    spark.serializer        org.apache.spark.serializer.KryoSerializer
-    spark.driver.extraJavaOptions -Dhdp.version=current    #For HDP
-    spark.yarn.am.extraJavaOptions -Dhdp.version=current    #For HDP
+    `spark.master            spark://<HOSTNAME OF YOUR MASTER NODE>:7077`
+    `spark.serializer        org.apache.spark.serializer.KryoSerializer`
+    `spark.driver.extraJavaOptions -Dhdp.version=current    #For HDP`
+    `spark.yarn.am.extraJavaOptions -Dhdp.version=current    #For HDP`
 
 * $SPARK_HOME/conf/slaves
 
-    <HOSTNAME OF YOUR MASTER NODE>
-    <HOSTNAME OF YOUR SLAVE NODE 1>
-    ...
-    ...
-    <HOSTNAME OF YOUR SLAVE NODE n>
+    `<HOSTNAME OF YOUR MASTER NODE>`
+    `<HOSTNAME OF YOUR SLAVE NODE 1>`
+    `...`
+    `...`
+    `<HOSTNAME OF YOUR SLAVE NODE n>`
 
 * Create java_opts file under $SPARK_HOME/conf
 
-    -Dhdp.version=current
+    `-Dhdp.version=current`
     
 * Set passwordless between all nodes
 
