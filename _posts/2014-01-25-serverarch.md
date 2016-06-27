@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "［转载］服务器三大体系SMP、NUMA、MPP介绍"
+title: "[转载]服务器三大体系SMP、NUMA、MPP介绍"
 description: ""
 category: "Server"
 tags: [server, SMP, NUMA, MMP, reprints]
