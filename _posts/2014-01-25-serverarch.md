@@ -1,15 +1,15 @@
 ---
 layout: post
-title: "服务器三大体系SMP、NUMA、MPP介绍"
+title: "［转载］服务器三大体系SMP、NUMA、MPP介绍"
 description: ""
-category: "hardware"
+category: "Server"
 tags: [server, SMP, NUMA, MMP, reprints]
 ---
 {% include JB/setup %}
 从系统架构来看，目前的商用服务器大体可以分为三类，即对称多处理器结构（SMP：Symmetric Multi-Processor），非一致存储访问结构（NUMA：Non-Uniform Memory Access），以及海量并行处理结构（MPP：Massive Parallel Processing）。它们的特征分别描述如下： 
 
 <!-- more -->
-##SMP（Symmetric Multi-Processor） 
+## SMP（Symmetric Multi-Processor） 
 
 　　所谓对称多处理器结构，是指服务器中多个CPU对称工作，无主次或从属关系。各CPU共享相同的物理内存，每个 CPU访问内存中的任何地址所需时间是相同的，因此SMP也被称为一致存储器访问结构（UMA：Uniform Memory Access）。对SMP服务器进行扩展的方式包括增加内存、使用更快的CPU、增加CPU、扩充I/O（槽口数与总线数）以及添加更多的外部设备（通常是磁盘存储）。 
 
@@ -19,7 +19,7 @@ tags: [server, SMP, NUMA, MMP, reprints]
 
 　　图1.SMP服务器CPU利用率状态
 
-##NUMA（Non-Uniform Memory Access） 
+## NUMA（Non-Uniform Memory Access） 
 
 　　由于SMP在扩展能力上的限制，人们开始探究如何进行有效地扩展从而构建大型系统的技术，NUMA就是这种努力下的结果之一。利用NUMA技术，可以把几十个CPU（甚至上百个CPU）组合在一个服务器内。其CPU模块结构如图2所示： 
 
@@ -35,7 +35,7 @@ tags: [server, SMP, NUMA, MMP, reprints]
 
 　　图3.MPP服务器架构图
 
-##MPP（Massive Parallel Processing） 
+## MPP（Massive Parallel Processing） 
 
 　　和NUMA不同，MPP提供了另外一种进行系统扩展的方式，它由多个SMP服务器通过一定的节点互联网络进行连接，协同工作，完成相同的任务，从用户的角度来看是一个服务器系统。其基本特征是由多个SMP服务器（每个SMP服务器称节点）通过节点互联网络连接而成，每个节点只访问自己的本地资源（内存、存储等），是一种完全无共享（Share Nothing）结构，因而扩展能力最好，理论上其扩展无限制，目前的技术可实现512个节点互联，数千个CPU。目前业界对节点互联网络暂无标准，如 NCR的Bynet，IBM的SPSwitch，它们都采用了不同的内部实现机制。但节点互联网仅供MPP服务器内部使用，对用户而言是透明的。 
 
@@ -43,7 +43,7 @@ tags: [server, SMP, NUMA, MMP, reprints]
 
 　　但是MPP服务器需要一种复杂的机制来调度和平衡各个节点的负载和并行处理过程。目前一些基于MPP技术的服务器往往通过系统级软件（如数据库）来屏蔽这种复杂性。举例来说，NCR的Teradata就是基于MPP技术的一个关系数据库软件，基于此数据库来开发应用时，不管后台服务器由多少个节点组成，开发人员所面对的都是同一个数据库系统，而不需要考虑如何调度其中某几个节点的负载。
 
-##NUMA与MPP的区别 
+## NUMA与MPP的区别 
 
 　　从架构来看，NUMA与MPP具有许多相似之处：它们都由多个节点组成，每个节点都具有自己的CPU、内存、I/O，节点之间都可以通过节点互联机制进行信息交互。那么它们的区别在哪里？通过分析下面NUMA和MPP服务器的内部架构和工作原理不难发现其差异所在。 
 
@@ -51,7 +51,7 @@ tags: [server, SMP, NUMA, MMP, reprints]
 
 　　其次是内存访问机制不同。在NUMA服务器内部，任何一个CPU可以访问整个系统的内存，但远地访问的性能远远低于本地内存访问，因此在开发应用程序时应该尽量避免远地内存访问。在MPP服务器中，每个节点只访问本地内存，不存在远地内存访问的问题。 
 
-##数据仓库的选择 
+## 数据仓库的选择 
 
 　　哪种服务器更加适应数据仓库环境？这需要从数据仓库环境本身的负载特征入手。众所周知，典型的数据仓库环境具有大量复杂的数据处理和综合分析，要求系统具有很高的I/O处理能力，并且存储系统需要提供足够的I/O带宽与之匹配。而一个典型的OLTP系统则以联机事务处理为主，每个交易所涉及的数据不多，要求系统具有很高的事务处理能力，能够在单位时间里处理尽量多的交易。显然这两种应用环境的负载特征完全不同。 
 
