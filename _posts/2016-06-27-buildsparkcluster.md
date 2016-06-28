@@ -10,6 +10,10 @@ tags: [spark, yarn]
 
 * Install JDK, set $JAVA_HOME and add to $PATH
 
+        $ sudo add-apt-repository ppa:webupd8team/java
+        $ sudo apt-get update
+        $ sudo apt-get install oracle-java8-installer
+
 <!-- more -->
 
 * Put spark-2.0.0-preview-bin-hadoop2.7 under /opt/, set $SPARK_HOME and add to $PATH
