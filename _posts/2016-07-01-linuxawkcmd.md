@@ -2,8 +2,8 @@
 layout: post
 title: "[转载]Linux AWK命令详解"
 description: ""
-category: "Spark"
-tags: [spark, yarn]
+category: "Linux"
+tags: [linux, awk, cmd]
 ---
 {% include JB/setup %}
 
