@@ -38,7 +38,25 @@ links:
 #       desc: Eddy Cai的百度空间
 #       url: http://hi.baidu.com/wzcyc
 resources:
-     - title: Teradata Documentation
+     - title: Coursera
+       desc: Online courses
+       url: https://www.coursera.org/
+     - title: Spark Documents
+       desc: Spark官方文档
+       url: http://spark.apache.org/docs/latest/index.html
+     - title: Spark Source Code
+       desc: Spark Github
+       url: https://github.com/apache/spark
+     - title: Kafka Documents
+       desc: Kafka官方文档
+       url: http://kafka.apache.org/documentation.html
+     - title: Play Documents
+       desc: Play官方文档
+       url: https://www.playframework.com/documentation
+     - title: ReactiveMongo Github
+       desc: Reactive Scala Driver for MongoDB
+       url: https://github.com/ReactiveMongo/ReactiveMongo
+     - title: Teradata Documents
        desc: TD官方文档
        url: http://www.info.teradata.com/
      - title: Teradata Message
@@ -56,6 +74,9 @@ resources:
      - title: Git Reference
        desc: Git 参考手册
        url: http://gitref.org/
+     - title: Admin LTE
+       desc: Web 模板
+       url: https://almsaeedstudio.com/preview
      - title: Statistical Learning
        desc: Stanford University Courses
        url: https://class.stanford.edu/courses/HumanitiesScience/StatLearning/Winter2014/about
