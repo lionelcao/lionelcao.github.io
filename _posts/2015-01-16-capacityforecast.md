@@ -160,14 +160,14 @@ where 1=1;
 
 ## Output
 
-![Image of output](/images/capaforecast1.png)
+![Image1](/images/capaforecast1.png)
 
 With these two parameters we can calculate the key point value and draw line in the dashboard.
 
 ### Mozart
 
-![Image of output](/images/capaforecast2.png)
+![Image2](/images/capaforecast2.png)
 
 ### Vivaldi
 
-![Image of output](/images/capaforecast3.png)
+![Image3](/images/capaforecast3.png)
