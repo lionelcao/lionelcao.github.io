@@ -7,14 +7,18 @@ tags: [data mining, linear regression, forecast ]
 ---
 {% include JB/setup %}
 
-### Introduction
+## Introduction
+
 This dashboard is built to help data warehouse administrators to monitor and forecast system storage before the end of 2015-06-30. 
 
-### Calculation
-#### Collect sample data
+<!-- more -->
+
+## Calculation
+
+### Collect sample data
 The sample data is collected from 2014-07-01 to 2014-12-31.
 
-#### Create mathematical model
+### Create mathematical model
 We use Simple Linear Regression model to calculate the storage forecast line. 
 
 We assume a model    
@@ -37,7 +41,7 @@ Estimation of parameters base on Least Squares approach
 
 So we only need to calculate X2, XY, and then ∑X=sum(X), ∑Y=sum(Y), ∑X2=sum(X2), ∑XY=sum(XY). SQL is enough to handle it.
 
-#### Confidence Interval
+### Confidence Interval
 That is, there is approximately a 95% chance that the interval `[β1' - 2•SE(β1'), β1' + 2•SE(β1')]` will contain the true value of β1.
 
         β1''=β1' ± 2•SE(β1')
@@ -49,7 +53,7 @@ We have
 
 where `σ2=Var(ε)`
 
-### Query Text
+## Query Text
 
 ```
 --delete from  support_scratch.storage;
@@ -154,7 +158,7 @@ on a.TheDate=c.TheDate
 where 1=1;
 ```
 
-### Output
+## Output
 
 With these two parameters we can calculate the key point value and draw line in the dashboard.
 
