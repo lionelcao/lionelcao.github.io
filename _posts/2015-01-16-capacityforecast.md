@@ -160,8 +160,14 @@ where 1=1;
 
 ## Output
 
+![Image of output](https://github.com/lionelcao/lionelcao.github.io/blob/master/images/capaforecast1.png)
+
 With these two parameters we can calculate the key point value and draw line in the dashboard.
 
-Mozart
+### Mozart
 
-Vivaldi
+![Image of output](https://github.com/lionelcao/lionelcao.github.io/blob/master/images/capaforecast2.png)
+
+### Vivaldi
+
+![Image of output](https://github.com/lionelcao/lionelcao.github.io/blob/master/images/capaforecast3.png)
