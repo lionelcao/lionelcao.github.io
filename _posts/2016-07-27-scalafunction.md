@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A test about Scala function/class parameters"
+title: "A test about option parameters in Scala function/class"
 description: ""
 category: "Syntax"
 tags: [scala, function, Option]
