@@ -83,13 +83,6 @@ scala> test("a", Some("None"))
 x is: a
 y is: Some(None)
 
-scala> test("a", Some("None").get)
-<console>:13: error: type mismatch;
- found   : String
- required: Option[String]
-       test("a", Some("None").get)
-                              ^
-
 scala> def test(a : String, b : Option[String]) { val x = a
      | val y=b
      | println("x is: " + x)
