@@ -47,17 +47,6 @@ You can make this conversion explicit by writing `exists _` or `exists(_)` inste
             ^
 
 scala> def test(a : String, b : Option[String]) { val x = a
-     |      | val y = b
-<console>:2: error: ';' expected but 'val' found.
-     | val y = b
-       ^
-
-scala>      | println("x is: " + x)
-<console>:12: error: not found: value x
- println("x is: " + x)
-                    ^
-
-scala> def test(a : String, b : Option[String]) { val x = a
      | val y = b
      | println("x is: " + x)
      | if(y.exists(_)) println("y is: " + y) else println("y is not exists!")
