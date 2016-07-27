@@ -2,7 +2,7 @@
 layout: post
 title: "Regular Expression"
 description: ""
-category: "syntax"
+category: "Syntax"
 tags: [syntax, regular expression, teradata, function]
 ---
 {% include JB/setup %}
