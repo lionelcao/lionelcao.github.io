@@ -59,7 +59,7 @@ resources:
      - title: Statistical Learning
        desc: Stanford University Courses
        url: https://class.stanford.edu/courses/HumanitiesScience/StatLearning/Winter2014/about
-documents:
+document:
      - title: Spark Documents
        desc: Spark官方文档
        url: http://spark.apache.org/docs/latest/index.html
