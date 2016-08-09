@@ -41,33 +41,12 @@ resources:
      - title: Coursera
        desc: Online courses
        url: https://www.coursera.org/
-     - title: Spark Documents
-       desc: Spark官方文档
-       url: http://spark.apache.org/docs/latest/index.html
-     - title: Spark Source Code
-       desc: Spark Github
-       url: https://github.com/apache/spark
-     - title: Kafka Documents
-       desc: Kafka官方文档
-       url: http://kafka.apache.org/documentation.html
-     - title: Play Documents
-       desc: Play官方文档
-       url: https://www.playframework.com/documentation
-     - title: ReactiveMongo Github
-       desc: Reactive Scala Driver for MongoDB
-       url: https://github.com/ReactiveMongo/ReactiveMongo
-     - title: Teradata Documents
-       desc: TD官方文档
-       url: http://www.info.teradata.com/
-     - title: Teradata Message
+     - title: Maven Scala plugin
+       desc: plugin Usage
+       url: http://scala-tools.org/mvnsites/maven-scala-plugin/usage.html
+     - title: Teradata Error Message
        desc: Error Code Description
        url: http://www.info.teradata.com/templates/eSrchResults.cfm?prodline=&txtpid=&txtrelno=&txtttlkywrd=MSGS,TNTMESSA&rdsort=Title&srtord=Asc&nm=Messages
-     - title: Hadoop 2.2.0 Documentation
-       desc: Hadoop文档
-       url: http://hadoop.apache.org/docs/r2.2.0/
-     - title: MySQL Documentation
-       desc: MySQL文档
-       url: http://dev.mysql.com/doc/index.html
      - title: MySQL Regular Expression
        desc: MySQL正则表达式
        url: http://dev.mysql.com/doc/refman/5.1/en/regexp.html
@@ -80,6 +59,26 @@ resources:
      - title: Statistical Learning
        desc: Stanford University Courses
        url: https://class.stanford.edu/courses/HumanitiesScience/StatLearning/Winter2014/about
+documents:
+     - title: Spark Documents
+       desc: Spark官方文档
+       url: http://spark.apache.org/docs/latest/index.html
+     - title: Kafka Documents
+       desc: Kafka官方文档
+       url: http://kafka.apache.org/documentation.html
+     - title: Play Documents
+       desc: Play官方文档
+       url: https://www.playframework.com/documentation
+     - title: Hadoop 2.2.0 Documentation
+       desc: Hadoop官方文档
+       url: http://hadoop.apache.org/docs/r2.2.0/
+     - title: MySQL Documentation
+       desc: MySQL官方文档
+       url: http://dev.mysql.com/doc/index.html
+     - title: Teradata Documents
+       desc: TD官方文档
+       url: http://www.info.teradata.com/
+     
 sports:
      - title: 新浪竞技风暴
        desc: 新浪体育
