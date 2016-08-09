@@ -26,6 +26,15 @@ group: navigation
 {% endfor %}
 </ul>
 
+<h2>Documents</h2>
+<ul class="links">
+{% for link in site.documents %}
+<li>
+    <a href="{{ link.url }}" target="_blank" title="{{ link.desc }}">{{ link.title }} <span style="font-style:italic">{{ link.desc }}</span></a>
+</li>
+{% endfor %}
+</ul>
+
 <h2>Sports</h2>
 <ul class="links">
 {% for link in site.sports %}
