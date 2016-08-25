@@ -59,6 +59,9 @@ resources:
      - title: Statistical Learning
        desc: Stanford University Courses
        url: https://class.stanford.edu/courses/HumanitiesScience/StatLearning/Winter2014/about
+     - title: ilanyu's Blog
+       desc: IDEA
+       url: http://blog.lanyus.com/archives/174.html
 document:
      - title: Spark Documents
        desc: Spark官方文档
