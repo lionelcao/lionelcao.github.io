@@ -7,18 +7,26 @@ tags: [spark]
 ---
 {% include JB/setup %}
 ### 问题1：Initial job has not accepted any resources; ......
-
+环境：在windows下Intellij直接启动spark app进行调试
 分析：该异常可能由多种原因导致
 
 <!-- more -->
 
 ```
- host配置不正确
- worker内存不足
- 相关端口号被占用
+ host配置不正确    --符合。由于在windows环境下开发，spark集群无法识别lucao-notepad ip导致worker无法连接client
+ worker内存不足    --一开始由于自己临时搭的server确实存在内存不足问题，导致这个问题排查颇具迷惑性，后想办法增加内存以后问题依然存在，故排除
+ 相关端口号被占用   --排除该可能
 ```
-
+报错信息：
 WARNYarnClientClusterScheduler: Initial job has not accepted any resources;check your cluster UI to ensure that workers are registered and havesufficient memory
+
+解决方法：
+
+1. 修改本机hosts文件，在修改第一行，添加自己的hostName，如：
+   127.0.0.1   lucao-notepad    localhsot
+   
+2.在spark集群的所有节点的hosts中添加本地提交任务的windows节点的ip和hostname，如：
+   10.0.1.76   lucao-notepad
 
 ### 问题2：local class incompatible: stream classdesc serialVersionUID = ......
 
