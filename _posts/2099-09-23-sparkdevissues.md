@@ -22,11 +22,13 @@ WARNYarnClientClusterScheduler: Initial job has not accepted any resources;check
 
 解决方法：
 
-1. 修改本机hosts文件，在修改第一行，添加自己的hostName，如：
-   127.0.0.1   lucao-notepad    localhsot
-   
-2.在spark集群的所有节点的hosts中添加本地提交任务的windows节点的ip和hostname，如：
-   10.0.1.76   lucao-notepad
+    1. 修改本机hosts文件，在修改第一行，添加自己的hostName，如：
+
+    127.0.0.1   lucao-notepad    localhsot
+    
+    2.在spark集群的所有节点的hosts中添加本地提交任务的windows节点的ip和hostname，如：
+
+    10.0.1.76   lucao-notepad
 
 ### 问题2：local class incompatible: stream classdesc serialVersionUID = ......
 
