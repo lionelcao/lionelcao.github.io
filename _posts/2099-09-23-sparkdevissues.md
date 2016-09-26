@@ -39,16 +39,13 @@ WARNYarnClientClusterScheduler: Initial job has not accepted any resources;check
 Exception in thread "main" org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 0.0 failed 4 times, most recent failure: Lost task 0.3 in stage 0.0 (TID 3, 10.100.56.197): java.io.InvalidClassException: org.apache.spark.rdd.MapPartitionsRDD; local class incompatible: stream classdesc serialVersionUID = 6732270565076291202, local class serialVersionUID = -1059539896677275380
 	at java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:616)
 	at java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1630)
-	.
-	.
-	.
+        ......
 Driver stacktrace:
 	at org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1431)
 	at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1419)
 	at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1418)
-	.
-	.
-	.
+        ......
 Caused by: java.io.InvalidClassException: org.apache.spark.rdd.MapPartitionsRDD; local class incompatible: stream classdesc serialVersionUID = 6732270565076291202, local class serialVersionUID = -1059539896677275380
 	at java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:616)
 	
+```
