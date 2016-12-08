@@ -45,6 +45,63 @@ Caused by: java.net.URISyntaxException: Relative path in absolute URI: ${system:
 
 原来是hive-site.xml中没有指定绝对路径，找到${system:java.io.tmpdir%7D/$%7Bsystem:user.name%7D并修改为绝对路径就OK了。
 
+另外由于使用了mysql5.7+，需要设置useSSL=false, 注意`&`在xml中以`&amp;`代替否则报错。
+
+```
+16/12/08 16:33:45 ERROR conf.Configuration: error parsing conf file:/Users/lucao/MyDev/hive-1.1.1/conf/hive-site.xml
+org.xml.sax.SAXParseException; systemId: file:/Users/lucao/MyDev/hive-1.1.1/conf/hive-site.xml; lineNumber: 386; columnNumber: 76; The reference to entity "useSSL" must end with the ';' delimiter.
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:150)
+	at org.apache.hadoop.conf.Configuration.parse(Configuration.java:2352)
+	at org.apache.hadoop.conf.Configuration.parse(Configuration.java:2340)
+	at org.apache.hadoop.conf.Configuration.loadResource(Configuration.java:2408)
+	at org.apache.hadoop.conf.Configuration.loadResources(Configuration.java:2374)
+	at org.apache.hadoop.conf.Configuration.getProps(Configuration.java:2281)
+	at org.apache.hadoop.conf.Configuration.get(Configuration.java:1108)
+	at org.apache.hadoop.hive.conf.HiveConf.getVar(HiveConf.java:2458)
+	at org.apache.hadoop.hive.conf.HiveConf.getVar(HiveConf.java:2479)
+	at org.apache.hadoop.hive.conf.HiveConf.initialize(HiveConf.java:2548)
+	at org.apache.hadoop.hive.conf.HiveConf.<init>(HiveConf.java:2494)
+	at org.apache.hadoop.hive.common.LogUtils.initHiveLog4jCommon(LogUtils.java:74)
+	at org.apache.hadoop.hive.common.LogUtils.initHiveLog4j(LogUtils.java:58)
+	at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:631)
+	at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:615)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+	at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+Exception in thread "main" java.lang.RuntimeException: org.xml.sax.SAXParseException; systemId: file:/Users/lucao/MyDev/hive-1.1.1/conf/hive-site.xml; lineNumber: 386; columnNumber: 76; The reference to entity "useSSL" must end with the ';' delimiter.
+	at org.apache.hadoop.conf.Configuration.loadResource(Configuration.java:2517)
+	at org.apache.hadoop.conf.Configuration.loadResources(Configuration.java:2374)
+	at org.apache.hadoop.conf.Configuration.getProps(Configuration.java:2281)
+	at org.apache.hadoop.conf.Configuration.get(Configuration.java:1108)
+	at org.apache.hadoop.hive.conf.HiveConf.getVar(HiveConf.java:2458)
+	at org.apache.hadoop.hive.conf.HiveConf.getVar(HiveConf.java:2479)
+	at org.apache.hadoop.hive.conf.HiveConf.initialize(HiveConf.java:2548)
+	at org.apache.hadoop.hive.conf.HiveConf.<init>(HiveConf.java:2494)
+	at org.apache.hadoop.hive.common.LogUtils.initHiveLog4jCommon(LogUtils.java:74)
+	at org.apache.hadoop.hive.common.LogUtils.initHiveLog4j(LogUtils.java:58)
+	at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:631)
+	at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:615)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+	at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+Caused by: org.xml.sax.SAXParseException; systemId: file:/Users/lucao/MyDev/hive-1.1.1/conf/hive-site.xml; lineNumber: 386; columnNumber: 76; The reference to entity "useSSL" must end with the ';' delimiter.
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:150)
+	at org.apache.hadoop.conf.Configuration.parse(Configuration.java:2352)
+	at org.apache.hadoop.conf.Configuration.parse(Configuration.java:2340)
+	at org.apache.hadoop.conf.Configuration.loadResource(Configuration.java:2408)
+	... 17 more
+```
+
 
 
 
