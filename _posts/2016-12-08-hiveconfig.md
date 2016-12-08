@@ -11,6 +11,8 @@ tags: [hive]
 
 但安装hive的时候明明已经按照官方wiki配好mysql driver，竟然还是一直报错找不到derby的driver，偶然间在网上看到hive配置文件是hive-site.xml，但我装的这个1.1.1版本下面只有hive-default.xml.
 
+<!-- more -->
+
 于是尝试
 
     cp hive-default.xml hive-site.xml
