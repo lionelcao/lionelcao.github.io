@@ -11,14 +11,14 @@ tags: [ssh, ubuntu, linux, hadoop]
    <!-- more -->
 1. 生成密钥
 
-        $ ssh keygen -t rsa
+        $ ssh-keygen -t rsa
 
    全部默认回车
 
 2. 将公钥添加到信任列表
 
         $ cd .ssh/
-        $ cat id_rsa.pub >> authorized_key
+        $ cat id_rsa.pub >> authorized_keys
 
 3. 验证无密码登录
 
